@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://pagead2.googlesyndication.com https://adservice.google.com https://www.googletagservices.com https://www.google-analytics.com https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; connect-src 'self' https://www.google-analytics.com; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;">
+<title>Privacy Policy — Humanitas</title>
+<meta name="description" content="Humanitas privacy policy — how we collect, use and protect your data, including Google AdSense cookies and your rights under GDPR and CCPA.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Privacy Policy — Humanitas">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marcellus-cpu.github.io/humanitas/privacy.html">
+<link rel="canonical" href="https://marcellus-cpu.github.io/humanitas/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:       #0D0D0D;
+  --ink-soft:  #3A3A3A;
+  --ink-muted: #767676;
+  --cream:     #FAF9F6;
+  --cream-2:   #F2F0EB;
+  --cream-3:   #E8E4DC;
+  --gold:      #B8933A;
+  --gold-lt:   #F5EDD8;
+  --rule:      1px solid #E8E4DC;
+  --serif:     'Cormorant Garant', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ── TOP BAR ── */
+#topbar { background: var(--ink); padding: 8px 0; }
+#topbar .container { display: flex; justify-content: space-between; align-items: center; }
+#topbar-links { display: flex; gap: 20px; }
+#topbar-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #7a7570; transition: color .2s; }
+#topbar-links a:hover { color: var(--cream); }
+#topbar-date { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #4a4844; }
+
+/* ── NAV ── */
+#nav { background: var(--cream); border-bottom: var(--rule); position: sticky; top: 0; z-index: 100; }
+#nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+#logo { font-family: var(--serif); font-size: 28px; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); flex-shrink: 0; }
+#logo span { color: var(--gold); }
+#nav-links { display: flex; list-style: none; gap: 0; }
+#nav-links a { font-size: 11.5px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); padding: 8px 14px; border-radius: 4px; transition: color .2s, background .2s; white-space: nowrap; }
+#nav-links a:hover { color: var(--ink); background: var(--cream-2); }
+#nav-right { display: flex; align-items: center; gap: 12px; }
+#subscribe-btn { background: var(--ink); color: var(--cream); border: none; border-radius: 6px; padding: 8px 18px; font-family: var(--sans); font-size: 12px; font-weight: 500; cursor: pointer; transition: opacity .2s; }
+#subscribe-btn:hover { opacity: .85; }
+#hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+#hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+#mobile-menu { display: none; background: var(--cream); border-top: var(--rule); padding: 16px 24px 24px; }
+#mobile-menu.open { display: block; }
+#mobile-menu a { display: block; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); padding: 10px 0; border-bottom: var(--rule); }
+#mobile-menu a:hover { color: var(--ink); }
+
+/* ── COOKIE BANNER ── */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ink);
+  color: var(--cream);
+  z-index: 999;
+  padding: 18px 0;
+  border-top: 2px solid var(--gold);
+  transform: translateY(100%);
+  transition: transform .35s ease;
+}
+#cookie-banner.visible { transform: translateY(0); }
+#cookie-banner .container { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+#cookie-banner p { font-size: 13px; font-weight: 300; color: #a09c94; line-height: 1.6; flex: 1; min-width: 240px; }
+#cookie-banner p a { color: var(--gold); border-bottom: 1px solid transparent; transition: border-color .2s; }
+#cookie-banner p a:hover { border-bottom-color: var(--gold); }
+.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+#cookie-accept {
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 5px;
+  padding: 9px 22px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+#cookie-accept:hover { opacity: .88; }
+#cookie-decline {
+  background: transparent;
+  color: #7a7570;
+  border: 1px solid #3a3733;
+  border-radius: 5px;
+  padding: 9px 22px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+#cookie-decline:hover { border-color: #6e6a63; color: var(--cream); }
+
+/* ── PAGE HERO ── */
+#privacy-hero {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 64px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+#privacy-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px);
+  pointer-events: none;
+}
+#privacy-hero .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+#privacy-hero h1 { font-family: var(--serif); font-size: clamp(32px, 5vw, 54px); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 16px; }
+#privacy-hero p { font-size: 15px; font-weight: 300; color: #a09c94; max-width: 560px; line-height: 1.7; }
+#privacy-hero .updated { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #4a4844; background: rgba(255,255,255,0.04); border: 1px solid #2a2a2a; border-radius: 4px; padding: 5px 12px; }
+#privacy-hero .updated span { color: var(--gold); }
+
+/* ── QUICK LINKS ── */
+#quick-nav {
+  background: var(--cream-2);
+  border-bottom: var(--rule);
+  padding: 16px 0;
+}
+#quick-nav .container { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+#quick-nav .ql { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); padding: 5px 12px; border-radius: 4px; border: var(--rule); transition: background .15s, color .15s; }
+#quick-nav .ql:hover { background: var(--cream-3); color: var(--ink); }
+#quick-nav .ql-label { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); margin-right: 4px; }
+
+/* ── MAIN LAYOUT ── */
+#privacy-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── SIDEBAR TOC ── */
+#toc {
+  position: sticky;
+  top: 84px;
+  border: var(--rule);
+  border-radius: 8px;
+  padding: 22px;
+  background: var(--cream);
+}
+#toc-title { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 14px; padding-bottom: 12px; border-bottom: var(--rule); }
+#toc ul { list-style: none; }
+#toc ul li { margin-bottom: 2px; }
+#toc ul li a { display: block; font-size: 13px; font-weight: 400; color: var(--ink-muted); padding: 5px 8px; border-radius: 4px; transition: background .15s, color .15s; line-height: 1.4; }
+#toc ul li a:hover, #toc ul li a.active { background: var(--cream-2); color: var(--ink); }
+#toc ul li a.active { font-weight: 500; }
+#toc-footer { margin-top: 16px; padding-top: 14px; border-top: var(--rule); font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+#toc-footer a { color: var(--gold); }
+
+/* ── POLICY CONTENT ── */
+#policy-content { min-width: 0; }
+
+.policy-section {
+  padding-bottom: 48px;
+  margin-bottom: 48px;
+  border-bottom: var(--rule);
+}
+.policy-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+.policy-section h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.policy-section h2 .sec-icon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-lt);
+}
+.policy-section h2 .sec-icon svg { width: 15px; height: 15px; color: var(--gold); }
+
+.policy-section h3 {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 24px 0 10px;
+}
+
+.policy-section p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.policy-section p:last-child { margin-bottom: 0; }
+
+.policy-section ul, .policy-section ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.policy-section li {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+.policy-section a { color: var(--gold); border-bottom: 1px solid transparent; transition: border-color .2s; }
+.policy-section a:hover { border-bottom-color: var(--gold); }
+
+.highlight-box {
+  background: var(--gold-lt);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.highlight-box p { font-size: 14px; color: var(--ink-soft); margin-bottom: 0; }
+.highlight-box p strong { color: var(--ink); font-weight: 500; }
+
+.rights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+.right-card {
+  background: var(--cream-2);
+  border: var(--rule);
+  border-radius: 6px;
+  padding: 16px 18px;
+}
+.right-card h4 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.right-card h4::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.right-card p { font-size: 13px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 0; }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+.data-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--ink);
+  background: var(--cream-2);
+}
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: var(--rule);
+  font-weight: 300;
+  color: var(--ink-soft);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--cream-2); }
+
+.contact-box {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.contact-box p { font-size: 14px; font-weight: 300; color: #a09c94; line-height: 1.7; flex: 1; min-width: 200px; }
+.contact-box a.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 6px;
+  padding: 11px 22px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity .2s;
+  flex-shrink: 0;
+}
+.contact-box a.email-link:hover { opacity: .88; border-bottom: none; }
+.contact-box a.email-link svg { width: 14px; height: 14px; }
+
+/* ── FOOTER ── */
+footer { background: #080808; color: #6e6a63; padding: 56px 0 32px; }
+#footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid #1e1e1e; margin-bottom: 32px; }
+.footer-logo { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--cream); margin-bottom: 12px; }
+.footer-logo span { color: var(--gold); }
+#footer-brand p { font-size: 13px; font-weight: 300; line-height: 1.7; max-width: 260px; margin-bottom: 20px; }
+.footer-social { display: flex; gap: 10px; }
+.footer-social a { width: 32px; height: 32px; border: 1px solid #2a2a2a; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #6e6a63; font-size: 12px; font-weight: 500; transition: border-color .2s, color .2s; }
+.footer-social a:hover { border-color: #5a564f; color: var(--cream); }
+.footer-col h4 { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #a09c94; margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: 13px; font-weight: 300; color: #6e6a63; transition: color .2s; }
+.footer-col ul li a:hover { color: var(--cream); }
+#footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+#footer-bottom p { font-size: 12px; }
+#footer-legal { display: flex; gap: 20px; }
+#footer-legal a { font-size: 12px; color: #4a4844; transition: color .2s; }
+#footer-legal a:hover { color: #6e6a63; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  #nav-links { display: none; }
+  #hamburger { display: flex; }
+  #privacy-layout { grid-template-columns: 1fr; }
+  #toc { position: static; display: none; }
+  .rights-grid { grid-template-columns: 1fr; }
+  #footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  #topbar { display: none; }
+  #privacy-layout { padding: 40px 16px 60px; }
+  .data-table { font-size: 12px; }
+  .data-table th, .data-table td { padding: 8px 10px; }
+  .contact-box { flex-direction: column; gap: 16px; }
+  #footer-top { grid-template-columns: 1fr; gap: 28px; }
+  #footer-bottom { flex-direction: column; align-items: flex-start; }
+  .cookie-btns { width: 100%; }
+  #cookie-accept, #cookie-decline { flex: 1; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── COOKIE CONSENT BANNER ── -->
+<div id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+  <div class="container">
+    <p id="cookie-desc">
+      <strong id="cookie-title" style="color:var(--cream);font-weight:500;">Cookies &amp; Privacy</strong><br>
+      Humanitas uses cookies to serve advertisements through Google AdSense and to understand how our content is read. We do not sell your personal data. By clicking Accept, you consent to our use of cookies as described in our <a href="/humanitas/privacy.html">Privacy Policy</a>.
+    </p>
+    <div class="cookie-btns">
+      <button id="cookie-decline" type="button">Decline non-essential</button>
+      <button id="cookie-accept" type="button">Accept &amp; continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOP BAR ── -->
+<div id="topbar" role="banner">
+  <div class="container">
+    <div id="topbar-links">
+      <a href="/humanitas/civilisation">Civilisation</a>
+      <a href="/humanitas/intelligence">Law &amp; Money</a>
+      <a href="/humanitas/human">Human</a>
+      <a href="/humanitas/cosmos">Science</a>
+      <a href="/humanitas/ideas">Philosophy</a>
+      <a href="/humanitas/earth">Earth</a>
+    </div>
+    <div id="topbar-date">Saturday, April 19, 2026</div>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div id="nav-inner">
+      <a href="/humanitas/" id="logo" aria-label="Humanitas home">Humani<span>tas</span></a>
+      <ul id="nav-links" role="list">
+        <li><a href="/humanitas/civilisation">Civilisation &amp; Power</a></li>
+        <li><a href="/humanitas/intelligence">Law, Money &amp; Tech</a></li>
+        <li><a href="/humanitas/human">Human Condition</a></li>
+        <li><a href="/humanitas/cosmos">Science &amp; Cosmos</a></li>
+        <li><a href="/humanitas/ideas">Philosophy</a></li>
+        <li><a href="/humanitas/earth">Earth &amp; Culture</a></li>
+        <li><a href="/humanitas/about.html">About</a></li>
+      </ul>
+      <div id="nav-right">
+        <button id="subscribe-btn" type="button" onclick="window.location.href='/humanitas/'">Subscribe</button>
+        <button id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <a href="/humanitas/civilisation" role="menuitem">Civilisation &amp; Power</a>
+    <a href="/humanitas/intelligence" role="menuitem">Law, Money &amp; Technology</a>
+    <a href="/humanitas/human" role="menuitem">The Human Condition</a>
+    <a href="/humanitas/cosmos" role="menuitem">Science &amp; the Cosmos</a>
+    <a href="/humanitas/ideas" role="menuitem">Philosophy &amp; Ideas</a>
+    <a href="/humanitas/earth" role="menuitem">Earth, Life &amp; Culture</a>
+    <a href="/humanitas/about.html" role="menuitem">About</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="privacy-hero" aria-labelledby="privacy-title">
+  <div class="container">
+    <p class="eyebrow">Legal</p>
+    <h1 id="privacy-title">Privacy Policy</h1>
+    <p>How Humanitas collects, uses and protects your data — and your rights as a reader under GDPR and CCPA.</p>
+    <div class="updated" aria-label="Last updated">Last updated: <span>April 2026</span></div>
+  </div>
+</section>
+
+<!-- ── QUICK LINKS ── -->
+<div id="quick-nav" aria-label="Jump to section">
+  <div class="container">
+    <span class="ql-label">Jump to:</span>
+    <a class="ql" href="#data-collected">Data we collect</a>
+    <a class="ql" href="#adsense">Google AdSense</a>
+    <a class="ql" href="#analytics">Analytics</a>
+    <a class="ql" href="#third-parties">Third parties</a>
+    <a class="ql" href="#gdpr">GDPR rights</a>
+    <a class="ql" href="#ccpa">CCPA rights</a>
+    <a class="ql" href="#cookies">Cookies</a>
+    <a class="ql" href="#opt-out">Opt out</a>
+    <a class="ql" href="#contact">Contact</a>
+  </div>
+</div>
+
+<main id="main-content">
+<div id="privacy-layout">
+
+  <!-- ── SIDEBAR TOC ── -->
+  <aside id="toc" aria-label="Table of contents">
+    <div id="toc-title">Contents</div>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data we collect</a></li>
+      <li><a href="#adsense">Google AdSense</a></li>
+      <li><a href="#analytics">Google Analytics</a></li>
+      <li><a href="#third-parties">Third-party services</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#gdpr">Your rights — GDPR</a></li>
+      <li><a href="#ccpa">Your rights — CCPA</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#changes">Policy changes</a></li>
+      <li><a href="#opt-out">How to opt out</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ul>
+    <div id="toc-footer">
+      Questions? <a href="mailto:privacy@humanitas.blog">privacy@humanitas.blog</a>
+    </div>
+  </aside>
+
+  <!-- ── POLICY BODY ── -->
+  <div id="policy-content">
+
+    <!-- OVERVIEW -->
+    <section class="policy-section" id="overview" aria-labelledby="h-overview">
+      <h2 id="h-overview">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4m0 4h.01"/></svg>
+        </span>
+        Overview
+      </h2>
+      <p>This Privacy Policy applies to the Humanitas website located at <strong>marcellus-cpu.github.io/humanitas</strong> ("Humanitas," "we," "our," or "us"). It explains what information we collect when you visit our site, how we use it, who we share it with, and what rights you have.</p>
+      <p>We take privacy seriously. Humanitas does not sell your personal data. We do not build advertising profiles on individual readers. We collect only what is necessary to operate the site and serve advertising through Google AdSense.</p>
+      <div class="highlight-box">
+        <p><strong>Plain-language summary:</strong> We use Google AdSense to display advertisements. AdSense uses cookies to show you relevant ads. We may use Google Analytics to understand how our articles are read. We do not collect your name, email address, or any personally identifiable information unless you voluntarily contact us.</p>
+      </div>
+    </section>
+
+    <!-- DATA WE COLLECT -->
+    <section class="policy-section" id="data-collected" aria-labelledby="h-data">
+      <h2 id="h-data">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </span>
+        Data we collect
+      </h2>
+      <p>Humanitas collects two categories of information: data you provide voluntarily, and data collected automatically when you visit the site.</p>
+
+      <h3>Information you provide voluntarily</h3>
+      <p>We may collect your email address if you choose to subscribe to our newsletter. We collect your name, email address, and the content of your message if you contact us by email. We do not collect payment information — Humanitas is free to read.</p>
+
+      <h3>Information collected automatically</h3>
+      <table class="data-table" aria-label="Automatically collected data">
+        <thead>
+          <tr>
+            <th>Data type</th>
+            <th>Source</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IP address (anonymised)</td>
+            <td>Server / GitHub Pages</td>
+            <td>Security and abuse prevention</td>
+          </tr>
+          <tr>
+            <td>Browser type and version</td>
+            <td>HTTP headers</td>
+            <td>Optimising site display</td>
+          </tr>
+          <tr>
+            <td>Device type (desktop/mobile)</td>
+            <td>HTTP headers</td>
+            <td>Responsive design analytics</td>
+          </tr>
+          <tr>
+            <td>Pages visited, time on page</td>
+            <td>Google Analytics</td>
+            <td>Understanding which content readers find valuable</td>
+          </tr>
+          <tr>
+            <td>Referring website</td>
+            <td>HTTP headers</td>
+            <td>Understanding traffic sources</td>
+          </tr>
+          <tr>
+            <td>Cookie identifiers</td>
+            <td>Google AdSense / Analytics</td>
+            <td>Ad personalisation and analytics</td>
+          </tr>
+          <tr>
+            <td>Ad interactions (clicks, views)</td>
+            <td>Google AdSense</td>
+            <td>Ad performance measurement</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>We do not collect sensitive personal data such as racial or ethnic origin, political opinions, religious beliefs, health data, or financial information.</p>
+    </section>
+
+    <!-- GOOGLE ADSENSE -->
+    <section class="policy-section" id="adsense" aria-labelledby="h-adsense">
+      <h2 id="h-adsense">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </span>
+        Google AdSense
+      </h2>
+      <p>Humanitas uses Google AdSense to display advertisements on this website. Google AdSense is operated by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
+
+      <h3>How AdSense works</h3>
+      <p>When you visit Humanitas, Google AdSense may set cookies on your device to show you advertisements that are relevant to your interests. These cookies track your browsing behaviour across websites that use Google AdSense. Google may use this information to personalise the ads you see here and on other websites.</p>
+
+      <h3>What Google collects through AdSense</h3>
+      <ul>
+        <li>Pages you visit on Humanitas and the time you spend on them</li>
+        <li>Your approximate geographic location (derived from your IP address)</li>
+        <li>Your device type, browser type, and operating system</li>
+        <li>Whether you clicked on an advertisement</li>
+        <li>Your general interests, inferred from your browsing history across Google's advertising network</li>
+      </ul>
+
+      <h3>Google's privacy practices</h3>
+      <p>Humanitas does not have access to the data Google collects through AdSense — this data goes directly to Google and is governed by <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google's Privacy Policy</a>. To understand how Google uses data from sites that use its advertising services, see <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">How Google uses information from sites or apps that use our services</a>.</p>
+
+      <div class="highlight-box">
+        <p><strong>Note on personalised advertising:</strong> Google AdSense may serve personalised ads based on your browsing history. You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" rel="noopener noreferrer" target="_blank">Google's Ad Settings</a> or by visiting <a href="https://www.aboutads.info" rel="noopener noreferrer" target="_blank">aboutads.info</a>.</p>
+      </div>
+
+      <h3>Humanitas and AdSense revenue</h3>
+      <p>Advertising revenue from Google AdSense is how Humanitas covers its operating costs. We have no editorial relationship with any advertiser — advertisements are served automatically by Google's systems and do not influence the content we publish.</p>
+    </section>
+
+    <!-- GOOGLE ANALYTICS -->
+    <section class="policy-section" id="analytics" aria-labelledby="h-analytics">
+      <h2 id="h-analytics">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </span>
+        Google Analytics
+      </h2>
+      <p>Humanitas may use Google Analytics to understand how readers interact with our content. Google Analytics is a web analytics service operated by Google LLC.</p>
+
+      <h3>What Analytics collects</h3>
+      <p>Google Analytics collects information about your visit to Humanitas including the pages you viewed, how long you spent on each page, how you arrived at the site, and your approximate geographic location. This data is used in aggregate — we use it to understand which topics our readers find most valuable, not to identify individual visitors.</p>
+
+      <h3>IP anonymisation</h3>
+      <p>Where Google Analytics is active on Humanitas, we use IP anonymisation (also called IP masking), which means your IP address is truncated before it is stored by Google. Your full IP address is never stored.</p>
+
+      <h3>Opting out of Analytics</h3>
+      <p>You can prevent Google Analytics from collecting your data by installing the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer" target="_blank">Google Analytics opt-out browser add-on</a>.</p>
+    </section>
+
+    <!-- THIRD PARTIES -->
+    <section class="policy-section" id="third-parties" aria-labelledby="h-third">
+      <h2 id="h-third">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </span>
+        Third-party services
+      </h2>
+      <p>Humanitas uses the following third-party services. Each operates under its own privacy policy.</p>
+
+      <table class="data-table" aria-label="Third-party services">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Provider</th>
+            <th>Purpose</th>
+            <th>Privacy policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google AdSense</td>
+            <td>Google LLC</td>
+            <td>Display advertising</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google Analytics</td>
+            <td>Google LLC</td>
+            <td>Visitor analytics</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google Fonts</td>
+            <td>Google LLC</td>
+            <td>Typography (Cormorant Garant, DM Sans)</td>
+            <td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>GitHub Pages</td>
+            <td>GitHub, Inc.</td>
+            <td>Website hosting</td>
+            <td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noopener noreferrer" target="_blank">GitHub Privacy Statement</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>We do not sell your data to any third party. We do not share your personal information with advertisers, data brokers, or marketing companies.</p>
+    </section>
+
+    <!-- COOKIES -->
+    <section class="policy-section" id="cookies" aria-labelledby="h-cookies">
+      <h2 id="h-cookies">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M8 12h.01M16 12h.01M12 16h.01"/></svg>
+        </span>
+        Cookies
+      </h2>
+      <p>Cookies are small text files placed on your device by websites you visit. Humanitas uses the following categories of cookies.</p>
+
+      <h3>Essential cookies</h3>
+      <p>These cookies are necessary for the website to function. They do not collect personal information and cannot be switched off.</p>
+
+      <h3>Analytics cookies</h3>
+      <p>Set by Google Analytics to help us understand how readers use the site. These cookies collect information in an anonymised, aggregated form. They do not identify you as an individual.</p>
+
+      <table class="data-table" aria-label="Analytics cookies">
+        <thead><tr><th>Cookie</th><th>Provider</th><th>Duration</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>_ga</td><td>Google Analytics</td><td>2 years</td><td>Distinguishes unique users</td></tr>
+          <tr><td>_ga_*</td><td>Google Analytics</td><td>2 years</td><td>Maintains session state</td></tr>
+          <tr><td>_gid</td><td>Google Analytics</td><td>24 hours</td><td>Distinguishes users within a session</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Advertising cookies</h3>
+      <p>Set by Google AdSense to deliver relevant advertisements and measure their effectiveness. These may be used to build a profile of your interests across websites.</p>
+
+      <table class="data-table" aria-label="Advertising cookies">
+        <thead><tr><th>Cookie</th><th>Provider</th><th>Duration</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>IDE</td><td>Google DoubleClick</td><td>13 months</td><td>Targeted advertising based on browsing history</td></tr>
+          <tr><td>DSID</td><td>Google</td><td>2 weeks</td><td>Identifies a logged-in user on non-Google sites</td></tr>
+          <tr><td>test_cookie</td><td>Google DoubleClick</td><td>15 minutes</td><td>Checks if the browser supports cookies</td></tr>
+          <tr><td>NID</td><td>Google</td><td>6 months</td><td>Stores preferences and other information</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Managing cookies in your browser</h3>
+      <p>You can control and delete cookies through your browser settings. Note that disabling cookies may affect the functionality of this and other websites. Instructions for managing cookies:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" rel="noopener noreferrer" target="_blank">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" rel="noopener noreferrer" target="_blank">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" rel="noopener noreferrer" target="_blank">Apple Safari</a></li>
+        <li><a href="https://support.microsoft.com/en-us/windows/manage-cookies-in-microsoft-edge" rel="noopener noreferrer" target="_blank">Microsoft Edge</a></li>
+      </ul>
+    </section>
+
+    <!-- GDPR -->
+    <section class="policy-section" id="gdpr" aria-labelledby="h-gdpr">
+      <h2 id="h-gdpr">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </span>
+        Your rights under GDPR
+      </h2>
+      <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, you have the following rights under the General Data Protection Regulation (GDPR) and equivalent national laws.</p>
+
+      <div class="rights-grid">
+        <div class="right-card">
+          <h4>Right of access</h4>
+          <p>You have the right to request a copy of the personal data we hold about you.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to rectification</h4>
+          <p>You have the right to request correction of inaccurate or incomplete personal data.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to erasure</h4>
+          <p>You have the right to request deletion of your personal data ("the right to be forgotten") in certain circumstances.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to restrict processing</h4>
+          <p>You have the right to request that we limit how we use your personal data in certain circumstances.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to data portability</h4>
+          <p>You have the right to receive your personal data in a structured, commonly used, machine-readable format.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to object</h4>
+          <p>You have the right to object to the processing of your personal data for direct marketing or where we rely on legitimate interests.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to withdraw consent</h4>
+          <p>Where processing is based on consent, you have the right to withdraw it at any time without affecting prior processing.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to lodge a complaint</h4>
+          <p>You have the right to lodge a complaint with your national data protection authority if you believe we have handled your data unlawfully.</p>
+        </div>
+      </div>
+
+      <h3>Legal basis for processing</h3>
+      <p>We process data on the following legal bases under GDPR: <strong>Consent</strong> — for advertising cookies (where required); <strong>Legitimate interests</strong> — for analytics to improve our content and user experience; <strong>Legal obligation</strong> — where processing is required by law.</p>
+
+      <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@humanitas.blog">privacy@humanitas.blog</a>. We will respond within 30 days.</p>
+    </section>
+
+    <!-- CCPA -->
+    <section class="policy-section" id="ccpa" aria-labelledby="h-ccpa">
+      <h2 id="h-ccpa">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        Your rights under CCPA
+      </h2>
+      <p>If you are a California resident, the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA) grants you specific rights regarding your personal information.</p>
+
+      <h3>Your CCPA rights</h3>
+      <ul>
+        <li><strong>Right to know:</strong> You have the right to request disclosure of the categories and specific pieces of personal information we have collected about you, the sources of that information, the business or commercial purpose for collecting it, and the third parties with whom we share it.</li>
+        <li><strong>Right to delete:</strong> You have the right to request deletion of personal information we have collected from you, subject to certain exceptions.</li>
+        <li><strong>Right to opt out of sale:</strong> You have the right to opt out of the sale of your personal information. <strong>Humanitas does not sell personal information.</strong></li>
+        <li><strong>Right to non-discrimination:</strong> You have the right not to receive discriminatory treatment for exercising your CCPA rights.</li>
+        <li><strong>Right to correct:</strong> You have the right to request correction of inaccurate personal information we maintain about you.</li>
+        <li><strong>Right to limit use of sensitive personal information:</strong> You may direct us to limit the use of sensitive personal information. We do not collect sensitive personal information.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>Do Not Sell My Personal Information:</strong> Humanitas does not sell personal information to third parties. If you wish to exercise any of the above rights, contact us at <a href="mailto:privacy@humanitas.blog">privacy@humanitas.blog</a> with "CCPA Request" in the subject line.</p>
+      </div>
+    </section>
+
+    <!-- CHILDREN -->
+    <section class="policy-section" id="children" aria-labelledby="h-children">
+      <h2 id="h-children">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </span>
+        Children's privacy
+      </h2>
+      <p>Humanitas is intended for a general adult audience. We do not knowingly collect personal information from children under the age of 13 (or 16 in the EEA). If you believe we have inadvertently collected information from a child, please contact us at <a href="mailto:privacy@humanitas.blog">privacy@humanitas.blog</a> and we will delete it promptly.</p>
+    </section>
+
+    <!-- RETENTION -->
+    <section class="policy-section" id="retention" aria-labelledby="h-retention">
+      <h2 id="h-retention">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+        </span>
+        Data retention
+      </h2>
+      <p>We retain personal data only for as long as necessary for the purposes described in this policy or as required by law.</p>
+      <ul>
+        <li><strong>Email addresses</strong> (newsletter subscribers): retained until you unsubscribe or request deletion.</li>
+        <li><strong>Contact email enquiries:</strong> retained for up to 12 months then deleted unless an ongoing correspondence requires otherwise.</li>
+        <li><strong>Analytics data:</strong> Google Analytics retains data for 26 months by default. You can request deletion via Google's tools.</li>
+        <li><strong>Advertising cookies:</strong> duration varies by cookie — see the cookies table above for specific periods.</li>
+      </ul>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="policy-section" id="security" aria-labelledby="h-security">
+      <h2 id="h-security">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </span>
+        Security
+      </h2>
+      <p>Humanitas takes appropriate technical and organisational measures to protect your personal data against accidental or unlawful loss, alteration, disclosure, or access. These measures include HTTPS encryption for all data in transit, Content Security Policy headers to prevent code injection attacks, and strict security configurations on all pages.</p>
+      <p>However, no method of transmission over the internet is completely secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+    </section>
+
+    <!-- CHANGES -->
+    <section class="policy-section" id="changes" aria-labelledby="h-changes">
+      <h2 id="h-changes">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </span>
+        Changes to this policy
+      </h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make changes, we will update the "Last updated" date at the top of this page. Material changes will be noted in a notice on the Humanitas homepage for a period of 30 days.</p>
+      <p>We encourage you to review this policy periodically. Your continued use of Humanitas after changes are posted constitutes your acceptance of the revised policy.</p>
+    </section>
+
+    <!-- OPT OUT -->
+    <section class="policy-section" id="opt-out" aria-labelledby="h-optout">
+      <h2 id="h-optout">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M4.93 4.93l14.14 14.14"/></svg>
+        </span>
+        How to opt out
+      </h2>
+      <p>You have several options to control data collection and personalised advertising on Humanitas:</p>
+
+      <h3>Opt out of personalised Google ads</h3>
+      <ul>
+        <li>Visit <a href="https://www.google.com/settings/ads" rel="noopener noreferrer" target="_blank">Google Ad Settings</a> and turn off ad personalisation</li>
+        <li>Visit the <a href="https://www.networkadvertising.org/choices/" rel="noopener noreferrer" target="_blank">Network Advertising Initiative opt-out page</a></li>
+        <li>Visit <a href="https://www.aboutads.info/choices/" rel="noopener noreferrer" target="_blank">the Digital Advertising Alliance opt-out tool</a></li>
+        <li>For EU residents: visit <a href="https://www.youronlinechoices.eu/" rel="noopener noreferrer" target="_blank">Your Online Choices</a></li>
+      </ul>
+
+      <h3>Opt out of Google Analytics</h3>
+      <ul>
+        <li>Install the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer" target="_blank">Google Analytics opt-out browser add-on</a></li>
+        <li>Enable "Do Not Track" in your browser settings (note: not all services honour this signal)</li>
+      </ul>
+
+      <h3>Manage cookies in your browser</h3>
+      <p>You can delete existing cookies and block future cookies through your browser's privacy or security settings. See the cookies section above for browser-specific instructions.</p>
+
+      <h3>Unsubscribe from the newsletter</h3>
+      <p>Every newsletter email contains an unsubscribe link. You can also request removal by emailing <a href="mailto:privacy@humanitas.blog">privacy@humanitas.blog</a>.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="policy-section" id="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact">
+        <span class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        Contact us
+      </h2>
+      <p>If you have questions about this Privacy Policy, wish to exercise your data rights, or have a privacy concern, please contact us. We aim to respond to all privacy enquiries within 30 days.</p>
+      <div class="contact-box">
+        <p>For all privacy matters — data requests, GDPR or CCPA rights, cookie concerns, or general questions about how we handle your data.</p>
+        <a class="email-link" href="mailto:privacy@humanitas.blog?subject=Privacy%20Enquiry" aria-label="Email our privacy team">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          privacy@humanitas.blog
+        </a>
+      </div>
+      <p style="margin-top:16px;font-size:14px;color:var(--ink-muted);">Humanitas is published at <strong>marcellus-cpu.github.io/humanitas</strong>. This policy was last reviewed and updated in <strong>April 2026</strong>.</p>
+    </section>
+
+  </div>
+</div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer role="contentinfo">
+  <div class="container">
+    <div id="footer-top">
+      <div id="footer-brand">
+        <div class="footer-logo">Humani<span>tas</span></div>
+        <p>A publication dedicated to ideas that matter and stories that endure. Covering civilisation, science, law, the human condition, philosophy, and the living world.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="https://twitter.com" rel="noopener noreferrer" target="_blank" aria-label="Follow on X">X</a>
+          <a href="https://linkedin.com" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">in</a>
+          <a href="https://facebook.com" rel="noopener noreferrer" target="_blank" aria-label="Facebook">f</a>
+          <a href="/humanitas/rss.xml" aria-label="RSS feed">RSS</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="/humanitas/civilisation">Civilisation &amp; Power</a></li>
+          <li><a href="/humanitas/intelligence">Law, Money &amp; Tech</a></li>
+          <li><a href="/humanitas/human">Human Condition</a></li>
+          <li><a href="/humanitas/cosmos">Science &amp; Cosmos</a></li>
+          <li><a href="/humanitas/ideas">Philosophy &amp; Ideas</a></li>
+          <li><a href="/humanitas/earth">Earth &amp; Culture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Publication</h4>
+        <ul>
+          <li><a href="/humanitas/about.html">About Humanitas</a></li>
+          <li><a href="/humanitas/about.html#contribute">Write for us</a></li>
+          <li><a href="/humanitas/archive">Archive</a></li>
+          <li><a href="mailto:editor@humanitas.blog">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/humanitas/privacy.html" aria-current="page">Privacy policy</a></li>
+          <li><a href="/humanitas/terms.html">Terms of use</a></li>
+          <li><a href="/humanitas/cookies.html">Cookie policy</a></li>
+          <li><a href="/humanitas/accessibility">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer-bottom">
+      <p>&copy; 2026 Humanitas. All rights reserved.</p>
+      <div id="footer-legal">
+        <a href="/humanitas/privacy.html" aria-current="page">Privacy</a>
+        <a href="/humanitas/terms.html">Terms</a>
+        <a href="/humanitas/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── NAV SHADOW ── */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.07)' : 'none';
+    }, { passive: true });
+  }
+
+  /* ── HAMBURGER ── */
+  var ham = document.getElementById('hamburger');
+  var mob = document.getElementById('mobile-menu');
+  if (ham && mob) {
+    ham.addEventListener('click', function () {
+      var isOpen = mob.classList.toggle('open');
+      ham.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!ham.contains(e.target) && !mob.contains(e.target)) {
+        mob.classList.remove('open');
+        ham.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ── COOKIE BANNER ── */
+  var COOKIE_KEY = 'hum_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+
+  function setCookieConsent(value) {
+    /* Store in localStorage — no server required */
+    try {
+      localStorage.setItem(COOKIE_KEY, value);
+    } catch (e) {}
+  }
+
+  function getCookieConsent() {
+    try {
+      return localStorage.getItem(COOKIE_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function dismissBanner() {
+    if (banner) {
+      banner.classList.remove('visible');
+      banner.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  /* Show banner only if consent not yet given */
+  if (!getCookieConsent() && banner) {
+    setTimeout(function () {
+      banner.classList.add('visible');
+      banner.removeAttribute('aria-hidden');
+    }, 1200);
+  }
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', function () {
+      setCookieConsent('accepted');
+      dismissBanner();
+    });
+  }
+
+  if (declineBtn) {
+    declineBtn.addEventListener('click', function () {
+      setCookieConsent('declined');
+      dismissBanner();
+    });
+  }
+
+  /* ── TOC ACTIVE HIGHLIGHT ── */
+  var tocLinks = document.querySelectorAll('#toc a[href^="#"]');
+  var sections = [];
+  tocLinks.forEach(function (link) {
+    var id = link.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ link: link, el: el });
+  });
+
+  function updateToc() {
+    var scrollY = window.scrollY + 100;
+    var current = null;
+    sections.forEach(function (s) {
+      if (s.el.offsetTop <= scrollY) current = s;
+    });
+    tocLinks.forEach(function (l) { l.classList.remove('active'); });
+    if (current) current.link.classList.add('active');
+  }
+
+  if (sections.length) {
+    window.addEventListener('scroll', updateToc, { passive: true });
+    updateToc();
+  }
+
+}());
+</script>
+</body>
+</html>
