@@ -18,20 +18,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════
-   HUMANITAS — IMMERSIVE HOMEPAGE v2
-   Philosophy: An intellectual publication
-   should feel like entering a great library
-   or stepping into an ancient forum at dusk.
-   Deep, textured, alive with ideas.
-═══════════════════════════════════════════ */
 :root {
+  /* Content colours */
   --ink:#0D0D0D; --ink-soft:#3A3A3A; --ink-muted:#767676;
   --cream:#FAF9F6; --cream-2:#F2F0EB; --cream-3:#E8E4DC;
   --gold:#B8933A; --gold-lt:#F5EDD8; --gold-dim:#7a6128;
   --rule:1px solid #E8E4DC;
   --serif:'Cormorant Garant',Georgia,serif;
   --sans:'DM Sans',system-ui,sans-serif;
+
+  /* Hero palette — rich dark slate, NOT pure black */
+  --hero-bg: #0F1923;          /* deep ink-blue */
+  --hero-mid: #162232;         /* slightly lighter layer */
+  --hero-surface: #1C2D40;     /* card surface in hero */
+  --hero-border: rgba(184,147,58,.14);
+  --hero-text: #E8E2D8;        /* warm off-white */
+  --hero-muted: rgba(232,226,216,.38);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -42,30 +44,30 @@ img{display:block;max-width:100%}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
 /* ── TOP BAR ── */
-#topbar{background:var(--ink);padding:8px 0;position:relative;z-index:10}
+#topbar{background:var(--hero-bg);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04)}
 #topbar .container{display:flex;justify-content:space-between;align-items:center}
 #topbar-links{display:flex;gap:20px}
-#topbar-links a{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#7a7570;transition:color .2s}
-#topbar-links a:hover{color:var(--cream)}
-#topbar-date{font-size:11px;font-weight:500;letter-spacing:.06em;color:#4a4844}
+#topbar-links a{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(232,226,216,.35);transition:color .2s}
+#topbar-links a:hover{color:var(--hero-text)}
+#topbar-date{font-size:11px;font-weight:400;color:rgba(232,226,216,.2);letter-spacing:.03em}
 
 /* ── NAV ── */
-#nav{position:sticky;top:0;z-index:100;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
-#nav.scrolled{background:rgba(250,249,246,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 20px rgba(0,0,0,.08)}
+#nav{position:sticky;top:0;z-index:100;transition:background .3s,box-shadow .3s}
+#nav.scrolled{background:rgba(250,249,246,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 24px rgba(0,0,0,.07)}
 #nav.hero-zone{background:transparent}
 #nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 24px}
-#logo{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:-.01em;color:var(--cream);flex-shrink:0;transition:color .3s}
+#logo{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:-.01em;color:var(--hero-text);flex-shrink:0;transition:color .3s}
 #nav.scrolled #logo,#nav.solid #logo{color:var(--ink)}
 #logo span{color:var(--gold)}
 #nav-links{display:flex;list-style:none}
-#nav-links a{font-size:11.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.7);padding:8px 14px;border-radius:4px;transition:color .2s,background .2s;white-space:nowrap}
-#nav-links a:hover{color:var(--cream);background:rgba(255,255,255,.1)}
+#nav-links a{font-size:11.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(232,226,216,.6);padding:8px 14px;border-radius:4px;transition:color .2s,background .2s;white-space:nowrap}
+#nav-links a:hover{color:var(--hero-text);background:rgba(255,255,255,.06)}
 #nav.scrolled #nav-links a,#nav.solid #nav-links a{color:var(--ink-muted)}
 #nav.scrolled #nav-links a:hover,#nav.solid #nav-links a:hover{color:var(--ink);background:var(--cream-2)}
 #subscribe-btn{background:var(--gold);color:var(--ink);border:none;border-radius:6px;padding:8px 20px;font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer;transition:opacity .2s,transform .15s;letter-spacing:.03em}
 #subscribe-btn:hover{opacity:.9;transform:translateY(-1px)}
 #hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-#hamburger span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:background .3s}
+#hamburger span{display:block;width:22px;height:2px;background:var(--hero-text);border-radius:2px;transition:background .3s}
 #nav.scrolled #hamburger span,#nav.solid #hamburger span{background:var(--ink)}
 #mobile-menu{display:none;background:var(--cream);border-top:var(--rule);padding:16px 24px 24px}
 #mobile-menu.open{display:block}
@@ -73,7 +75,10 @@ img{display:block;max-width:100%}
 #mobile-menu a:hover{color:var(--ink)}
 
 /* ══════════════════════════════════════
-   IMMERSIVE HERO — The centrepiece
+   HERO — Deep slate with linen warmth
+   Palette: #0F1923 hero-bg (midnight ink)
+   subtle warm texture, fine grain, 
+   gold constellations, NO pure black
 ══════════════════════════════════════ */
 #hero {
   position: relative;
@@ -84,41 +89,95 @@ img{display:block;max-width:100%}
   align-items: center;
   text-align: center;
   overflow: hidden;
-  background: #080808;
+  /* Layered radial gradient — rich deep slate, NOT black */
+  background:
+    radial-gradient(ellipse 140% 80% at 50% -10%, rgba(26,74,138,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 85% 80%, rgba(122,74,10,.10) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 10% 70%, rgba(58,26,58,.08) 0%, transparent 55%),
+    linear-gradient(165deg, #14202E 0%, #0F1923 45%, #111A26 100%);
 }
 
-/* Deep space / ancient cosmos background */
+/* Fine linen grain texture */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='0.032'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: .7;
+}
+
+/* Warm gold vignette frame */
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 50% at 50% 50%, transparent 40%, rgba(10,14,20,.35) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Particle canvas */
 #hero-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
-/* Layered atmospheric depth */
-#hero::before {
-  content: '';
+/* Slow-breathing orbs — warmer tones */
+.orb {
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,147,58,.12) 0%, transparent 70%),
-    radial-gradient(ellipse 100% 80% at 20% 100%, rgba(26,74,138,.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(138,26,58,.06) 0%, transparent 50%);
+  border-radius: 50%;
+  filter: blur(90px);
+  animation: float-orb 14s ease-in-out infinite;
   pointer-events: none;
+  z-index: 0;
+}
+.orb-1{width:560px;height:420px;background:radial-gradient(circle,rgba(26,74,138,.07),transparent 70%);top:-15%;left:-8%;animation-delay:0s}
+.orb-2{width:420px;height:420px;background:radial-gradient(circle,rgba(184,147,58,.05),transparent 70%);bottom:-5%;right:5%;animation-delay:5s}
+.orb-3{width:280px;height:280px;background:radial-gradient(circle,rgba(80,30,80,.06),transparent 70%);top:45%;left:62%;animation-delay:9s}
+
+@keyframes float-orb {
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(24px,-16px) scale(1.04)}
+  66%{transform:translate(-16px,24px) scale(.97)}
+}
+
+/* Star field */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(232,226,216,.55);
+  animation: twinkle var(--dur,3s) ease-in-out infinite;
   z-index: 1;
 }
-
-/* Grain texture for depth */
-#hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: .4;
-  pointer-events: none;
-  z-index: 1;
+@keyframes twinkle {
+  0%,100%{opacity:.15;transform:scale(1)}
+  50%{opacity:.85;transform:scale(1.6)}
 }
 
+/* Thin horizontal constellation rules */
+.c-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,147,58,.1), transparent);
+  animation: scan 9s ease-in-out infinite;
+  opacity: 0;
+  z-index: 1;
+}
+.c-line:nth-child(1){top:22%;width:55%;left:22%;animation-delay:0s}
+.c-line:nth-child(2){top:44%;width:38%;left:12%;animation-delay:3s}
+.c-line:nth-child(3){top:66%;width:62%;left:18%;animation-delay:6s}
+@keyframes scan {
+  0%,100%{opacity:0;transform:scaleX(.2)}
+  50%{opacity:1;transform:scaleX(1)}
+}
+
+/* Hero content */
 #hero-content {
   position: relative;
   z-index: 2;
@@ -126,133 +185,66 @@ img{display:block;max-width:100%}
   padding: 0 24px;
 }
 
-/* Animated constellation lines behind content */
-.hero-constellation {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.c-line {
-  position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(184,147,58,.15), transparent);
-  height: 1px;
-  animation: scan 8s ease-in-out infinite;
-  opacity: 0;
-}
-.c-line:nth-child(1){top:20%;width:60%;left:20%;animation-delay:0s}
-.c-line:nth-child(2){top:40%;width:40%;left:10%;animation-delay:2s}
-.c-line:nth-child(3){top:60%;width:70%;left:15%;animation-delay:4s}
-.c-line:nth-child(4){top:80%;width:50%;left:25%;animation-delay:6s}
-
-.c-vline {
-  position: absolute;
-  background: linear-gradient(180deg, transparent, rgba(184,147,58,.08), transparent);
-  width: 1px;
-  animation: vscan 10s ease-in-out infinite;
-  opacity: 0;
-}
-.c-vline:nth-child(5){left:25%;height:60%;top:20%;animation-delay:1s}
-.c-vline:nth-child(6){left:50%;height:80%;top:10%;animation-delay:3s}
-.c-vline:nth-child(7){left:75%;height:50%;top:25%;animation-delay:5s}
-
-@keyframes scan {
-  0%,100%{opacity:0;transform:scaleX(.3)}
-  50%{opacity:1;transform:scaleX(1)}
-}
-@keyframes vscan {
-  0%,100%{opacity:0;transform:scaleY(.3)}
-  50%{opacity:1;transform:scaleY(1)}
-}
-
-/* Floating orbs for atmospheric depth */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: float-orb 12s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-.orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(184,147,58,.06),transparent 70%);top:-10%;left:-10%;animation-delay:0s}
-.orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(26,74,138,.05),transparent 70%);bottom:-10%;right:-5%;animation-delay:4s}
-.orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(138,26,58,.04),transparent 70%);top:40%;left:60%;animation-delay:8s}
-
-@keyframes float-orb {
-  0%,100%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(30px,-20px) scale(1.05)}
-  66%{transform:translate(-20px,30px) scale(.95)}
-}
-
-/* Particle stars */
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.6);
-  animation: twinkle var(--dur, 3s) ease-in-out infinite;
-}
-@keyframes twinkle {
-  0%,100%{opacity:.2;transform:scale(1)}
-  50%{opacity:1;transform:scale(1.5)}
-}
-
-/* Hero typography */
 #hero-eyebrow {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: .22em;
+  letter-spacing: .24em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
   animation: rise .8s ease forwards .3s;
+}
+
+/* Decorative line flanking eyebrow */
+#hero-eyebrow::before,#hero-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .45;
+  vertical-align: middle;
+  margin: 0 12px;
 }
 
 #hero h1 {
   font-family: var(--serif);
-  font-size: clamp(44px, 8vw, 96px);
+  font-size: clamp(42px,7.5vw,92px);
   font-weight: 300;
-  line-height: 1.02;
-  letter-spacing: -.025em;
-  color: var(--cream);
+  line-height: 1.04;
+  letter-spacing: -.022em;
+  color: var(--hero-text);
   margin-bottom: 28px;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(28px);
   animation: rise .9s ease forwards .5s;
 }
-
 #hero h1 em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--gold);
   position: relative;
 }
-
-/* Underline glow on em */
 #hero h1 em::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  right: 0;
+  bottom: -3px;
+  left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: .6;
+  background: linear-gradient(90deg,transparent,rgba(184,147,58,.5),transparent);
 }
 
 #hero-sub {
-  font-size: clamp(15px, 2vw, 19px);
+  font-size: clamp(15px,1.9vw,18px);
   font-weight: 300;
-  color: rgba(250,249,246,.55);
-  max-width: 580px;
+  color: var(--hero-muted);
+  max-width: 560px;
   margin: 0 auto 44px;
-  line-height: 1.75;
+  line-height: 1.8;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
   animation: rise .8s ease forwards .7s;
 }
 
@@ -262,7 +254,7 @@ img{display:block;max-width:100%}
   justify-content: center;
   flex-wrap: wrap;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
   animation: rise .8s ease forwards .9s;
 }
 
@@ -277,19 +269,18 @@ img{display:block;max-width:100%}
   font-weight: 500;
   cursor: pointer;
   letter-spacing: .04em;
-  transition: transform .15s, box-shadow .15s, opacity .15s;
-  box-shadow: 0 0 0 rgba(184,147,58,0);
+  transition: transform .15s, box-shadow .2s, opacity .15s;
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(184,147,58,.35);
+  box-shadow: 0 10px 36px rgba(184,147,58,.32);
   opacity: .95;
 }
 
 .btn-ghost {
   background: transparent;
-  color: rgba(250,249,246,.75);
-  border: 1px solid rgba(250,249,246,.2);
+  color: rgba(232,226,216,.7);
+  border: 1px solid rgba(232,226,216,.18);
   border-radius: 6px;
   padding: 14px 32px;
   font-family: var(--sans);
@@ -300,28 +291,28 @@ img{display:block;max-width:100%}
   transition: border-color .2s, color .2s, background .2s;
 }
 .btn-ghost:hover {
-  border-color: rgba(250,249,246,.5);
-  color: var(--cream);
-  background: rgba(255,255,255,.05);
+  border-color: rgba(232,226,216,.45);
+  color: var(--hero-text);
+  background: rgba(255,255,255,.04);
 }
 
-/* Stats bar */
+/* Stats */
 #hero-stats {
   display: flex;
   gap: 48px;
   justify-content: center;
-  padding-top: 56px;
-  margin-top: 56px;
-  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 52px;
+  margin-top: 52px;
+  border-top: 1px solid rgba(232,226,216,.08);
   flex-wrap: wrap;
   opacity: 0;
   animation: rise .8s ease forwards 1.1s;
 }
 .hero-stat .n {
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 600;
-  color: var(--cream);
+  color: var(--hero-text);
   line-height: 1;
 }
 .hero-stat .l {
@@ -329,11 +320,11 @@ img{display:block;max-width:100%}
   font-weight: 500;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.3);
+  color: rgba(232,226,216,.28);
   margin-top: 5px;
 }
 
-/* Scroll indicator */
+/* Scroll cue */
 #scroll-hint {
   position: absolute;
   bottom: 32px;
@@ -352,17 +343,17 @@ img{display:block;max-width:100%}
   font-weight: 500;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.3);
+  color: rgba(232,226,216,.22);
 }
 .scroll-line {
   width: 1px;
-  height: 40px;
-  background: linear-gradient(180deg, rgba(184,147,58,.6), transparent);
-  animation: scroll-pulse 2s ease-in-out infinite;
+  height: 38px;
+  background: linear-gradient(180deg, rgba(184,147,58,.5), transparent);
+  animation: scroll-pulse 2.2s ease-in-out infinite;
 }
 @keyframes scroll-pulse {
-  0%,100%{transform:scaleY(1);opacity:.6}
-  50%{transform:scaleY(.6);opacity:1}
+  0%,100%{transform:scaleY(1);opacity:.5}
+  50%{transform:scaleY(.55);opacity:1}
 }
 
 @keyframes rise {
@@ -370,35 +361,15 @@ img{display:block;max-width:100%}
 }
 
 /* ══════════════════════════════════════
-   IMMERSIVE SECTION DIVIDER
+   WAVE DIVIDER
 ══════════════════════════════════════ */
-.wave-divider {
-  background: var(--ink);
-  line-height: 0;
-}
-.wave-divider svg {
-  display: block;
-  width: 100%;
-}
+.wave-divider{background:var(--hero-bg);line-height:0}
+.wave-divider svg{display:block;width:100%}
 
 /* ══════════════════════════════════════
    AD SLOT
 ══════════════════════════════════════ */
-.adsense-slot {
-  background: var(--cream-2);
-  border: 1px dashed var(--cream-3);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 6px;
-  color: var(--ink-muted);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
+.adsense-slot{background:var(--cream-2);border:1px dashed var(--cream-3);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--ink-muted);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
 .adsense-slot small{font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:#aaa}
 .adsense-leaderboard{width:100%;height:90px;margin:24px 0}
 
@@ -417,8 +388,6 @@ img{display:block;max-width:100%}
 .cat-badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:10px}
 .s1{--sc:#1A4A8A;--sl:#E8F0FA}.s2{--sc:#7A4A0A;--sl:#FAF0E0}.s3{--sc:#8A1A3A;--sl:#FAE8EE}.s4{--sc:#3A1A8A;--sl:#EEEAFA}.s5{--sc:#0A5A3A;--sl:#E0F5EC}.s6{--sc:#1A6A1A;--sl:#E4F5E4}
 .cat-badge.s1,.cat-badge.s2,.cat-badge.s3,.cat-badge.s4,.cat-badge.s5,.cat-badge.s6{background:var(--sl);color:var(--sc)}
-.article-img-real{width:100%;aspect-ratio:16/9;border-radius:6px;margin-bottom:14px;overflow:hidden;background:var(--cream-2);position:relative}
-.article-img-real img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
 .article-img-placeholder{width:100%;aspect-ratio:16/9;border-radius:6px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
 .article-img-placeholder.s1,.article-img-placeholder.s2,.article-img-placeholder.s3,.article-img-placeholder.s4,.article-img-placeholder.s5,.article-img-placeholder.s6{background:var(--sl);color:var(--sc)}
 .article-title{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.25;margin-bottom:10px;transition:color .2s;display:block}
@@ -427,8 +396,7 @@ img{display:block;max-width:100%}
 .article-meta{font-size:11px;font-weight:500;letter-spacing:.05em;color:var(--ink-muted);text-transform:uppercase}
 #featured-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .feat-main{grid-column:1/3;padding-right:40px;border-right:var(--rule)}
-.feat-main .article-title{font-size:32px}
-.feat-main:hover .article-img-real img{transform:scale(1.02)}
+.feat-main .article-title{font-size:30px}
 .feat-sidebar{display:flex;flex-direction:column;padding-left:32px}
 .feat-side-item{padding:20px 0;border-bottom:var(--rule)}
 .feat-side-item:first-child{padding-top:0}
@@ -436,37 +404,40 @@ img{display:block;max-width:100%}
 .feat-side-item .article-title{font-size:17px}
 
 /* ══════════════════════════════════════
-   IMMERSIVE SECTIONS GRID
-   — Each card has a unique personality
+   SECTIONS GRID — Dark slate, NOT black
+   Each card glows in its section colour
 ══════════════════════════════════════ */
 #sections-wrap {
-  background: var(--ink);
+  background: var(--hero-bg);
   padding: 72px 0;
   margin: 48px 0 0;
   position: relative;
   overflow: hidden;
 }
 
-/* Textured background for sections */
+/* Subtle grid lines */
 #sections-wrap::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,.015) 60px, rgba(255,255,255,.015) 61px),
-    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,.015) 60px, rgba(255,255,255,.015) 61px);
+    repeating-linear-gradient(0deg, transparent, transparent 64px, rgba(255,255,255,.012) 64px, rgba(255,255,255,.012) 65px),
+    repeating-linear-gradient(90deg, transparent, transparent 64px, rgba(255,255,255,.012) 64px, rgba(255,255,255,.012) 65px);
   pointer-events: none;
 }
 
-#sections-wrap .container {
-  position: relative;
-  z-index: 1;
+/* Warm vignette on the dark section */
+#sections-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 120% 80% at 50% 50%, transparent 30%, rgba(9,13,18,.4) 100%);
+  pointer-events: none;
 }
 
-.sections-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
+#sections-wrap .container { position: relative; z-index: 1; }
+
+.sections-header { text-align: center; margin-bottom: 48px; }
 .sections-header .eyebrow {
   font-size: 10px;
   font-weight: 500;
@@ -477,135 +448,96 @@ img{display:block;max-width:100%}
 }
 .sections-header h2 {
   font-family: var(--serif);
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(26px,4vw,46px);
   font-weight: 400;
-  color: var(--cream);
-  line-height: 1.15;
+  color: var(--hero-text);
+  line-height: 1.18;
 }
-.sections-header h2 em {
-  font-style: italic;
-  color: var(--gold);
-}
+.sections-header h2 em { font-style: italic; color: var(--gold); }
 
 #sections-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 1px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 8px;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.055);
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .sec-card {
-  background: rgba(255,255,255,.025);
+  background: rgba(255,255,255,.022);
   padding: 28px;
   position: relative;
   overflow: hidden;
-  transition: background .2s;
+  transition: background .25s;
   cursor: pointer;
 }
-.sec-card:hover {
-  background: rgba(255,255,255,.055);
-}
+.sec-card:hover { background: rgba(255,255,255,.048); }
 
-/* Unique glow per section on hover */
-.sec-card.s1:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%, rgba(26,74,138,.15), transparent 70%);pointer-events:none}
-.sec-card.s2:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%, rgba(122,74,10,.15), transparent 70%);pointer-events:none}
-.sec-card.s3:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%, rgba(138,26,58,.12), transparent 70%);pointer-events:none}
-.sec-card.s4:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%, rgba(58,26,138,.12), transparent 70%);pointer-events:none}
-.sec-card.s5:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%, rgba(10,90,58,.12), transparent 70%);pointer-events:none}
-.sec-card.s6:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%, rgba(26,106,26,.12), transparent 70%);pointer-events:none}
+/* Per-section glow on hover — warmer, softer than before */
+.sec-card.s1:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(26,74,138,.12),transparent 68%);pointer-events:none}
+.sec-card.s2:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(122,74,10,.11),transparent 68%);pointer-events:none}
+.sec-card.s3:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(138,26,58,.10),transparent 68%);pointer-events:none}
+.sec-card.s4:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(58,26,138,.10),transparent 68%);pointer-events:none}
+.sec-card.s5:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(10,90,58,.10),transparent 68%);pointer-events:none}
+.sec-card.s6:hover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(26,106,26,.10),transparent 68%);pointer-events:none}
 
 .sec-card-num {
   font-family: var(--serif);
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 700;
   line-height: 1;
-  opacity: .06;
+  opacity: .055;
   position: absolute;
-  top: 12px;
-  right: 16px;
-  color: var(--cream);
+  top: 12px; right: 16px;
+  color: var(--hero-text);
   transition: opacity .2s;
 }
-.sec-card:hover .sec-card-num{opacity:.1}
+.sec-card:hover .sec-card-num{opacity:.09}
 
 .sec-icon {
-  width: 38px;
-  height: 38px;
+  width: 36px; height: 36px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.07);
 }
-.sec-icon svg{width:18px;height:18px;color:var(--gold)}
+.sec-icon svg{width:17px;height:17px;color:var(--gold)}
 
 .sec-card h3 {
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
-  color: var(--cream);
+  color: var(--hero-text);
   margin-bottom: 8px;
   line-height: 1.2;
 }
-
 .sec-card p {
   font-size: 13px;
   font-weight: 300;
-  color: rgba(250,249,246,.5);
-  line-height: 1.65;
+  color: rgba(232,226,216,.45);
+  line-height: 1.7;
   margin-bottom: 16px;
 }
-
-.sec-topics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 18px;
-}
-.sec-topic {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 3px;
-  background: rgba(255,255,255,.06);
-  color: rgba(250,249,246,.5);
-  border: 1px solid rgba(255,255,255,.08);
-  transition: background .15s, color .15s;
-}
-.sec-card:hover .sec-topic{background:rgba(255,255,255,.09);color:rgba(250,249,246,.7)}
-
-.sec-link {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: gap .2s;
-  opacity: .7;
-}
+.sec-topics{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px}
+.sec-topic{font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:3px;background:rgba(255,255,255,.055);color:rgba(232,226,216,.45);border:1px solid rgba(255,255,255,.07);transition:background .15s,color .15s}
+.sec-card:hover .sec-topic{background:rgba(255,255,255,.08);color:rgba(232,226,216,.65)}
+.sec-link{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:5px;transition:gap .2s;opacity:.65}
 .sec-card:hover .sec-link{gap:9px;opacity:1}
 
 /* ══════════════════════════════════════
-   LATEST ARTICLES — with decorative rule
+   LATEST ARTICLES
 ══════════════════════════════════════ */
 #latest-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
 .latest-card .article-img-placeholder{aspect-ratio:3/2}
 .latest-card .article-title{font-size:18px}
-.latest-card:hover .article-title{color:var(--gold)}
 
 /* ══════════════════════════════════════
-   PHILOSOPHY STRIP — quote section
-   Unique to this publication
+   PHILOSOPHY STRIP
 ══════════════════════════════════════ */
 #philosophy-strip {
   background: var(--cream-2);
@@ -619,173 +551,71 @@ img{display:block;max-width:100%}
 #philosophy-strip::before {
   content: '"';
   font-family: var(--serif);
-  font-size: 320px;
+  font-size: 300px;
   font-weight: 700;
   color: rgba(0,0,0,.03);
   position: absolute;
-  top: -60px;
-  left: 24px;
+  top: -60px; left: 24px;
   line-height: 1;
   pointer-events: none;
 }
-#philosophy-strip .container {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-}
-.phil-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-.phil-quote {
-  flex: 1;
-}
-.phil-quote p {
-  font-family: var(--serif);
-  font-size: clamp(20px, 3vw, 32px);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.45;
-  margin-bottom: 16px;
-}
-.phil-cite {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
+#philosophy-strip .container{display:flex;align-items:center;gap:48px}
+.phil-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);white-space:nowrap;writing-mode:vertical-rl;transform:rotate(180deg)}
+.phil-quote p{font-family:var(--serif);font-size:clamp(19px,2.8vw,30px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.45;margin-bottom:16px}
+.phil-cite{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted)}
 
 /* ══════════════════════════════════════
    NEWSLETTER
 ══════════════════════════════════════ */
 #newsletter {
-  background: var(--ink);
+  background: var(--hero-bg);
   padding: 72px 0;
   position: relative;
   overflow: hidden;
 }
+/* Concentric ring decorations */
 #newsletter::before {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  border: 1px solid rgba(184,147,58,.08);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  pointer-events: none;
+  content:'';position:absolute;width:580px;height:580px;border-radius:50%;border:1px solid rgba(184,147,58,.07);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
 }
 #newsletter::after {
-  content: '';
-  position: absolute;
-  width: 900px;
-  height: 900px;
-  border-radius: 50%;
-  border: 1px solid rgba(184,147,58,.04);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  pointer-events: none;
+  content:'';position:absolute;width:860px;height:860px;border-radius:50%;border:1px solid rgba(184,147,58,.03);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
 }
-#newsletter-inner {
-  max-width: 520px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.nl-eyebrow {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-#newsletter h2 {
-  font-family: var(--serif);
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--cream);
-  margin-bottom: 14px;
-}
+#newsletter-inner{max-width:520px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.nl-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+#newsletter h2{font-family:var(--serif);font-size:clamp(26px,4vw,40px);font-weight:400;line-height:1.18;color:var(--hero-text);margin-bottom:14px}
 #newsletter h2 em{font-style:italic;color:var(--gold)}
-#newsletter p {
-  font-size: 15px;
-  font-weight: 300;
-  color: rgba(250,249,246,.45);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-#nl-form {
-  display: flex;
-  gap: 10px;
-  max-width: 420px;
-  margin: 0 auto;
-}
-#nl-form input[type="email"] {
-  flex: 1;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 6px;
-  padding: 12px 16px;
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--cream);
-  outline: none;
-  transition: border-color .2s;
-}
-#nl-form input::placeholder{color:rgba(255,255,255,.25)}
+#newsletter p{font-size:15px;font-weight:300;color:var(--hero-muted);margin-bottom:32px;line-height:1.75}
+#nl-form{display:flex;gap:10px;max-width:420px;margin:0 auto}
+#nl-form input[type="email"]{flex:1;background:rgba(232,226,216,.07);border:1px solid rgba(232,226,216,.1);border-radius:6px;padding:12px 16px;font-family:var(--sans);font-size:14px;color:var(--hero-text);outline:none;transition:border-color .2s}
+#nl-form input::placeholder{color:rgba(232,226,216,.22)}
 #nl-form input:focus{border-color:var(--gold)}
-#nl-form button {
-  background: var(--gold);
-  color: var(--ink);
-  border: none;
-  border-radius: 6px;
-  padding: 12px 22px;
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity .2s,transform .15s;
-}
+#nl-form button{background:var(--gold);color:var(--ink);border:none;border-radius:6px;padding:12px 22px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;transition:opacity .2s,transform .15s}
 #nl-form button:hover{opacity:.9;transform:translateY(-1px)}
-#nl-msg{margin-top:12px;font-size:13px;min-height:20px;color:rgba(255,255,255,.35)}
-.nl-privacy{font-size:11px;color:rgba(255,255,255,.2);margin-top:14px}
-.nl-privacy a{color:rgba(184,147,58,.6)}
+#nl-msg{margin-top:12px;font-size:13px;min-height:20px;color:rgba(232,226,216,.3)}
+.nl-privacy{font-size:11px;color:rgba(232,226,216,.18);margin-top:14px}
+.nl-privacy a{color:rgba(184,147,58,.55)}
 
 /* ══════════════════════════════════════
    FOOTER
 ══════════════════════════════════════ */
-footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
-#footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid #141414;margin-bottom:32px}
-.footer-logo{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--cream);margin-bottom:12px}
+footer{background:#080C12;color:#6a6660;padding:56px 0 32px}
+#footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.04);margin-bottom:32px}
+.footer-logo{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--hero-text);margin-bottom:12px}
 .footer-logo span{color:var(--gold)}
 #footer-brand p{font-size:13px;font-weight:300;line-height:1.7;max-width:260px;margin-bottom:20px}
 .footer-social{display:flex;gap:10px}
-.footer-social a{width:32px;height:32px;border:1px solid #1e1e1e;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#6e6a63;font-size:12px;font-weight:500;transition:border-color .2s,color .2s}
-.footer-social a:hover{border-color:#5a564f;color:var(--cream)}
-.footer-col h4{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#5a564f;margin-bottom:16px}
+.footer-social a{width:32px;height:32px;border:1px solid rgba(255,255,255,.07);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#6a6660;font-size:12px;font-weight:500;transition:border-color .2s,color .2s}
+.footer-social a:hover{border-color:#5a564f;color:var(--hero-text)}
+.footer-col h4{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#4a4844;margin-bottom:16px}
 .footer-col ul{list-style:none}
 .footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{font-size:13px;font-weight:300;color:#6e6a63;transition:color .2s}
-.footer-col ul li a:hover{color:var(--cream)}
+.footer-col ul li a{font-size:13px;font-weight:300;color:#6a6660;transition:color .2s}
+.footer-col ul li a:hover{color:var(--hero-text)}
 #footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 #footer-bottom p{font-size:12px}
 #footer-legal{display:flex;gap:20px}
-#footer-legal a{font-size:12px;color:#3a3733;transition:color .2s}
-#footer-legal a:hover{color:#6e6a63}
+#footer-legal a{font-size:12px;color:#2e2c2a;transition:color .2s}
+#footer-legal a:hover{color:#6a6660}
 
 /* ══════════════════════════════════════
    RESPONSIVE
@@ -804,8 +634,8 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
 }
 @media(max-width:600px){
   #topbar{display:none}
-  #hero h1{font-size:38px}
-  #hero-stats{gap:24px}
+  #hero h1{font-size:36px}
+  #hero-stats{gap:22px}
   #sections-grid{grid-template-columns:1fr}
   #latest-grid{grid-template-columns:1fr}
   #nl-form{flex-direction:column}
@@ -816,7 +646,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
 </head>
 <body>
 
-<!-- ── TOP BAR ── -->
 <div id="topbar" role="banner">
   <div class="container">
     <div id="topbar-links">
@@ -827,11 +656,10 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
       <a href="/humanitas/ideas/">Philosophy</a>
       <a href="/humanitas/earth/">Earth</a>
     </div>
-    <div id="topbar-date">Tuesday, April 21, 2026</div>
+    <div id="topbar-date">Friday, May 2, 2026</div>
   </div>
 </div>
 
-<!-- ── NAV (transparent over hero, solid when scrolled) ── -->
 <nav id="nav" role="navigation" aria-label="Main navigation" class="hero-zone">
   <div id="nav-inner">
     <a href="/humanitas/" id="logo" aria-label="Humanitas home">Humani<span>tas</span></a>
@@ -860,34 +688,17 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════
-     IMMERSIVE HERO
-══════════════════════════════════════ -->
+<!-- HERO -->
 <section id="hero" aria-labelledby="hero-title">
-
-  <!-- Floating atmospheric orbs -->
   <div class="orb orb-1" aria-hidden="true"></div>
   <div class="orb orb-2" aria-hidden="true"></div>
   <div class="orb orb-3" aria-hidden="true"></div>
-
-  <!-- Animated constellation lines -->
-  <div class="hero-constellation" aria-hidden="true">
-    <div class="c-line"></div>
-    <div class="c-line"></div>
-    <div class="c-line"></div>
-    <div class="c-line"></div>
-    <div class="c-vline"></div>
-    <div class="c-vline"></div>
-    <div class="c-vline"></div>
-  </div>
-
-  <!-- Particle stars (generated by JS) -->
+  <div class="c-line" aria-hidden="true"></div>
+  <div class="c-line" aria-hidden="true"></div>
+  <div class="c-line" aria-hidden="true"></div>
   <div id="stars" aria-hidden="true"></div>
-
-  <!-- Canvas for the deep-space particle field -->
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-  <!-- Content -->
   <div id="hero-content">
     <p id="hero-eyebrow">Est. 2026 &nbsp;·&nbsp; A free, independent publication</p>
     <h1 id="hero-title">Where <em>civilisation</em><br>meets the curious mind</h1>
@@ -898,39 +709,31 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
     </div>
     <div id="hero-stats" role="list">
       <div class="hero-stat" role="listitem"><div class="n">6</div><div class="l">Sections</div></div>
-      <div class="hero-stat" role="listitem"><div class="n">5</div><div class="l">Articles live</div></div>
+      <div class="hero-stat" role="listitem"><div class="n">13</div><div class="l">Articles live</div></div>
       <div class="hero-stat" role="listitem"><div class="n">90+</div><div class="l">Coming soon</div></div>
       <div class="hero-stat" role="listitem"><div class="n">Free</div><div class="l">Always</div></div>
     </div>
   </div>
 
-  <!-- Scroll hint -->
   <div id="scroll-hint" aria-hidden="true">
     <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
-
 </section>
 
-<!-- Wave transition from dark hero to cream content -->
 <div class="wave-divider" aria-hidden="true">
   <svg viewBox="0 0 1200 60" preserveAspectRatio="none" height="60">
-    <path d="M0,60 L0,20 Q300,0 600,30 Q900,60 1200,10 L1200,60 Z" fill="#FAF9F6"/>
+    <path d="M0,60 L0,22 Q300,2 600,32 Q900,62 1200,12 L1200,60 Z" fill="#FAF9F6"/>
   </svg>
 </div>
 
-<!-- ══════════════════════════════════════
-     MAIN CONTENT
-══════════════════════════════════════ -->
+<!-- MAIN CONTENT -->
 <main id="main-content">
 <div class="container">
-
-  <!-- AdSense leaderboard -->
   <div class="adsense-slot adsense-leaderboard" role="complementary" aria-label="Advertisement">
     <!-- REPLACE WITH ADSENSE CODE --><span>Advertisement</span><small>728×90 Leaderboard</small>
   </div>
 
-  <!-- Featured stories -->
   <hr class="section-rule" aria-hidden="true">
   <div class="section-head">
     <h2>Featured story</h2>
@@ -940,44 +743,39 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
   <div id="featured-grid" role="list">
     <article class="feat-main" role="listitem">
       <span class="cat-badge s1">Civilisation &amp; Power</span>
-      <!-- Local image — save roman-forum.jpg to /humanitas/images/ for best results -->
       <div class="article-img-placeholder s1" role="img" aria-label="Roman Forum">Roman Forum</div>
       <a href="/humanitas/civilisation/roman-law-modern-world.html">
         <h2 class="article-title">How Roman Law Quietly Governs the Modern World — Two Thousand Years Later</h2>
       </a>
       <p class="article-excerpt">Five case studies, 22 academic citations, and the forgotten history of the most consequential intellectual inheritance in human history — from Louisiana courts to the United Nations Charter.</p>
-      <span class="article-meta">The Humanitas Editors &nbsp;·&nbsp; 18 min read &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; 22 citations</span>
+      <span class="article-meta">The Humanitas Editors &nbsp;·&nbsp; 18 min read &nbsp;·&nbsp; April 2026</span>
     </article>
     <div class="feat-sidebar" role="list">
       <div class="feat-side-item" role="listitem">
         <span class="cat-badge s2">Law, Money &amp; Tech</span>
-        <a href="/humanitas/intelligence/compound-interest.html"><h3 class="article-title">What Is Compound Interest and Why It Is the Most Powerful Force in Finance</h3></a>
-        <span class="article-meta">16 min &nbsp;·&nbsp; April 2026</span>
-      </div>
-      <div class="feat-side-item" role="listitem">
-        <span class="cat-badge s2">Law, Money &amp; Tech</span>
-        <a href="/humanitas/intelligence/reading-a-contract.html"><h3 class="article-title">How to Read a Contract: The 8 Clauses That Can Ruin You</h3></a>
-        <span class="article-meta">17 min &nbsp;·&nbsp; April 2026</span>
+        <a href="/humanitas/intelligence/what-is-ai.html"><h3 class="article-title">What Artificial Intelligence Actually Is — A Complete, Jargon-Free Explanation</h3></a>
+        <span class="article-meta">18 min &nbsp;·&nbsp; May 2026</span>
       </div>
       <div class="feat-side-item" role="listitem">
         <span class="cat-badge s3">Human Condition</span>
-        <a href="/humanitas/human/neuroscience-love.html"><h3 class="article-title">The Neuroscience of Falling in Love — What Actually Happens in Your Brain</h3></a>
+        <a href="/humanitas/human/science-of-loneliness.html"><h3 class="article-title">The Science of Loneliness — Why It Is Killing Us and What Actually Helps</h3></a>
         <span class="article-meta">15 min &nbsp;·&nbsp; April 2026</span>
+      </div>
+      <div class="feat-side-item" role="listitem">
+        <span class="cat-badge s1">Civilisation &amp; Power</span>
+        <a href="/humanitas/civilisation/empire-collapse.html"><h3 class="article-title">Why Every Great Empire Eventually Collapsed — The Patterns History Keeps Repeating</h3></a>
+        <span class="article-meta">17 min &nbsp;·&nbsp; April 2026</span>
       </div>
     </div>
   </div>
 
-  <!-- Rectangle ad -->
   <div class="adsense-slot" style="min-height:250px;margin:48px 0;" role="complementary" aria-label="Advertisement">
     <!-- REPLACE WITH ADSENSE CODE --><span>Advertisement</span><small>300×250</small>
   </div>
-
 </div>
 </main>
 
-<!-- ══════════════════════════════════════
-     IMMERSIVE SECTIONS GRID (dark)
-══════════════════════════════════════ -->
+<!-- SECTIONS GRID -->
 <section id="sections-wrap" aria-labelledby="sections-title">
   <div class="container">
     <div class="sections-header">
@@ -985,7 +783,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
       <h2 id="sections-title">The <em>architecture</em> of Humanitas</h2>
     </div>
     <div id="sections-grid" role="list">
-
       <a href="/humanitas/civilisation/" class="sec-card s1" role="listitem">
         <span class="sec-card-num" aria-hidden="true">I</span>
         <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21h18M6 21V9m4-6h4m-4 6V3m4 6V3M6 9l6-6 6 6M10 21v-6h4v6"/></svg></div>
@@ -994,7 +791,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
         <div class="sec-topics"><span class="sec-topic">History</span><span class="sec-topic">Politics</span><span class="sec-topic">Empires</span></div>
         <span class="sec-link">Explore →</span>
       </a>
-
       <a href="/humanitas/intelligence/" class="sec-card s2" role="listitem">
         <span class="sec-card-num" aria-hidden="true">II</span>
         <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
@@ -1003,7 +799,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
         <div class="sec-topics"><span class="sec-topic">Law</span><span class="sec-topic">Finance</span><span class="sec-topic">AI</span></div>
         <span class="sec-link">Explore →</span>
       </a>
-
       <a href="/humanitas/human/" class="sec-card s3" role="listitem">
         <span class="sec-card-num" aria-hidden="true">III</span>
         <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
@@ -1012,7 +807,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
         <div class="sec-topics"><span class="sec-topic">Psychology</span><span class="sec-topic">Love</span><span class="sec-topic">Society</span></div>
         <span class="sec-link">Explore →</span>
       </a>
-
       <a href="/humanitas/cosmos/" class="sec-card s4" role="listitem">
         <span class="sec-card-num" aria-hidden="true">IV</span>
         <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
@@ -1021,7 +815,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
         <div class="sec-topics"><span class="sec-topic">Space</span><span class="sec-topic">Physics</span><span class="sec-topic">Evolution</span></div>
         <span class="sec-link">Explore →</span>
       </a>
-
       <a href="/humanitas/ideas/" class="sec-card s5" role="listitem">
         <span class="sec-card-num" aria-hidden="true">V</span>
         <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
@@ -1030,7 +823,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
         <div class="sec-topics"><span class="sec-topic">Ethics</span><span class="sec-topic">Logic</span><span class="sec-topic">Meaning</span></div>
         <span class="sec-link">Explore →</span>
       </a>
-
       <a href="/humanitas/earth/" class="sec-card s6" role="listitem">
         <span class="sec-card-num" aria-hidden="true">VI</span>
         <div class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
@@ -1039,14 +831,11 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
         <div class="sec-topics"><span class="sec-topic">Wildlife</span><span class="sec-topic">Conservation</span><span class="sec-topic">Culture</span></div>
         <span class="sec-link">Explore →</span>
       </a>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     PHILOSOPHY STRIP — editorial identity
-══════════════════════════════════════ -->
+<!-- PHILOSOPHY STRIP -->
 <div id="philosophy-strip" role="note" aria-label="Editorial philosophy">
   <div class="container">
     <div class="phil-label" aria-hidden="true">Editorial</div>
@@ -1057,9 +846,7 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     LATEST ARTICLES
-══════════════════════════════════════ -->
+<!-- LATEST ARTICLES -->
 <div class="container">
   <hr class="section-rule" aria-hidden="true">
   <div class="section-head">
@@ -1068,37 +855,33 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
   </div>
   <div id="latest-grid" role="list">
     <article class="latest-card" role="listitem">
-      <div class="article-img-placeholder s2">Law &amp; Money</div>
+      <div class="article-img-placeholder s2">Law &amp; Tech</div>
       <span class="cat-badge s2">Law, Money &amp; Tech</span>
-      <a href="/humanitas/intelligence/credit-scores.html"><h3 class="article-title">How Credit Scores Work and Exactly How to Improve Yours in 6 Months</h3></a>
-      <p class="article-excerpt">The algorithm that controls your mortgage rate, your rent application, and your loan terms — explained completely with a month-by-month improvement plan.</p>
-      <span class="article-meta">14 min read &nbsp;·&nbsp; April 2026</span>
-    </article>
-    <article class="latest-card" role="listitem">
-      <div class="article-img-placeholder s3">Human</div>
-      <span class="cat-badge s3">Human Condition</span>
-      <a href="/humanitas/human/neuroscience-love.html"><h3 class="article-title">The Neuroscience of Falling in Love — What Actually Happens in Your Brain</h3></a>
-      <p class="article-excerpt">Brain scans, hormones, and the reward system: the complete scientific account, with 20 peer-reviewed citations and two landmark studies examined in full.</p>
-      <span class="article-meta">15 min read &nbsp;·&nbsp; April 2026</span>
+      <a href="/humanitas/intelligence/what-is-ai.html"><h3 class="article-title">What Artificial Intelligence Actually Is</h3></a>
+      <p class="article-excerpt">Not the hype. The actual technical explanation of what modern AI is, how it works, and what it genuinely cannot do — with 20 primary citations.</p>
+      <span class="article-meta">18 min read &nbsp;·&nbsp; May 2026</span>
     </article>
     <article class="latest-card" role="listitem">
       <div class="article-img-placeholder s1">Civilisation</div>
       <span class="cat-badge s1">Civilisation &amp; Power</span>
-      <a href="/humanitas/civilisation/roman-law-modern-world.html"><h3 class="article-title">How Roman Law Quietly Governs the Modern World</h3></a>
-      <p class="article-excerpt">The legal code of a civilisation that collapsed in 476 AD still determines who owns your home and how courts in 150 countries reach their verdicts.</p>
-      <span class="article-meta">18 min read &nbsp;·&nbsp; April 2026</span>
+      <a href="/humanitas/civilisation/democracy-older-than-greece.html"><h3 class="article-title">Democracy Is Older Than Greece</h3></a>
+      <p class="article-excerpt">Athens did not invent democracy. Evidence from Mesopotamia, India, and the Haudenosaunee Confederacy shows self-governance is a universal human impulse.</p>
+      <span class="article-meta">16 min read &nbsp;·&nbsp; April 2026</span>
+    </article>
+    <article class="latest-card" role="listitem">
+      <div class="article-img-placeholder s3">Human</div>
+      <span class="cat-badge s3">Human Condition</span>
+      <a href="/humanitas/human/attachment-theory.html"><h3 class="article-title">What Attachment Theory Reveals About Every Relationship You Have Ever Had</h3></a>
+      <p class="article-excerpt">The template your nervous system built in childhood still shapes every close relationship you form as an adult. Here is the full science.</p>
+      <span class="article-meta">16 min read &nbsp;·&nbsp; April 2026</span>
     </article>
   </div>
-
-  <!-- Banner ad -->
   <div class="adsense-slot" style="height:90px;margin:48px 0 0;" role="complementary" aria-label="Advertisement">
     <!-- REPLACE WITH ADSENSE CODE --><span>Advertisement</span><small>728×90 Banner</small>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     NEWSLETTER
-══════════════════════════════════════ -->
+<!-- NEWSLETTER -->
 <section id="newsletter" aria-labelledby="nl-title">
   <div class="container">
     <div id="newsletter-inner">
@@ -1116,9 +899,6 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
 <footer role="contentinfo">
   <div class="container">
     <div id="footer-top">
@@ -1162,137 +942,53 @@ footer{background:#060606;color:#6e6a63;padding:56px 0 32px}
 (function(){
   'use strict';
 
-  /* ── STAR FIELD ── */
-  var starsEl = document.getElementById('stars');
-  if(starsEl){
-    var frag = document.createDocumentFragment();
-    for(var i=0;i<120;i++){
-      var s = document.createElement('div');
-      s.className = 'star';
-      s.style.cssText = [
-        'left:'+(Math.random()*100)+'%',
-        'top:'+(Math.random()*100)+'%',
-        '--dur:'+(2+Math.random()*4)+'s',
-        'animation-delay:'+(Math.random()*6)+'s',
-        'width:'+(1+Math.random()*2)+'px',
-        'height:'+(1+Math.random()*2)+'px',
-        'opacity:'+(Math.random()*.4)
-      ].join(';');
-      frag.appendChild(s);
-    }
-    starsEl.appendChild(frag);
-  }
+  /* Stars */
+  var se=document.getElementById('stars');
+  if(se){var f=document.createDocumentFragment();for(var i=0;i<110;i++){var s=document.createElement('div');s.className='star';s.style.cssText='left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;--dur:'+(2.5+Math.random()*4)+'s;animation-delay:'+(Math.random()*7)+'s;width:'+(1+Math.random()*1.8)+'px;height:'+(1+Math.random()*1.8)+'px;opacity:'+(Math.random()*.3);f.appendChild(s);}se.appendChild(f);}
 
-  /* ── CANVAS PARTICLE FIELD ── */
-  var canvas = document.getElementById('hero-canvas');
-  if(canvas && canvas.getContext){
-    var ctx = canvas.getContext('2d');
-    var particles = [];
-    var W, H;
-
-    function resize(){
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize, {passive:true});
-
-    var NUM = 80;
-    for(var p=0;p<NUM;p++){
-      particles.push({
-        x: Math.random()*2000,
-        y: Math.random()*1000,
-        vx: (Math.random()-.5)*.15,
-        vy: (Math.random()-.5)*.15,
-        r: Math.random()*1.5+.5,
-        a: Math.random()*.4+.1
-      });
-    }
-
-    function drawParticles(){
+  /* Canvas particle field — warm gold tones */
+  var cv=document.getElementById('hero-canvas');
+  if(cv&&cv.getContext){
+    var ctx=cv.getContext('2d'),pts=[],W,H;
+    function rsz(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+    rsz();window.addEventListener('resize',rsz,{passive:true});
+    for(var p=0;p<70;p++)pts.push({x:Math.random()*2000,y:Math.random()*1000,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,r:Math.random()*1.4+.4,a:Math.random()*.35+.08});
+    function draw(){
       ctx.clearRect(0,0,W,H);
-      // Draw particles
-      particles.forEach(function(p){
-        p.x += p.vx; p.y += p.vy;
-        if(p.x<0)p.x=W; if(p.x>W)p.x=0;
-        if(p.y<0)p.y=H; if(p.y>H)p.y=0;
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle='rgba(184,147,58,'+p.a+')';
-        ctx.fill();
+      pts.forEach(function(p){
+        p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+        if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(184,147,58,'+p.a+')';ctx.fill();
       });
-      // Draw connections
-      for(var i=0;i<particles.length;i++){
-        for(var j=i+1;j<particles.length;j++){
-          var dx=particles[i].x-particles[j].x;
-          var dy=particles[i].y-particles[j].y;
-          var dist=Math.sqrt(dx*dx+dy*dy);
-          if(dist<120){
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x,particles[i].y);
-            ctx.lineTo(particles[j].x,particles[j].y);
-            var alpha=(1-dist/120)*.06;
-            ctx.strokeStyle='rgba(184,147,58,'+alpha+')';
-            ctx.lineWidth=.5;
-            ctx.stroke();
-          }
-        }
+      for(var i=0;i<pts.length;i++)for(var j=i+1;j<pts.length;j++){
+        var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<110){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(184,147,58,'+(1-d/110)*.05+')';ctx.lineWidth=.4;ctx.stroke();}
       }
-      requestAnimationFrame(drawParticles);
+      requestAnimationFrame(draw);
     }
-    drawParticles();
+    draw();
   }
 
-  /* ── TRANSPARENT NAV ── */
-  var nav = document.getElementById('nav');
-  var hero = document.getElementById('hero');
-  if(nav && hero){
-    function updateNav(){
-      var heroBottom = hero.offsetTop + hero.offsetHeight;
-      if(window.scrollY > heroBottom - 80){
-        nav.classList.remove('hero-zone');
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.add('hero-zone');
-        nav.classList.remove('scrolled');
-      }
-    }
-    window.addEventListener('scroll', updateNav, {passive:true});
-    updateNav();
+  /* Nav transparent → solid */
+  var nav=document.getElementById('nav'),hero=document.getElementById('hero');
+  if(nav&&hero){
+    function upNav(){var hb=hero.offsetTop+hero.offsetHeight;if(window.scrollY>hb-80){nav.classList.remove('hero-zone');nav.classList.add('scrolled');}else{nav.classList.add('hero-zone');nav.classList.remove('scrolled');}}
+    window.addEventListener('scroll',upNav,{passive:true});upNav();
   }
 
-  /* ── HAMBURGER ── */
-  var ham = document.getElementById('hamburger');
-  var mob = document.getElementById('mobile-menu');
-  if(ham && mob){
-    ham.addEventListener('click',function(){
-      var o = mob.classList.toggle('open');
-      ham.setAttribute('aria-expanded', o?'true':'false');
-      if(!nav.classList.contains('hero-zone')) return;
-      nav.classList.toggle('solid', o);
-    });
-    document.addEventListener('click',function(e){
-      if(!ham.contains(e.target)&&!mob.contains(e.target)){
-        mob.classList.remove('open');
-        ham.setAttribute('aria-expanded','false');
-        nav.classList.remove('solid');
-      }
-    });
+  /* Hamburger */
+  var ham=document.getElementById('hamburger'),mob=document.getElementById('mobile-menu');
+  if(ham&&mob){
+    ham.addEventListener('click',function(){var o=mob.classList.toggle('open');ham.setAttribute('aria-expanded',o?'true':'false');if(!nav.classList.contains('hero-zone'))return;nav.classList.toggle('solid',o);});
+    document.addEventListener('click',function(e){if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.setAttribute('aria-expanded','false');nav.classList.remove('solid');}});
   }
 
-  /* ── NEWSLETTER ── */
+  /* Newsletter */
   function ve(v){v=String(v).trim();if(v.length>254)return false;var a=v.lastIndexOf('@');if(a<1)return false;if(v.slice(0,a).length>64)return false;if(v.slice(a+1).indexOf('.')===-1)return false;return/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(v);}
-  var nlf=document.getElementById('nl-form');
-  var nlm=document.getElementById('nl-msg');
-  var nle=document.getElementById('nl-email');
-  if(nlf&&nlm&&nle){
-    nlf.addEventListener('submit',function(e){
-      e.preventDefault();
-      if(!ve(nle.value)){nlm.textContent='Please enter a valid email.';nlm.style.color='#c0392b';nle.focus();return;}
-      nle.value='';nlm.textContent='Subscribed. Welcome to Humanitas.';nlm.style.color='#b8933a';
-    });
-  }
-
+  var nlf=document.getElementById('nl-form'),nlm=document.getElementById('nl-msg'),nle=document.getElementById('nl-email');
+  if(nlf&&nlm&&nle){nlf.addEventListener('submit',function(e){e.preventDefault();if(!ve(nle.value)){nlm.textContent='Please enter a valid email.';nlm.style.color='#c0392b';nle.focus();return;}nle.value='';nlm.textContent='Subscribed. Welcome to Humanitas.';nlm.style.color='#b8933a';});}
 }());
 </script>
 </body>
