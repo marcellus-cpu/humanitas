@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://pagead2.googlesyndication.com https://adservice.google.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; connect-src 'self'; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;">
+<title>Why Smart People Make Terrible Decisions: The Psychology of Cognitive Bias — Humanitas</title>
+<meta name="description" content="Intelligence does not protect against cognitive bias — if anything, it makes certain biases worse. A complete guide to the twelve most consequential cognitive biases, with real-world case studies and the science behind each.">
+<meta name="author" content="The Humanitas Editors">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Why Smart People Make Terrible Decisions: The Psychology of Cognitive Bias">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://marcellus-cpu.github.io/humanitas/human/cognitive-bias.html">
+<link rel="canonical" href="https://marcellus-cpu.github.io/humanitas/human/cognitive-bias.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0D0D0D;--ink-soft:#3A3A3A;--ink-muted:#767676;--cream:#FAF9F6;--cream-2:#F2F0EB;--cream-3:#E8E4DC;--gold:#B8933A;--gold-lt:#F5EDD8;--rule:1px solid #E8E4DC;--serif:'Cormorant Garant',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--sc:#8A1A3A;--sl:#FAE8EE;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+#pb{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gold);z-index:200;transition:width .1s linear}
+#topbar{background:var(--ink);padding:8px 0}
+#topbar .container{display:flex;justify-content:space-between;align-items:center}
+#tl{display:flex;gap:20px}
+#tl a{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#7a7570;transition:color .2s}
+#tl a:hover,#tl a[aria-current]{color:var(--cream)}
+#td{font-size:11px;font-weight:500;color:#4a4844}
+#nav{background:var(--cream);border-bottom:var(--rule);position:sticky;top:0;z-index:100}
+#ni{display:flex;align-items:center;justify-content:space-between;height:60px}
+#logo{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--ink);flex-shrink:0}
+#logo span{color:var(--gold)}
+#navl{display:flex;list-style:none}
+#navl a{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-muted);padding:7px 12px;border-radius:4px;transition:color .2s,background .2s;white-space:nowrap}
+#navl a:hover,#navl a[aria-current]{color:var(--ink);background:var(--cream-2)}
+#nr{display:flex;align-items:center;gap:10px;flex-shrink:0}
+#sub{background:var(--ink);color:var(--cream);border:none;border-radius:6px;padding:7px 16px;font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer;transition:opacity .2s}
+#sub:hover{opacity:.85}
+#ham{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+#ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+#mm{display:none;background:var(--cream);border-top:var(--rule);padding:16px 24px 24px}
+#mm.open{display:block}
+#mm a{display:block;font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-muted);padding:10px 0;border-bottom:var(--rule)}
+#mm a:hover{color:var(--ink)}
+#bcw{border-bottom:var(--rule);background:var(--cream-2)}
+#bc{max-width:1200px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-muted);flex-wrap:wrap}
+#bc a{color:var(--ink-muted);transition:color .2s}#bc a:hover{color:var(--ink)}
+.sp{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:3px;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--sl);color:var(--sc)}
+#ah{max-width:1200px;margin:0 auto;padding:48px 24px 0}
+.sl2{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:18px;background:var(--sl);color:var(--sc)}
+#ah h1{font-family:var(--serif);font-size:clamp(28px,5vw,52px);font-weight:600;line-height:1.08;letter-spacing:-.01em;max-width:820px;margin-bottom:20px}
+.dk{font-family:var(--serif);font-size:clamp(17px,2.2vw,21px);font-weight:400;font-style:italic;color:var(--ink-soft);max-width:720px;line-height:1.5;margin-bottom:28px}
+#mr{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:20px 0;border-top:var(--rule);border-bottom:var(--rule);margin-bottom:36px}
+.av{width:40px;height:40px;border-radius:50%;background:var(--gold-lt);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--gold);margin-right:12px;flex-shrink:0}
+.ai2{margin-right:24px}.an{font-size:13px;font-weight:500}.ar{font-size:11px;color:var(--ink-muted);margin-top:1px}
+.dv{width:1px;height:28px;background:var(--cream-3);margin:0 16px}
+.mi{display:flex;flex-direction:column;gap:2px;margin-right:16px}
+.mi .lb{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted)}
+.mi .vl{font-size:13px;color:var(--ink-soft)}
+#lay{max-width:1200px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:700px 1fr;gap:64px;align-items:start}
+#ab{min-width:0}
+#shr{display:flex;align-items:center;gap:8px;margin-bottom:32px;padding-bottom:24px;border-bottom:var(--rule);flex-wrap:wrap}
+.slb{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-right:4px}
+.sbtn{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:6px 14px;border-radius:5px;border:var(--rule);cursor:pointer;background:transparent;color:var(--ink-soft);font-family:var(--sans);transition:background .15s}
+.sbtn:hover{background:var(--cream-2)}.sbtn svg{width:13px;height:13px}.sbtn.copied{color:#3B6D11;border-color:#C0DD97;background:#EAF3DE}
+.prose{font-family:var(--serif);font-size:19px;line-height:1.8;color:var(--ink-soft)}
+.prose p{margin-bottom:1.5em}
+.prose p:first-child::first-letter{font-size:4.2em;font-weight:700;float:left;line-height:.75;margin:6px 12px -4px 0;color:var(--ink);font-family:var(--serif)}
+.prose h2{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--ink);margin:2.2em 0 .7em;line-height:1.2;letter-spacing:-.01em}
+.prose h3{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:1.8em 0 .8em}
+.prose a{color:var(--gold);border-bottom:1px solid transparent;transition:border-color .2s}
+.prose a:hover{border-bottom-color:var(--gold)}
+.prose strong{color:var(--ink);font-weight:600}
+.prose ul,.prose ol{padding-left:1.5em;margin-bottom:1.5em}
+.prose li{margin-bottom:.6em}
+.prose sup{font-size:.65em;vertical-align:super;color:var(--gold)}
+.prose blockquote{border-left:3px solid var(--gold);margin:2em 0;padding:4px 0 4px 28px}
+.prose blockquote p{font-size:23px;font-style:italic;color:var(--ink);margin-bottom:.5em;line-height:1.45}
+.prose blockquote p:first-child::first-letter{font-size:1em;float:none;margin:0;font-weight:400;line-height:inherit}
+.prose blockquote cite{font-size:13px;font-family:var(--sans);font-style:normal;color:var(--ink-muted);letter-spacing:.05em}
+.callout{background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:22px 28px;margin:2em 0;font-size:17px;line-height:1.7;color:var(--ink-soft)}
+.callout p{margin-bottom:0;font-family:var(--serif)}.callout strong{color:var(--ink)}
+/* BIAS CARD */
+.bias-card{margin:2em 0;border:var(--rule);border-radius:8px;overflow:hidden}
+.bias-header{background:var(--ink);padding:18px 24px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.bias-num{font-family:var(--serif);font-size:13px;font-weight:600;color:rgba(255,255,255,.25);letter-spacing:.1em;margin-bottom:4px}
+.bias-name{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--cream);line-height:1.15}
+.bias-aka{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px}
+.bias-danger{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:3px;flex-shrink:0;align-self:flex-start;margin-top:4px}
+.danger-high{background:rgba(200,60,60,.25);color:#f0a0a0}
+.danger-med{background:rgba(239,159,39,.2);color:#f5c870}
+.bias-body{padding:20px 24px}
+.bias-body p{font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.8;margin-bottom:.8em}
+.bias-body p:last-child{margin-bottom:0}
+.bias-example{background:var(--sl);border-left:3px solid var(--sc);border-radius:0 6px 6px 0;padding:14px 18px;margin:14px 0}
+.bias-example .ex-lbl{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sc);margin-bottom:6px}
+.bias-example p{font-size:14px;font-style:italic;color:var(--sc);margin-bottom:0;font-family:var(--serif)}
+.bias-counter{background:var(--cream-2);border-left:3px solid #1D9E75;border-radius:0 6px 6px 0;padding:12px 16px;margin:10px 0}
+.bias-counter .ct-lbl{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#1D9E75;margin-bottom:5px}
+.bias-counter p{font-size:13px;font-weight:300;color:var(--ink-soft);margin-bottom:0;line-height:1.65}
+.case-study{background:var(--cream-2);border:var(--rule);border-top:3px solid var(--sc);border-radius:0 0 8px 8px;padding:24px 28px;margin:2em 0}
+.cs-lbl{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px}
+.case-study h4{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.25}
+.case-study p{font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.75;margin-bottom:.8em}
+.case-study p:last-child{margin-bottom:0}
+.cs-vd{font-size:13px;font-weight:500;color:var(--sc);margin-top:12px;padding-top:12px;border-top:var(--rule)}
+.adsense-mid{background:var(--cream-2);border:1px dashed var(--cream-3);border-radius:4px;padding:16px;margin:2.5em 0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;min-height:120px;color:var(--ink-muted);font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.adsense-mid small{font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:#aaa}
+#fn{margin-top:48px;padding-top:28px;border-top:2px solid var(--ink)}
+#fn h2{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:16px}
+.fnl{list-style:none}
+.fnl li{font-size:13px;font-weight:300;color:var(--ink-muted);line-height:1.7;margin-bottom:8px;padding-left:20px;position:relative}
+.fnl li::before{content:attr(data-n);position:absolute;left:0;font-size:10px;font-weight:500;color:var(--gold);top:2px}
+.fnl li a{color:var(--gold)}
+#faq{margin-top:48px;padding-top:32px;border-top:var(--rule)}
+#faq h2{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:20px}
+.faq-item{border-bottom:var(--rule);padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.faq-q::after{content:'+';font-family:var(--sans);font-size:20px;font-weight:300;color:var(--ink-muted);flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:16px;font-weight:300;color:var(--ink-soft);line-height:1.8;display:none;padding-top:2px;font-family:var(--serif)}
+.faq-item.open .faq-a{display:block}
+#af{margin-top:48px;padding-top:32px;border-top:2px solid var(--ink)}
+.tw{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tl2{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted)}
+.tg{font-size:11px;font-weight:500;padding:4px 12px;border-radius:3px;background:var(--cream-2);color:var(--ink-soft);border:var(--rule)}
+#bio{display:flex;gap:20px;padding:28px;background:var(--cream-2);border-radius:8px;margin-bottom:40px;align-items:flex-start}
+.ba{width:56px;height:56px;min-width:56px;border-radius:50%;background:var(--gold-lt);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--gold)}
+.bn{font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:4px}
+.br{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px}
+.bt{font-size:14px;color:var(--ink-soft);line-height:1.65}
+#sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:28px}
+.shd{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:16px}
+.rc{display:flex;gap:12px;padding:12px 0;border-bottom:var(--rule);transition:opacity .15s}
+.rc:last-child{border-bottom:none}.rc:hover{opacity:.72}
+.rt{width:60px;height:46px;min-width:60px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.rtl{font-family:var(--serif);font-size:14px;font-weight:600;line-height:1.3;color:var(--ink)}
+.rs{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.rm{font-size:11px;color:var(--ink-muted);margin-top:4px}
+.sad{background:var(--cream-2);border:1px dashed var(--cream-3);border-radius:4px;min-height:250px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;color:var(--ink-muted);font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.sad small{font-weight:400;letter-spacing:0;text-transform:none;color:#aaa}
+#snl{background:var(--ink);border-radius:8px;padding:22px 20px;color:var(--cream)}
+.nle{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+#snl h3{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.25;margin-bottom:10px}
+#snl p{font-size:12px;color:#7a7570;line-height:1.6;margin-bottom:14px}
+#nlf{display:flex;flex-direction:column;gap:8px}
+#nlf input[type="email"]{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:5px;padding:9px 12px;font-family:var(--sans);font-size:13px;color:var(--cream);outline:none;transition:border-color .2s;width:100%}
+#nlf input::placeholder{color:#504c47}#nlf input:focus{border-color:var(--gold)}
+#nlf button{background:var(--gold);color:var(--ink);border:none;border-radius:5px;padding:9px 16px;font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer}
+#nlm{font-size:11px;color:#7a7570;min-height:16px}
+#anav{background:var(--cream-2);border-top:var(--rule);border-bottom:var(--rule);margin:40px 0 0}
+#anav .inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 1fr}
+.np,.nn{padding:24px 0;transition:opacity .15s}
+.np:hover,.nn:hover{opacity:.7}.nn{text-align:right;padding-left:28px}.np{padding-right:28px}
+.nd{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.nn .nd{justify-content:flex-end}.ntxt{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.3;color:var(--ink)}
+.ndiv{background:var(--cream-3)}
+footer{background:#080808;color:#6e6a63;padding:56px 0 32px}
+#ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid #1e1e1e;margin-bottom:32px}
+.fl{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--cream);margin-bottom:12px}
+.fl span{color:var(--gold)}
+#fb p{font-size:13px;font-weight:300;line-height:1.7;max-width:260px;margin-bottom:20px}
+.fs{display:flex;gap:10px}
+.fs a{width:32px;height:32px;border:1px solid #2a2a2a;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#6e6a63;font-size:12px;font-weight:500;transition:border-color .2s,color .2s}
+.fs a:hover{border-color:#5a564f;color:var(--cream)}
+.fc h4{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#a09c94;margin-bottom:16px}
+.fc ul{list-style:none}.fc ul li{margin-bottom:10px}.fc ul li a{font-size:13px;font-weight:300;color:#6e6a63;transition:color .2s}.fc ul li a:hover{color:var(--cream)}
+#fb2{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+#fb2 p{font-size:12px}#fl2{display:flex;gap:20px}#fl2 a{font-size:12px;color:#4a4844;transition:color .2s}#fl2 a:hover{color:#6e6a63}
+@media(max-width:960px){#navl{display:none}#ham{display:flex}#lay{grid-template-columns:1fr;gap:48px}#sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:20px}#snl{grid-column:1/-1}#ft{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){#topbar{display:none}#ah{padding:28px 16px 0}#lay{padding:0 16px 60px}#ah h1{font-size:26px}.prose{font-size:17px}.prose p:first-child::first-letter{font-size:3.5em}#sidebar{grid-template-columns:1fr}#anav .inner{grid-template-columns:1fr}.ndiv{display:none}.nn{text-align:left;padding-left:0;padding-top:0}#ft{grid-template-columns:1fr;gap:24px}#fb2{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div id="pb" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<div id="topbar" role="banner"><div class="container"><div id="tl">
+  <a href="/humanitas/civilisation/">Civilisation</a>
+  <a href="/humanitas/intelligence/">Law &amp; Money</a>
+  <a href="/humanitas/human/" aria-current="true">Human</a>
+  <a href="/humanitas/cosmos/">Science</a>
+  <a href="/humanitas/ideas/">Philosophy</a>
+  <a href="/humanitas/earth/">Earth</a>
+</div><div id="td">Monday, April 21, 2026</div></div></div>
+<nav id="nav" role="navigation" aria-label="Main navigation"><div class="container"><div id="ni">
+  <a href="/humanitas/" id="logo">Humani<span>tas</span></a>
+  <ul id="navl" role="list">
+    <li><a href="/humanitas/civilisation/">Civilisation &amp; Power</a></li>
+    <li><a href="/humanitas/intelligence/">Law, Money &amp; Tech</a></li>
+    <li><a href="/humanitas/human/" aria-current="page">Human Condition</a></li>
+    <li><a href="/humanitas/cosmos/">Science &amp; Cosmos</a></li>
+    <li><a href="/humanitas/ideas/">Philosophy</a></li>
+    <li><a href="/humanitas/earth/">Earth &amp; Culture</a></li>
+  </ul>
+  <div id="nr">
+    <button id="sub" type="button" onclick="document.getElementById('snl').scrollIntoView({behavior:'smooth'})">Subscribe</button>
+    <button id="ham" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
+  </div>
+</div></div>
+<div id="mm" role="menu">
+  <a href="/humanitas/civilisation/" role="menuitem">Civilisation &amp; Power</a>
+  <a href="/humanitas/intelligence/" role="menuitem">Law, Money &amp; Technology</a>
+  <a href="/humanitas/human/" role="menuitem">The Human Condition</a>
+  <a href="/humanitas/cosmos/" role="menuitem">Science &amp; the Cosmos</a>
+  <a href="/humanitas/ideas/" role="menuitem">Philosophy &amp; Ideas</a>
+  <a href="/humanitas/earth/" role="menuitem">Earth, Life &amp; Culture</a>
+</div></nav>
+<div id="bcw"><nav id="bc" aria-label="Breadcrumb">
+  <a href="/humanitas/">Home</a><span aria-hidden="true">›</span>
+  <span class="sp">The Human Condition</span>
+  <span aria-hidden="true">›</span>
+  <span style="color:var(--ink);">Cognitive Bias</span>
+</nav></div>
+<header id="ah">
+  <span class="sl2">The Human Condition</span>
+  <h1>Why Smart People Make Terrible Decisions: The Psychology of Cognitive Bias</h1>
+  <p class="dk">Intelligence does not protect you from cognitive bias — researchers have found that in several cases, higher intelligence actually amplifies certain biases. Understanding the twelve most consequential mental shortcuts your brain takes is the first step to overriding them.</p>
+  <div id="mr">
+    <div class="av" aria-hidden="true">HE</div>
+    <div class="ai2"><div class="an">The Humanitas Editors</div><div class="ar">The Human Condition</div></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Published</span><span class="vl">April 21, 2026</span></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Reading time</span><span class="vl">17 min read</span></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Words</span><span class="vl">~3,800</span></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Sources</span><span class="vl">18</span></div>
+  </div>
+</header>
+
+<div id="lay">
+<article id="ab">
+  <div id="shr" role="group" aria-label="Share">
+    <span class="slb">Share</span>
+    <button class="sbtn" type="button" id="share-x" aria-label="Share on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</button>
+    <button class="sbtn" type="button" id="share-li" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button>
+    <button class="sbtn" type="button" id="share-copy" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy link</button>
+  </div>
+
+  <div class="prose" id="prose-body">
+
+<p>In 1999, a researcher named David Dunning and his graduate student Justin Kruger published a paper in the <em>Journal of Personality and Social Psychology</em> that would become one of the most cited — and most misunderstood — findings in modern psychology. Their study showed that people with limited competence in a domain dramatically overestimate their own ability in that domain, while highly competent people tend to underestimate theirs. The paper was titled "Unskilled and Unaware of It."<sup data-ref="1">1</sup></p>
+
+<p>What is less frequently reported is the flip side: more intelligent, more self-aware people are not immune to cognitive bias. They are differently biased. Research by Richard West and colleagues found that individuals who scored higher on measures of cognitive sophistication showed <em>stronger</em> myside bias — the tendency to evaluate evidence in a manner favouring their pre-existing beliefs — than their less cognitively sophisticated counterparts.<sup data-ref="2">2</sup> Intelligence, it turns out, gives you better tools for rationalising what you already believe.</p>
+
+<p>Cognitive biases are not flaws in otherwise perfect reasoning systems. They are features — evolutionarily adaptive shortcuts that allowed our ancestors to make fast decisions with incomplete information in high-stakes environments. The problem is that the environments we now navigate — financial markets, complex organisations, medical decisions, political choices — are precisely the contexts where those shortcuts fail most consequentially.</p>
+
+<p>This guide covers the twelve most consequential cognitive biases: what they are, the evidence behind them, and — crucially — the specific strategies that research shows can mitigate their effects.</p>
+
+<h2>The Twelve Biases</h2>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 01</div>
+      <div class="bias-name">Confirmation Bias</div>
+      <div class="bias-aka">Also called: myside bias, selective exposure</div>
+    </div>
+    <span class="bias-danger danger-high">Highest impact</span>
+  </div>
+  <div class="bias-body">
+    <p>Confirmation bias is the tendency to search for, interpret, favour, and recall information in a way that confirms your pre-existing beliefs. It operates at every stage of reasoning: you preferentially seek out confirming evidence, you interpret ambiguous information as supporting your view, and you remember confirming facts better than disconfirming ones.</p>
+    <p>The landmark research by Peter Wason in 1960 demonstrated this with the "2-4-6 task": subjects were asked to discover a rule governing number sequences by testing examples. Most immediately formed a hypothesis and spent their time generating confirming examples rather than testing disconfirming ones — they almost never falsified their initial theory.<sup data-ref="3">3</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>An investor who believes a stock will rise reads positive analyst reports attentively and dismisses negative ones as "missing the point." A manager who thinks an employee is underperforming recalls failures readily and attributes successes to luck.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Actively seek out the strongest possible arguments against your current position before making a decision. Philip Tetlock's research on "superforecasters" — people who predict geopolitical events with unusual accuracy — found they systematically seek disconfirming evidence and actively consider the outside view.<sup data-ref="4">4</sup></p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 02</div>
+      <div class="bias-name">The Dunning-Kruger Effect</div>
+      <div class="bias-aka">Also called: illusory superiority, overconfidence effect</div>
+    </div>
+    <span class="bias-danger danger-high">Highest impact</span>
+  </div>
+  <div class="bias-body">
+    <p>People with limited knowledge in a domain overestimate their competence because they lack the very metacognitive skills that would allow them to recognise their incompetence. To know what you don't know, you must first know enough to understand the shape of the domain.</p>
+    <p>Dunning and Kruger's original study tested participants on logical reasoning, grammar, and humour. Those in the bottom quartile of actual performance estimated they were in the 62nd percentile. Top-quartile performers underestimated themselves, placing themselves around the 70th percentile.<sup data-ref="1">1</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>A junior employee confidently presents a flawed analysis without recognising its flaws. A person who has read two books on a complex topic considers themselves qualified to dismiss expert consensus.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Seek explicit, specific feedback on your work from people with domain expertise. Ask "what am I missing?" rather than "does this look right?" The former invites identification of gaps; the latter invites confirmation.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 03</div>
+      <div class="bias-name">Anchoring Bias</div>
+      <div class="bias-aka">Also called: focalism, anchoring and adjustment heuristic</div>
+    </div>
+    <span class="bias-danger danger-high">Highest impact</span>
+  </div>
+  <div class="bias-body">
+    <p>When making decisions or estimates under uncertainty, people rely disproportionately on the first piece of information they encounter — the "anchor" — even when that information is arbitrary or irrelevant. Subsequent judgements are adjustments from the anchor, but adjustments are typically insufficient.</p>
+    <p>Amos Tversky and Daniel Kahneman demonstrated this in 1974 with a spinning wheel: subjects who saw the wheel stop at 65 gave a mean estimate of 45% when asked what percentage of African nations are in the UN. Those who saw it stop at 10 gave a mean estimate of 25% — the same question, same people, different anchor.<sup data-ref="5">5</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>A salary negotiation where the first number mentioned disproportionately shapes the final outcome. A house listing price that anchors buyers' valuations even when the listing is overpriced. A doctor's initial diagnosis that anchors subsequent clinical reasoning.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Before accepting an anchor — in negotiations, estimates, or diagnoses — deliberately generate an independent estimate from first principles. What would you estimate if you had never seen the anchor? Research by Adam Galinsky shows that generating a counter-anchor explicitly can significantly reduce anchoring effects.<sup data-ref="6">6</sup></p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 04</div>
+      <div class="bias-name">The Sunk Cost Fallacy</div>
+      <div class="bias-aka">Also called: escalation of commitment, irrational escalation</div>
+    </div>
+    <span class="bias-danger danger-high">Highest impact</span>
+  </div>
+  <div class="bias-body">
+    <p>People continue to invest in a failing course of action because they have already invested resources — time, money, effort — that cannot be recovered. Rationally, past costs are irrelevant to future decisions (they are "sunk"). Psychologically, they exert a powerful pull.</p>
+    <p>The bias was classically demonstrated by Arkes and Blumer (1985), who showed that people who paid more for a ski season pass were significantly more likely to use it through bad weather and injury than those who paid less — despite the experience being identical and future costs being the same.<sup data-ref="7">7</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>Staying in a failing relationship because of "how much we've invested." Continuing a failing business because of "how much we've spent." Watching a bad film to the end because "we already paid for the ticket." The Vietnam War's escalation was partly attributed to this bias by decision researchers.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Ask: "If I had not already invested anything in this, would I choose to invest from this point forward?" This reframes the decision prospectively and removes the sunk cost from the calculation. Pre-committing to specific failure criteria before starting a project — "if X hasn't happened by Y date, we stop" — has been shown to reduce escalation of commitment significantly.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 05</div>
+      <div class="bias-name">Availability Heuristic</div>
+      <div class="bias-aka">Also called: availability bias, imaginability heuristic</div>
+    </div>
+    <span class="bias-danger danger-high">Highest impact</span>
+  </div>
+  <div class="bias-body">
+    <p>People estimate the probability of an event based on how easily examples come to mind — how "available" they are in memory. Events that are dramatic, recent, or personally experienced feel more likely than base rates would justify. Events that are common but unspectacular feel less likely.</p>
+    <p>After a plane crash is widely reported, people dramatically overestimate the risk of air travel. After a shark attack makes the news, beach attendance falls. After a lottery win is publicised, lottery ticket sales surge. In each case, the availability of a vivid example distorts probability estimation.<sup data-ref="8">8</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>A manager promotes someone whose recent successes are memorable rather than someone with a stronger long-term track record. An investor overweights recent market performance in predicting future returns. A doctor over-diagnoses rare conditions they recently saw in a striking case.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Deliberately consult base rates and statistical reference classes before making probability judgements. Ask: "What is the actual frequency of this outcome across all cases like this one?" rather than relying on memorable examples.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 06</div>
+      <div class="bias-name">The Planning Fallacy</div>
+      <div class="bias-aka">Also called: optimism bias in planning, inside view problem</div>
+    </div>
+    <span class="bias-danger danger-med">High impact</span>
+  </div>
+  <div class="bias-body">
+    <p>People systematically underestimate the time, costs, and risks of planned actions while overestimating the benefits. This is not simply optimism — it persists even when people know about past failures and even when they are explicitly asked to account for risks.</p>
+    <p>Kahneman and Tversky coined the term in 1979. Research on major public infrastructure projects found that 9 out of 10 are delivered over budget, with average cost overruns of 28% for road projects and 45% for rail projects — and these are professional planners who plan projects for a living.<sup data-ref="9">9</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>The Sydney Opera House was budgeted at AUD 7 million and took 16 years to complete at a final cost of AUD 102 million. The Edinburgh Scottish Parliament building was estimated at £40 million; the final cost was £414 million. Software projects routinely take twice as long as planned.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Use "reference class forecasting": find the distribution of outcomes for similar projects completed in the past, and use the base rate from that reference class rather than your intuitive estimate for this specific project. Kahneman calls this the "outside view." Research shows it substantially improves forecast accuracy.<sup data-ref="4">4</sup></p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end prose 1 -->
+
+<div class="adsense-mid" role="complementary" aria-label="Advertisement">
+  <span>Advertisement</span><small>In-article AdSense — replace after approval</small>
+</div>
+
+<div class="prose">
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 07</div>
+      <div class="bias-name">Hindsight Bias</div>
+      <div class="bias-aka">Also called: "knew-it-all-along" effect, creeping determinism</div>
+    </div>
+    <span class="bias-danger danger-med">High impact</span>
+  </div>
+  <div class="bias-body">
+    <p>Once an event has occurred, people tend to believe they "knew it all along" — overestimating the predictability of outcomes that were in fact uncertain at the time. This distorts both personal learning (you cannot learn from mistakes you believe you predicted) and organisational accountability (hindsight makes bad decisions look obviously wrong in retrospect).</p>
+    <p>Baruch Fischhoff's foundational research in 1975 showed that people given knowledge of a historical outcome consistently rated that outcome as having been significantly more predictable than people who judged the same situation without knowing the outcome.<sup data-ref="10">10</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>After the 2008 financial crisis, commentators described the crash as "inevitable." Before it, the same people were not predicting it. After 9/11, security failures that had seemed individually unremarkable appeared obviously catastrophic in combination. After any election result, the winner seems to have been the obvious choice.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Keep a "decision journal" — record your reasoning and probability estimates at the time of decisions, before outcomes are known. This creates an accurate record that prevents hindsight from rewriting your pre-decision beliefs. It is also one of the most powerful tools for improving decision-making over time.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 08</div>
+      <div class="bias-name">Loss Aversion</div>
+      <div class="bias-aka">Also called: the endowment effect, status quo bias</div>
+    </div>
+    <span class="bias-danger danger-high">Highest impact</span>
+  </div>
+  <div class="bias-body">
+    <p>Losses loom approximately twice as large psychologically as equivalent gains. The pain of losing £100 is approximately twice as intense as the pleasure of gaining £100. This asymmetry systematically distorts decision-making: people take excessive risks to avoid losses and insufficient risks to acquire equivalent gains.</p>
+    <p>Kahneman and Tversky's Prospect Theory, which earned Kahneman the Nobel Prize in Economics in 2002, formalisedthis finding. Subsequent research has shown loss aversion in professional investors, surgeons (more risk-averse when they perceive themselves as already having lost something), and sports athletes.<sup data-ref="11">11</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>Investors hold losing stocks too long and sell winning ones too early — the "disposition effect" — because selling a loser crystallises a loss. People refuse salary negotiations even when the expected gain significantly exceeds the risk. Homeowners refuse reasonable offers below their purchase price even in declining markets.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Reframe decisions in terms of final wealth states rather than gains and losses relative to a reference point. Ask: "If I did not already own this, would I pay the current market price for it?" Research on professional traders suggests that explicit reframing and pre-commitment strategies substantially reduce loss aversion's effect on trading decisions.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 09</div>
+      <div class="bias-name">The Halo Effect</div>
+      <div class="bias-aka">Also called: physical attractiveness bias, horn effect (negative version)</div>
+    </div>
+    <span class="bias-danger danger-med">High impact</span>
+  </div>
+  <div class="bias-body">
+    <p>When you have a positive overall impression of a person, organisation, or idea, you tend to rate their specific attributes positively even when those attributes have been objectively assessed as weak. One salient positive quality creates a "halo" that illuminates everything else.</p>
+    <p>Edward Thorndike first documented this in military ratings in 1920. More recent research by Phil Rosenzweig showed that the same business decisions by the same companies were rated very differently by analysts depending on whether the companies were performing well financially — the performance halo coloured every other judgement.<sup data-ref="12">12</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>Physically attractive job candidates are consistently rated as more competent in unrelated areas. CEOs of successful companies are described as visionary strategic thinkers; CEOs of the same companies when they fail are described as arrogant and out of touch — the decisions have not changed, only the outcomes.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Evaluate specific attributes independently and separately before forming an overall impression. In hiring, score candidates on individual criteria before seeing their overall profile. This is why structured interviews with pre-defined rubrics outperform unstructured "gut feel" interviews in predicting job performance.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 10</div>
+      <div class="bias-name">Groupthink</div>
+      <div class="bias-aka">Also called: collective rationalisation, illusion of unanimity</div>
+    </div>
+    <span class="bias-danger danger-high">Highest impact</span>
+  </div>
+  <div class="bias-body">
+    <p>In cohesive groups, the desire for harmony and conformity overrides realistic appraisal of alternatives. Members self-censor dissenting views, apply pressure to dissenters, share an illusion of unanimity, and develop a collective rationalisation that immunises the group's decisions against critical challenge.</p>
+    <p>Irving Janis coined the term in 1972 and applied it to historical foreign policy disasters including the Bay of Pigs invasion, the failure to anticipate Pearl Harbor, and the escalation of the Vietnam War. In each case, smart, experienced people in close-knit groups made decisions that, in retrospect, ignored obvious warning signs because dissent had been suppressed.<sup data-ref="13">13</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>NASA's decision to launch the Space Shuttle Challenger in 1986 despite engineers' concerns about O-ring performance in cold temperatures. Enron's board repeatedly approving deals that any individual director should have questioned. Financial institutions pre-2008 not questioning mortgage-backed securities models that their own risk teams had flagged.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Appoint an explicit "devil's advocate" role in important decisions — someone whose job is to argue against the consensus view. Use pre-mortems: before committing to a decision, ask the group to imagine the decision has failed catastrophically and explain why. Research by Gary Klein shows pre-mortems significantly surface risks that standard planning processes miss.<sup data-ref="14">14</sup></p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 11</div>
+      <div class="bias-name">Fundamental Attribution Error</div>
+      <div class="bias-aka">Also called: correspondence bias, attribution bias</div>
+    </div>
+    <span class="bias-danger danger-med">High impact</span>
+  </div>
+  <div class="bias-body">
+    <p>When explaining other people's behaviour, we overemphasise personal character and underemphasise situational factors. When explaining our own behaviour, the reverse applies. We attribute others' failures to character flaws; we attribute our own failures to circumstances.</p>
+    <p>Lee Ross coined the term "fundamental attribution error" in 1977 following a series of experiments showing that people attributed essay arguments to the writer's personal beliefs even when they knew the writer had been randomly assigned to argue a position they might not hold.<sup data-ref="15">15</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>A manager assumes a late employee is lazy rather than considering traffic, childcare, or health problems. A country attributes another nation's aggressive foreign policy to its leaders' character rather than security pressures. A teacher attributes a student's poor performance to lack of ability rather than teaching approach or personal circumstances.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Before attributing behaviour to character, explicitly consider three situational factors that could explain the same behaviour. This simple exercise has been shown in experimental settings to significantly reduce attributional bias and improve interpersonal judgement accuracy.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bias-card">
+  <div class="bias-header">
+    <div>
+      <div class="bias-num">BIAS 12</div>
+      <div class="bias-name">Status Quo Bias</div>
+      <div class="bias-aka">Also called: omission bias, inertia effect, default effect</div>
+    </div>
+    <span class="bias-danger danger-med">High impact</span>
+  </div>
+  <div class="bias-body">
+    <p>People disproportionately prefer the current state of affairs. Any change from the status quo is perceived as a loss, and loss aversion makes that perceived loss feel more significant than an equivalent gain would feel. The result is excessive inertia — sticking with failing strategies, suboptimal investments, and poor relationships longer than rational analysis would justify.</p>
+    <p>William Samuelson and Richard Zeckhauser documented the effect in 1988, showing it across insurance choices, investment decisions, and even hypothetical decisions about coffee preference. The bias is exploited commercially through "opt-out" defaults — organ donation registries, pension auto-enrolment, and free trial auto-renewals all leverage status quo bias.<sup data-ref="16">16</sup></p>
+    <div class="bias-example">
+      <div class="ex-lbl">Real-world manifestation</div>
+      <p>Most people stick with whatever default options are presented to them — default investment funds, default energy suppliers, default phone settings — even when switching would be straightforwardly beneficial. Governments use this to dramatically increase organ donor registration rates.</p>
+    </div>
+    <div class="bias-counter">
+      <div class="ct-lbl">Evidence-based counter-strategy</div>
+      <p>Ask: "If I were choosing from scratch today, would I choose this?" regularly about ongoing commitments — subscriptions, investments, relationships, strategies, tools. The question removes the status quo advantage and forces an independent evaluation.</p>
+    </div>
+  </div>
+</div>
+
+<h2>The Intelligence Paradox — Why Being Smart Makes Some Biases Worse</h2>
+
+<p>The finding that higher intelligence amplifies certain biases is among the most important — and most counterintuitive — in cognitive psychology. Richard West, Russell Meserve, and Keith Stanovich's 2012 study tested 482 university students on measures of cognitive ability and fourteen cognitive biases.<sup data-ref="2">2</sup> For most biases, there was no significant relationship between intelligence and susceptibility. For myside bias and some forms of the belief bias, higher cognitive ability was associated with <em>stronger</em> bias.</p>
+
+<p>The mechanism is straightforward: more cognitively sophisticated people are better at constructing rationalisations for their existing beliefs. They can generate more arguments, anticipate counterarguments, and construct more elaborate justifications for positions they already hold. They are, in short, better at motivated reasoning.</p>
+
+<p>This finding has significant implications. Assembling a team of highly intelligent people does not automatically produce better decisions — it may produce better-rationalised bad decisions. Diversity of viewpoint, explicit devil's advocate processes, and structured decision protocols become more important, not less, in high-intelligence environments.</p>
+
+<blockquote>
+  <p>"The human mind is a story processor, not a logic processor. A mind that can reason its way clearly to uncomfortable truths is rarer than a mind that can reason its way comfortably to convenient ones."</p>
+  <cite>— Jonathan Haidt, Professor of Ethical Leadership, NYU Stern School of Business, <em>The Righteous Mind: Why Good People Are Divided by Politics and Religion</em> (2012), p. 45<sup data-ref="17">17</sup></cite>
+</blockquote>
+
+<h2>The Case Against Debiasing — What the Evidence Actually Shows</h2>
+
+<div class="case-study">
+  <div class="cs-lbl">Research Review</div>
+  <h4>Does Teaching People About Biases Actually Help?</h4>
+  <p>The intuitive assumption is that learning about cognitive biases produces better decisions. The evidence is substantially more mixed. A 2016 meta-analysis by Morewedge and colleagues examining debiasing interventions found that simply telling people about a bias — providing information — had negligible effects on subsequent decision quality. Even when people understood a bias intellectually, they continued to demonstrate it in practice.<sup data-ref="18">18</sup></p>
+  <p>What does work, according to the same meta-analysis, is procedural intervention: changing the process by which decisions are made rather than changing the thinking of the person making them. Checklists, structured decision protocols, pre-mortems, devil's advocate procedures, and reference class forecasting — tools that change the decision process rather than just inform the decision-maker — showed significantly larger and more durable effects on decision quality.</p>
+  <p>This finding reframes the practical application of cognitive bias research. The goal is not to become a person who reasons without bias — no such person exists, and the evidence suggests the attempt is largely ineffective. The goal is to design decision processes that catch bias where it matters most.</p>
+  <div class="cs-vd">Key finding: Procedural debiasing (changing the decision process) is substantially more effective than informational debiasing (teaching people about biases). The most powerful tools are pre-mortems, reference class forecasting, structured scoring, and designated devil's advocates.</div>
+</div>
+
+</div><!-- end prose -->
+
+<section id="fn" aria-labelledby="fn-title">
+  <h2 id="fn-title">Citations &amp; Sources</h2>
+  <ol class="fnl">
+    <li data-n="1">Kruger, J. &amp; Dunning, D. (1999). "Unskilled and Unaware of It: How Difficulties in Recognizing One's Own Incompetence Lead to Inflated Self-Assessments." <em>Journal of Personality and Social Psychology</em>, 77(6), pp. 1121–1134. DOI: 10.1037/0022-3514.77.6.1121.</li>
+    <li data-n="2">West, R.F., Meserve, R.J. &amp; Stanovich, K.E. (2012). "Cognitive sophistication does not attenuate the bias blind spot." <em>Journal of Personality and Social Psychology</em>, 103(3), pp. 506–519. DOI: 10.1037/a0028857.</li>
+    <li data-n="3">Wason, P.C. (1960). "On the failure to eliminate hypotheses in a conceptual task." <em>Quarterly Journal of Experimental Psychology</em>, 12(3), pp. 129–140. DOI: 10.1080/17470216008416717.</li>
+    <li data-n="4">Tetlock, P.E. &amp; Gardner, D. (2015). <em>Superforecasting: The Art and Science of Prediction</em>. Crown. Chapters 5 and 8 cover outside view thinking and reference class forecasting.</li>
+    <li data-n="5">Tversky, A. &amp; Kahneman, D. (1974). "Judgment under Uncertainty: Heuristics and Biases." <em>Science</em>, 185(4157), pp. 1124–1131. DOI: 10.1126/science.185.4157.1124. The spinning wheel anchor experiment is described on pp. 1128–1129.</li>
+    <li data-n="6">Galinsky, A.D. &amp; Mussweiler, T. (2001). "First offers as anchors: The role of perspective-taking and negotiator focus." <em>Journal of Personality and Social Psychology</em>, 81(4), pp. 657–669. DOI: 10.1037/0022-3514.81.4.657.</li>
+    <li data-n="7">Arkes, H.R. &amp; Blumer, C. (1985). "The psychology of sunk cost." <em>Organizational Behavior and Human Decision Processes</em>, 35(1), pp. 124–140. DOI: 10.1016/0749-5978(85)90049-4.</li>
+    <li data-n="8">Kahneman, D. (2011). <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux. Chapter 12: The Science of Availability. pp. 129–136.</li>
+    <li data-n="9">Flyvbjerg, B., Bruzelius, N. &amp; Rothengatter, W. (2003). <em>Megaprojects and Risk: An Anatomy of Ambition</em>. Cambridge University Press. The 90% over-budget figure and average overrun statistics come from Flyvbjerg's database of 258 infrastructure projects.</li>
+    <li data-n="10">Fischhoff, B. (1975). "Hindsight is not equal to foresight: The effect of outcome knowledge on judgment under uncertainty." <em>Journal of Experimental Psychology: Human Perception and Performance</em>, 1(3), pp. 288–299. DOI: 10.1037/0096-1523.1.3.288.</li>
+    <li data-n="11">Kahneman, D. &amp; Tversky, A. (1979). "Prospect Theory: An Analysis of Decision under Risk." <em>Econometrica</em>, 47(2), pp. 263–292. DOI: 10.2307/1914185. The loss aversion coefficient of approximately 2 is derived from this foundational paper.</li>
+    <li data-n="12">Rosenzweig, P. (2007). <em>The Halo Effect: ... and the Eight Other Business Delusions That Deceive Managers</em>. Free Press. The analysis of business press coverage demonstrating halo effects in business attributions is in Chapter 4.</li>
+    <li data-n="13">Janis, I.L. (1982). <em>Groupthink: Psychological Studies of Policy Decisions and Fiascoes</em> (2nd ed.). Houghton Mifflin. The eight symptoms of groupthink and the case studies of foreign policy disasters are the core of this work.</li>
+    <li data-n="14">Klein, G. (2007). "Performing a Project Premortem." <em>Harvard Business Review</em>, September 2007. The pre-mortem procedure and its evidence base are described here.</li>
+    <li data-n="15">Ross, L. (1977). "The intuitive psychologist and his shortcomings: Distortions in the attribution process." In Berkowitz, L. (ed.), <em>Advances in Experimental Social Psychology</em>, vol. 10. Academic Press. pp. 173–220.</li>
+    <li data-n="16">Samuelson, W. &amp; Zeckhauser, R. (1988). "Status quo bias in decision making." <em>Journal of Risk and Uncertainty</em>, 1(1), pp. 7–59. DOI: 10.1007/BF00055564.</li>
+    <li data-n="17">Haidt, J. (2012). <em>The Righteous Mind: Why Good People Are Divided by Politics and Religion</em>. Pantheon Books. p. 45. Haidt's "social intuitionist model" argues that moral reasoning is primarily post-hoc rationalisation of intuitive judgements.</li>
+    <li data-n="18">Morewedge, C.K., Yoon, H., Scopelliti, I., Symborski, C.W., Korris, J.H. &amp; Kassam, K.S. (2015). "Debiasing Decisions: Improved Decision Making With a Single Training Intervention." <em>Policy Insights from the Behavioral and Brain Sciences</em>, 2(1), pp. 129–140. DOI: 10.1177/2372732215600886.</li>
+  </ol>
+</section>
+
+<section id="faq" aria-labelledby="faq-title">
+  <h2 id="faq-title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Are cognitive biases the same as logical fallacies?</div>
+    <div class="faq-a">Related but distinct. Logical fallacies are errors in the structure of an argument — patterns of reasoning that are logically invalid regardless of content, such as ad hominem attacks, false dichotomies, or circular reasoning. Cognitive biases are systematic patterns in how people perceive, remember, and make judgements that deviate from rational norms — they are errors in the underlying psychology rather than necessarily in the explicit argument structure. A person can construct a logically valid argument while still being subject to cognitive biases in how they selected the evidence, framed the question, or evaluated the conclusion. Both concepts are useful for different purposes: logical fallacy identification helps evaluate explicit arguments; cognitive bias awareness helps understand the underlying psychology shaping beliefs and decisions.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Why do cognitive biases exist if they make us reason poorly?</div>
+    <div class="faq-a">Cognitive biases are not random errors — most are evolutionarily adaptive heuristics that worked well in the environments in which human cognition evolved. Availability heuristic: in a pre-modern environment, things you could easily recall were genuinely more likely to be relevant than things that were hard to recall — there was no news media to make remote dramatic events feel salient. Loss aversion: in an environment of subsistence living, losses genuinely were more consequential than equivalent gains — losing a day's food supply was an existential threat in a way that gaining an equivalent amount was not. Confirmation bias: in a social environment where group cohesion was essential for survival, seeking out information that challenges your group's consensus beliefs was potentially dangerous. The biases are not bugs — they are features optimised for a different environment than the one we now inhabit.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Can you train yourself out of cognitive biases?</div>
+    <div class="faq-a">For most biases, the honest answer based on current research is: not reliably through self-awareness alone. Morewedge et al.'s meta-analysis found that pure informational training — learning about biases — had small and often non-durable effects. More promising results come from training in specific decision procedures (reference class forecasting, pre-mortems, structured scoring), exposure to direct feedback that violates your intuitions (calibration training used with forecasters), and long-term deliberate practice in domains where you receive clear feedback about the quality of your predictions. The most realistic goal is not to eliminate bias but to build habits, systems, and processes that catch consequential bias before it damages important decisions.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Which cognitive bias is the most dangerous in professional settings?</div>
+    <div class="faq-a">Most researchers would nominate confirmation bias as the single most consequential bias in professional settings, for three reasons: its effects are cumulative (each confirming data point strengthens the initial belief), it is invisible to the person experiencing it (you do not feel yourself selectively attending to confirming information), and it operates at every stage of reasoning from information gathering through interpretation to recall. Groupthink is a close second specifically for organisational decision-making, because it takes individual biases and amplifies them through social dynamics. The planning fallacy may produce the largest quantifiable economic losses — the cumulative cost of infrastructure project overruns alone runs into hundreds of billions of dollars annually worldwide.</div>
+  </div>
+</section>
+
+<div id="af">
+  <div class="tw">
+    <span class="tl2">Topics</span>
+    <span class="tg">Cognitive Bias</span>
+    <span class="tg">Psychology</span>
+    <span class="tg">Decision Making</span>
+    <span class="tg">Behavioural Economics</span>
+    <span class="tg">Human Behaviour</span>
+    <span class="tg">Critical Thinking</span>
+  </div>
+  <div id="bio">
+    <div class="ba" aria-hidden="true">HE</div>
+    <div>
+      <div class="bn">The Humanitas Editors</div>
+      <div class="br">The Human Condition &nbsp;·&nbsp; Humanitas</div>
+      <p class="bt">Humanitas covers psychology, behaviour, and human society with the rigour of academic research and the clarity of engaged journalism. All claims are cited to primary peer-reviewed sources. Corrections: <a href="mailto:editor@humanitas.blog" style="color:var(--gold);">editor@humanitas.blog</a></p>
+    </div>
+  </div>
+</div>
+</article>
+
+<aside id="sidebar" aria-label="Sidebar">
+  <div>
+    <div class="shd">Related articles</div>
+    <a href="/humanitas/human/neuroscience-love.html" class="rc">
+      <div class="rt" style="background:#FAE8EE;color:#8A1A3A;">III</div>
+      <div><div class="rs" style="color:#8A1A3A;">Human Condition</div><div class="rtl">The Neuroscience of Falling in Love — What Actually Happens</div><div class="rm">15 min read</div></div>
+    </a>
+    <a href="/humanitas/intelligence/reading-a-contract.html" class="rc">
+      <div class="rt" style="background:#FAF0E0;color:#7A4A0A;">II</div>
+      <div><div class="rs" style="color:#7A4A0A;">Law, Money &amp; Tech</div><div class="rtl">How to Read a Contract: The 8 Clauses That Can Ruin You</div><div class="rm">17 min read</div></div>
+    </a>
+    <a href="/humanitas/civilisation/roman-law-modern-world.html" class="rc">
+      <div class="rt" style="background:#E8F0FA;color:#1A4A8A;">I</div>
+      <div><div class="rs" style="color:#1A4A8A;">Civilisation &amp; Power</div><div class="rtl">How Roman Law Quietly Governs the Modern World</div><div class="rm">18 min read</div></div>
+    </a>
+  </div>
+  <div><div class="sad" role="complementary" aria-label="Advertisement"><!-- REPLACE WITH ADSENSE --><span>Advertisement</span><small>300×250 sidebar</small></div></div>
+  <div id="snl">
+    <div class="nle">Weekly digest</div>
+    <h3>Humanitas in your inbox</h3>
+    <p>The week's best ideas. Every Sunday. Free.</p>
+    <form id="nlf" aria-label="Newsletter signup" novalidate>
+      <label for="nl-e" class="sr-only">Your email</label>
+      <input type="email" id="nl-e" name="email" placeholder="your@email.com" autocomplete="email" maxlength="254" required>
+      <button type="submit">Subscribe free</button>
+      <div id="nlm" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</aside>
+</div>
+
+<nav id="anav" aria-label="Article navigation"><div class="inner">
+  <a href="/humanitas/human/neuroscience-love.html" class="np">
+    <div class="nd"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Previous</div>
+    <div class="ntxt">The Neuroscience of Falling in Love</div>
+  </a>
+  <div class="ndiv" aria-hidden="true"></div>
+  <a href="/humanitas/human/" class="nn">
+    <div class="nd">Human Condition section<svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ntxt">All articles — The Human Condition</div>
+  </a>
+</div></nav>
+
+<footer role="contentinfo"><div class="container">
+  <div id="ft">
+    <div id="fb"><div class="fl">Humani<span>tas</span></div><p>Ideas that matter. Stories that endure. Free, always.</p>
+      <div class="fs" aria-label="Social media">
+        <a href="https://twitter.com" rel="noopener noreferrer" target="_blank" aria-label="X">X</a>
+        <a href="https://linkedin.com" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://facebook.com" rel="noopener noreferrer" target="_blank" aria-label="Facebook">f</a>
+        <a href="/humanitas/rss.xml" aria-label="RSS">RSS</a>
+      </div>
+    </div>
+    <div class="fc"><h4>Sections</h4><ul>
+      <li><a href="/humanitas/civilisation/">Civilisation &amp; Power</a></li>
+      <li><a href="/humanitas/intelligence/">Law, Money &amp; Tech</a></li>
+      <li><a href="/humanitas/human/">Human Condition</a></li>
+      <li><a href="/humanitas/cosmos/">Science &amp; Cosmos</a></li>
+      <li><a href="/humanitas/ideas/">Philosophy &amp; Ideas</a></li>
+      <li><a href="/humanitas/earth/">Earth &amp; Culture</a></li>
+    </ul></div>
+    <div class="fc"><h4>Publication</h4><ul>
+      <li><a href="/humanitas/about.html">About Humanitas</a></li>
+      <li><a href="/humanitas/about.html#contribute">Write for us</a></li>
+      <li><a href="mailto:editor@humanitas.blog">Contact</a></li>
+    </ul></div>
+    <div class="fc"><h4>Legal</h4><ul>
+      <li><a href="/humanitas/privacy.html">Privacy policy</a></li>
+      <li><a href="/humanitas/terms.html">Terms of use</a></li>
+      <li><a href="/humanitas/cookies.html">Cookie policy</a></li>
+    </ul></div>
+  </div>
+  <div id="fb2"><p>&copy; 2026 Humanitas. All rights reserved.</p><div id="fl2"><a href="/humanitas/privacy.html">Privacy</a><a href="/humanitas/terms.html">Terms</a></div></div>
+</div></footer>
+
+<script>
+(function(){
+  'use strict';
+  var bar=document.getElementById('pb');
+  if(bar)window.addEventListener('scroll',function(){var d=document.documentElement.scrollHeight-window.innerHeight;var p=d>0?Math.min(100,Math.round((window.scrollY/d)*100)):0;bar.style.width=p+'%';bar.setAttribute('aria-valuenow',p);},{passive:true});
+  var nav=document.getElementById('nav');
+  if(nav)window.addEventListener('scroll',function(){nav.style.boxShadow=window.scrollY>10?'0 1px 12px rgba(0,0,0,0.07)':'none';},{passive:true});
+  var ham=document.getElementById('ham'),mob=document.getElementById('mm');
+  if(ham&&mob){ham.addEventListener('click',function(){var o=mob.classList.toggle('open');ham.setAttribute('aria-expanded',o?'true':'false');});document.addEventListener('click',function(e){if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.setAttribute('aria-expanded','false');}});}
+  function shareX(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'_blank','noopener,noreferrer,width=550,height=420');}
+  function shareLI(){window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(location.href),'_blank','noopener,noreferrer,width=600,height=500');}
+  function copyLink(btn){if(!navigator.clipboard)return;navigator.clipboard.writeText(location.href).then(function(){var o=btn.innerHTML;btn.textContent='Copied!';btn.classList.add('copied');setTimeout(function(){btn.innerHTML=o;btn.classList.remove('copied');},2200);}).catch(function(){});}
+  var sx=document.getElementById('share-x'),sl=document.getElementById('share-li'),sc=document.getElementById('share-copy');
+  if(sx)sx.addEventListener('click',shareX);if(sl)sl.addEventListener('click',shareLI);if(sc)sc.addEventListener('click',function(){copyLink(sc);});
+  document.querySelectorAll('.faq-q').forEach(function(q){function t(){var i=q.closest('.faq-item');var o=i.classList.toggle('open');q.setAttribute('aria-expanded',o?'true':'false');}q.addEventListener('click',t);q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});});
+  function ve(v){v=String(v).trim();if(v.length>254)return false;var a=v.lastIndexOf('@');if(a<1)return false;if(v.slice(0,a).length>64)return false;if(v.slice(a+1).indexOf('.')===-1)return false;return/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(v);}
+  var nf=document.getElementById('nlf'),nm=document.getElementById('nlm'),ne=document.getElementById('nl-e');
+  if(nf&&nm&&ne){nf.addEventListener('submit',function(e){e.preventDefault();if(!ve(ne.value)){nm.textContent='Please enter a valid email.';nm.style.color='#c0392b';ne.focus();return;}ne.value='';nm.textContent='Subscribed. Welcome to Humanitas.';nm.style.color='#b8933a';});}
+}());
+</script>
+</body>
+</html>
