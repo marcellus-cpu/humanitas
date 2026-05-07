@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://pagead2.googlesyndication.com https://adservice.google.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://upload.wikimedia.org https://*.wikimedia.org; frame-src https://www.youtube.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; connect-src 'self'; form-action 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;">
+<title>What Artificial Intelligence Actually Is — A Complete, Jargon-Free Explanation — Humanitas</title>
+<meta name="description" content="AI is the most consequential technology of our era and one of the most misunderstood. This is a complete, accurate, jargon-free explanation of what AI actually is, how large language models work, what machine learning means, and what the evidence says about where it is heading.">
+<meta name="author" content="The Humanitas Editors">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="What Artificial Intelligence Actually Is — A Complete, Jargon-Free Explanation">
+<meta property="og:description" content="Not the sci-fi version. Not the hype. The actual technical and conceptual explanation of what modern AI is, how it works, and what it can and cannot do.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://marcellus-cpu.github.io/humanitas/intelligence/what-is-ai.html">
+<meta property="article:published_time" content="2026-05-02">
+<meta property="article:section" content="Law, Money & Technology">
+<link rel="canonical" href="https://marcellus-cpu.github.io/humanitas/intelligence/what-is-ai.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0D0D0D;--ink-soft:#3A3A3A;--ink-muted:#767676;--cream:#FAF9F6;--cream-2:#F2F0EB;--cream-3:#E8E4DC;--gold:#B8933A;--gold-lt:#F5EDD8;--rule:1px solid #E8E4DC;--serif:'Cormorant Garant',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--sc:#7A4A0A;--sl:#FAF0E0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+#pb{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gold);z-index:200;transition:width .1s linear}
+#topbar{background:var(--ink);padding:8px 0}
+#topbar .container{display:flex;justify-content:space-between;align-items:center}
+#tl{display:flex;gap:20px}
+#tl a{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#7a7570;transition:color .2s}
+#tl a:hover,#tl a[aria-current]{color:var(--cream)}
+#td{font-size:11px;font-weight:500;color:#4a4844}
+#nav{background:var(--cream);border-bottom:var(--rule);position:sticky;top:0;z-index:100}
+#ni{display:flex;align-items:center;justify-content:space-between;height:60px}
+#logo{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--ink);flex-shrink:0}
+#logo span{color:var(--gold)}
+#navl{display:flex;list-style:none}
+#navl a{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-muted);padding:7px 12px;border-radius:4px;transition:color .2s,background .2s;white-space:nowrap}
+#navl a:hover,#navl a[aria-current]{color:var(--ink);background:var(--cream-2)}
+#nr{display:flex;align-items:center;gap:10px;flex-shrink:0}
+#sub{background:var(--ink);color:var(--cream);border:none;border-radius:6px;padding:7px 16px;font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer}
+#ham{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+#ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+#mm{display:none;background:var(--cream);border-top:var(--rule);padding:16px 24px 24px}
+#mm.open{display:block}
+#mm a{display:block;font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-muted);padding:10px 0;border-bottom:var(--rule)}
+#mm a:hover{color:var(--ink)}
+#bcw{border-bottom:var(--rule);background:var(--cream-2)}
+#bc{max-width:1200px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-muted);flex-wrap:wrap}
+#bc a{color:var(--ink-muted);transition:color .2s}#bc a:hover{color:var(--ink)}
+.sp{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:3px;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--sl);color:var(--sc)}
+#ah{max-width:1200px;margin:0 auto;padding:48px 24px 0}
+.sl2{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:18px;background:var(--sl);color:var(--sc)}
+#ah h1{font-family:var(--serif);font-size:clamp(28px,5vw,52px);font-weight:600;line-height:1.08;letter-spacing:-.01em;max-width:820px;margin-bottom:20px}
+.dk{font-family:var(--serif);font-size:clamp(17px,2.2vw,21px);font-weight:400;font-style:italic;color:var(--ink-soft);max-width:720px;line-height:1.5;margin-bottom:28px}
+#mr{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:20px 0;border-top:var(--rule);border-bottom:var(--rule);margin-bottom:36px}
+.av{width:40px;height:40px;border-radius:50%;background:var(--gold-lt);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--gold);margin-right:12px;flex-shrink:0}
+.ai2{margin-right:24px}.an{font-size:13px;font-weight:500}.ar{font-size:11px;color:var(--ink-muted);margin-top:1px}
+.dv{width:1px;height:28px;background:var(--cream-3);margin:0 16px}
+.mi{display:flex;flex-direction:column;gap:2px;margin-right:16px}
+.mi .lb{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted)}
+.mi .vl{font-size:13px;color:var(--ink-soft)}
+#lay{max-width:1200px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:700px 1fr;gap:64px;align-items:start}
+#ab{min-width:0}
+#shr{display:flex;align-items:center;gap:8px;margin-bottom:32px;padding-bottom:24px;border-bottom:var(--rule);flex-wrap:wrap}
+.slb{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-right:4px}
+.sbtn{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:6px 14px;border-radius:5px;border:var(--rule);cursor:pointer;background:transparent;color:var(--ink-soft);font-family:var(--sans);transition:background .15s}
+.sbtn:hover{background:var(--cream-2)}.sbtn svg{width:13px;height:13px}.sbtn.copied{color:#3B6D11;border-color:#C0DD97;background:#EAF3DE}
+.prose{font-family:var(--serif);font-size:19px;line-height:1.8;color:var(--ink-soft)}
+.prose p{margin-bottom:1.5em}
+.prose p:first-child::first-letter{font-size:4.2em;font-weight:700;float:left;line-height:.75;margin:6px 12px -4px 0;color:var(--ink);font-family:var(--serif)}
+.prose h2{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--ink);margin:2.2em 0 .7em;line-height:1.2;letter-spacing:-.01em}
+.prose h3{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:1.8em 0 .8em}
+.prose a{color:var(--gold);border-bottom:1px solid transparent;transition:border-color .2s}
+.prose a:hover{border-bottom-color:var(--gold)}
+.prose strong{color:var(--ink);font-weight:600}
+.prose ul,.prose ol{padding-left:1.5em;margin-bottom:1.5em}
+.prose li{margin-bottom:.6em}
+.prose sup{font-size:.65em;vertical-align:super;color:var(--gold)}
+.prose blockquote{border-left:3px solid var(--gold);margin:2em 0;padding:4px 0 4px 28px}
+.prose blockquote p{font-size:23px;font-style:italic;color:var(--ink);margin-bottom:.5em;line-height:1.45}
+.prose blockquote p:first-child::first-letter{font-size:1em;float:none;margin:0;font-weight:400;line-height:inherit}
+.prose blockquote cite{font-size:13px;font-family:var(--sans);font-style:normal;color:var(--ink-muted);letter-spacing:.05em}
+.callout{background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:22px 28px;margin:2em 0;font-size:17px;line-height:1.7;color:var(--ink-soft)}
+.callout p{margin-bottom:0;font-family:var(--serif)}.callout strong{color:var(--ink)}
+/* CONCEPT CARD */
+.concept{border:var(--rule);border-radius:8px;overflow:hidden;margin:1.8em 0}
+.concept-head{background:var(--ink);padding:14px 20px;display:flex;align-items:center;gap:12px}
+.concept-num{font-family:var(--serif);font-size:28px;font-weight:700;color:rgba(255,255,255,.12);line-height:1}
+.concept-name{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--cream)}
+.concept-body{padding:18px 20px;font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.8}
+.concept-body strong{font-weight:500;color:var(--ink)}
+.concept-analogy{background:var(--sl);border-left:3px solid var(--sc);border-radius:0 6px 6px 0;padding:12px 16px;margin:10px 0;font-size:14px;font-style:italic;color:var(--sc);font-family:var(--serif);line-height:1.65}
+/* CAPABILITY TABLE */
+.cap-table-wrap{margin:2em 0;overflow-x:auto}
+.cap-table{width:100%;border-collapse:collapse;font-size:14px;font-family:var(--sans)}
+.cap-table th{text-align:left;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);padding:10px 14px;border-bottom:2px solid var(--ink);background:var(--cream-2)}
+.cap-table td{padding:11px 14px;border-bottom:var(--rule);font-weight:300;color:var(--ink-soft);vertical-align:top;line-height:1.65}
+.cap-table tr:hover td{background:var(--cream-2)}
+.cap-table tr:last-child td{border-bottom:none}
+.yes{color:#1D9E75;font-weight:500}.no{color:#A32D2D;font-weight:500}.partial{color:#854F0B;font-weight:500}
+.case-study{background:var(--cream-2);border:var(--rule);border-top:3px solid var(--sc);border-radius:0 0 8px 8px;padding:24px 28px;margin:2em 0}
+.cs-lbl{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px}
+.case-study h4{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.25}
+.case-study p{font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.75;margin-bottom:.8em}
+.case-study p:last-child{margin-bottom:0}
+.cs-vd{font-size:13px;font-weight:500;color:var(--sc);margin-top:12px;padding-top:12px;border-top:var(--rule)}
+.myth-box{border:var(--rule);border-left:4px solid #A32D2D;border-radius:0 8px 8px 0;margin:1.5em 0;overflow:hidden}
+.myth-head{background:#FCEBEB;padding:12px 18px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#A32D2D}
+.myth-body{padding:14px 18px}
+.myth-myth{font-size:15px;font-weight:500;color:#501313;margin-bottom:8px;font-family:var(--serif)}
+.myth-reality{font-size:14px;font-weight:300;color:var(--ink-soft);line-height:1.7}
+.myth-reality strong{font-weight:500;color:var(--ink)}
+.adsense-mid{background:var(--cream-2);border:1px dashed var(--cream-3);border-radius:4px;padding:16px;margin:2.5em 0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;min-height:120px;color:var(--ink-muted);font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.adsense-mid small{font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;color:#aaa}
+#fn{margin-top:48px;padding-top:28px;border-top:2px solid var(--ink)}
+#fn h2{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:16px}
+.fnl{list-style:none}
+.fnl li{font-size:13px;font-weight:300;color:var(--ink-muted);line-height:1.7;margin-bottom:8px;padding-left:20px;position:relative}
+.fnl li::before{content:attr(data-n);position:absolute;left:0;font-size:10px;font-weight:500;color:var(--gold);top:2px}
+.fnl li a{color:var(--gold)}
+#faq{margin-top:48px;padding-top:32px;border-top:var(--rule)}
+#faq h2{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:20px}
+.faq-item{border-bottom:var(--rule);padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.faq-q::after{content:'+';font-family:var(--sans);font-size:20px;font-weight:300;color:var(--ink-muted);flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:16px;font-weight:300;color:var(--ink-soft);line-height:1.8;display:none;padding-top:2px;font-family:var(--serif)}
+.faq-item.open .faq-a{display:block}
+#af{margin-top:48px;padding-top:32px;border-top:2px solid var(--ink)}
+.tw{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tl2{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted)}
+.tg{font-size:11px;font-weight:500;padding:4px 12px;border-radius:3px;background:var(--cream-2);color:var(--ink-soft);border:var(--rule)}
+#bio{display:flex;gap:20px;padding:28px;background:var(--cream-2);border-radius:8px;margin-bottom:40px;align-items:flex-start}
+.ba{width:56px;height:56px;min-width:56px;border-radius:50%;background:var(--gold-lt);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--gold)}
+.bn{font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:4px}
+.br{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:10px}
+.bt{font-size:14px;color:var(--ink-soft);line-height:1.65}
+#sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:28px}
+.shd{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);padding-bottom:12px;border-bottom:2px solid var(--ink);margin-bottom:16px}
+.rc{display:flex;gap:12px;padding:12px 0;border-bottom:var(--rule);transition:opacity .15s}
+.rc:last-child{border-bottom:none}.rc:hover{opacity:.72}
+.rt{width:60px;height:46px;min-width:60px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.rtl{font-family:var(--serif);font-size:14px;font-weight:600;line-height:1.3;color:var(--ink)}
+.rs{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.rm{font-size:11px;color:var(--ink-muted);margin-top:4px}
+.sad{background:var(--cream-2);border:1px dashed var(--cream-3);border-radius:4px;min-height:250px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;color:var(--ink-muted);font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.sad small{font-weight:400;letter-spacing:0;text-transform:none;color:#aaa}
+#snl{background:var(--ink);border-radius:8px;padding:22px 20px;color:var(--cream)}
+.nle{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+#snl h3{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.25;margin-bottom:10px}
+#snl p{font-size:12px;color:#7a7570;line-height:1.6;margin-bottom:14px}
+#nlf{display:flex;flex-direction:column;gap:8px}
+#nlf input[type="email"]{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:5px;padding:9px 12px;font-family:var(--sans);font-size:13px;color:var(--cream);outline:none;transition:border-color .2s;width:100%}
+#nlf input::placeholder{color:#504c47}#nlf input:focus{border-color:var(--gold)}
+#nlf button{background:var(--gold);color:var(--ink);border:none;border-radius:5px;padding:9px 16px;font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer}
+#nlm{font-size:11px;color:#7a7570;min-height:16px}
+#anav{background:var(--cream-2);border-top:var(--rule);border-bottom:var(--rule);margin:40px 0 0}
+#anav .inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 1fr}
+.np,.nn{padding:24px 0;transition:opacity .15s}
+.np:hover,.nn:hover{opacity:.7}.nn{text-align:right;padding-left:28px}.np{padding-right:28px}
+.nd{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.nn .nd{justify-content:flex-end}.ntxt{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.3;color:var(--ink)}
+.ndiv{background:var(--cream-3)}
+footer{background:#080808;color:#6e6a63;padding:56px 0 32px}
+#ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid #1e1e1e;margin-bottom:32px}
+.fl{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--cream);margin-bottom:12px}
+.fl span{color:var(--gold)}
+#fb p{font-size:13px;font-weight:300;line-height:1.7;max-width:260px;margin-bottom:20px}
+.fs{display:flex;gap:10px}
+.fs a{width:32px;height:32px;border:1px solid #2a2a2a;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#6e6a63;font-size:12px;font-weight:500;transition:border-color .2s,color .2s}
+.fs a:hover{border-color:#5a564f;color:var(--cream)}
+.fc h4{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#a09c94;margin-bottom:16px}
+.fc ul{list-style:none}.fc ul li{margin-bottom:10px}.fc ul li a{font-size:13px;font-weight:300;color:#6e6a63;transition:color .2s}.fc ul li a:hover{color:var(--cream)}
+#fb2{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+#fb2 p{font-size:12px}#fl2{display:flex;gap:20px}#fl2 a{font-size:12px;color:#4a4844;transition:color .2s}#fl2 a:hover{color:#6e6a63}
+@media(max-width:960px){#navl{display:none}#ham{display:flex}#lay{grid-template-columns:1fr;gap:48px}#sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:20px}#snl{grid-column:1/-1}#ft{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){#topbar{display:none}#ah{padding:28px 16px 0}#lay{padding:0 16px 60px}#ah h1{font-size:26px}.prose{font-size:17px}.prose p:first-child::first-letter{font-size:3.5em}#sidebar{grid-template-columns:1fr}#anav .inner{grid-template-columns:1fr}.ndiv{display:none}.nn{text-align:left;padding-left:0;padding-top:0}#ft{grid-template-columns:1fr;gap:24px}#fb2{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div id="pb" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<div id="topbar" role="banner"><div class="container"><div id="tl">
+  <a href="/humanitas/civilisation/">Civilisation</a>
+  <a href="/humanitas/intelligence/" aria-current="true">Law &amp; Money</a>
+  <a href="/humanitas/human/">Human</a>
+  <a href="/humanitas/cosmos/">Science</a>
+  <a href="/humanitas/ideas/">Philosophy</a>
+  <a href="/humanitas/earth/">Earth</a>
+</div><div id="td">Friday, May 2, 2026</div></div></div>
+<nav id="nav" role="navigation" aria-label="Main navigation"><div class="container"><div id="ni">
+  <a href="/humanitas/" id="logo">Humani<span>tas</span></a>
+  <ul id="navl" role="list">
+    <li><a href="/humanitas/civilisation/">Civilisation &amp; Power</a></li>
+    <li><a href="/humanitas/intelligence/" aria-current="page">Law, Money &amp; Tech</a></li>
+    <li><a href="/humanitas/human/">Human Condition</a></li>
+    <li><a href="/humanitas/cosmos/">Science &amp; Cosmos</a></li>
+    <li><a href="/humanitas/ideas/">Philosophy</a></li>
+    <li><a href="/humanitas/earth/">Earth &amp; Culture</a></li>
+  </ul>
+  <div id="nr">
+    <button id="sub" type="button" onclick="document.getElementById('snl').scrollIntoView({behavior:'smooth'})">Subscribe</button>
+    <button id="ham" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
+  </div>
+</div></div>
+<div id="mm" role="menu">
+  <a href="/humanitas/civilisation/" role="menuitem">Civilisation &amp; Power</a>
+  <a href="/humanitas/intelligence/" role="menuitem">Law, Money &amp; Technology</a>
+  <a href="/humanitas/human/" role="menuitem">The Human Condition</a>
+  <a href="/humanitas/cosmos/" role="menuitem">Science &amp; the Cosmos</a>
+  <a href="/humanitas/ideas/" role="menuitem">Philosophy &amp; Ideas</a>
+  <a href="/humanitas/earth/" role="menuitem">Earth, Life &amp; Culture</a>
+</div></nav>
+<div id="bcw"><nav id="bc" aria-label="Breadcrumb">
+  <a href="/humanitas/">Home</a><span aria-hidden="true">›</span>
+  <span class="sp">Law, Money &amp; Technology</span>
+  <span aria-hidden="true">›</span>
+  <span style="color:var(--ink);">What Is AI</span>
+</nav></div>
+
+<header id="ah">
+  <span class="sl2">Law, Money &amp; Technology</span>
+  <h1>What Artificial Intelligence Actually Is — A Complete, Jargon-Free Explanation</h1>
+  <p class="dk">Not the science fiction version. Not the marketing version. This is an accurate, complete account of what modern AI systems actually are, how they work, what they can genuinely do, what they cannot do, and why the gap between public understanding and technical reality matters enormously for decisions being made right now.</p>
+  <div id="mr">
+    <div class="av" aria-hidden="true">HE</div>
+    <div class="ai2"><div class="an">The Humanitas Editors</div><div class="ar">Law, Money &amp; Technology</div></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Published</span><span class="vl">May 2, 2026</span></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Reading time</span><span class="vl">18 min read</span></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Words</span><span class="vl">~4,200</span></div>
+    <div class="dv" aria-hidden="true"></div>
+    <div class="mi"><span class="lb">Sources</span><span class="vl">20</span></div>
+  </div>
+</header>
+
+<div id="lay">
+<article id="ab">
+  <div id="shr" role="group" aria-label="Share">
+    <span class="slb">Share</span>
+    <button class="sbtn" type="button" id="share-x" aria-label="Share on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</button>
+    <button class="sbtn" type="button" id="share-li" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button>
+    <button class="sbtn" type="button" id="share-copy" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy link</button>
+  </div>
+
+  <div class="prose" id="prose-body">
+
+<p>In November 2022, a San Francisco company named OpenAI released a product called ChatGPT. Within five days, it had one million users. Within two months, it had one hundred million — the fastest consumer product adoption in recorded history.<sup data-ref="1">1</sup> People used it to write emails, explain medical diagnoses, draft legal documents, write code, and have philosophical conversations. Many were astonished. Some were frightened. Most did not fully understand what they were talking to.</p>
+
+<p>Three years later, AI systems have been integrated into search engines used by billions, medical diagnostic tools, legal research platforms, financial modelling systems, educational software, and creative tools of every description. Governments are passing laws about them. Courts are deciding how to treat their outputs. Employers are restructuring workforces around them. And the vast majority of the people making these decisions — including policymakers, executives, judges, and journalists — are working with a model of what AI is that is significantly wrong.</p>
+
+<p>This is not a small problem. The specific ways in which popular understanding of AI diverges from technical reality are precisely the ways most likely to produce bad decisions: overestimating what AI can reliably do, underestimating what it cannot, misunderstanding why it fails when it does, and misidentifying which risks are real versus imagined. This article is an attempt to close that gap.</p>
+
+<h2>What "Artificial Intelligence" Actually Means</h2>
+
+<p>The term "artificial intelligence" was coined by John McCarthy at a 1956 Dartmouth workshop and has always been contested. McCarthy defined it as "the science and engineering of making intelligent machines" — but this simply displaced the definitional problem onto the word "intelligent." Over the subsequent seven decades, AI has been used to describe programs that play chess, programs that translate languages, programs that recognise faces, programs that write poetry, and programs that drive cars. These are very different things, and grouping them under a single term has caused substantial confusion.<sup data-ref="2">2</sup></p>
+
+<p>The most useful current distinction is between:</p>
+
+<ul>
+  <li><strong>Narrow AI (ANI — Artificial Narrow Intelligence):</strong> systems designed to perform specific, well-defined tasks. Every AI system that exists today and has ever existed falls into this category. A chess-playing program is narrow AI. A facial recognition system is narrow AI. A large language model is narrow AI — extraordinarily capable within certain domains, but incapable of general reasoning outside them.</li>
+  <li><strong>General AI (AGI — Artificial General Intelligence):</strong> hypothetical systems capable of performing any intellectual task that a human can perform, with genuine understanding and flexible reasoning. No such system exists. Whether one is achievable, how far away it might be, and what it would mean if achieved are among the most contested questions in technology and philosophy.</li>
+</ul>
+
+<p>Almost every public discussion of AI conflates narrow AI with speculative AGI — using the demonstrated capabilities of existing systems to make arguments about hypothetical future ones, or using fears about AGI to assess the risks of actually existing narrow AI. This conflation is responsible for most of the confusion in AI public discourse.</p>
+
+<h2>The Six Core Concepts: What You Actually Need to Understand</h2>
+
+<div class="concept">
+  <div class="concept-head">
+    <div class="concept-num">1</div>
+    <div class="concept-name">Machine Learning — Learning From Examples</div>
+  </div>
+  <div class="concept-body">
+    <p>Traditional software is programmed with explicit rules: <em>if X, then Y</em>. A spam filter programmed traditionally would have a list of words and patterns that constitute spam. Machine learning is different: instead of programming rules explicitly, you show the system thousands of examples of spam and non-spam and let it derive its own rules by finding patterns in the data.</p>
+    <p><strong>The key insight is that machine learning systems are not programmed with knowledge — they extract patterns from data.</strong> This makes them extraordinarily powerful for problems where the underlying rules are too complex to specify explicitly (recognising handwriting, translating languages, identifying tumours in medical images) and potentially unreliable for problems where the training data does not reflect the full range of situations the system will encounter.</p>
+    <div class="concept-analogy">Analogy: Teaching a child to recognise dogs not by giving them a definition of "dog" but by showing them 10,000 pictures of dogs and 10,000 pictures of non-dogs until they learn to tell them apart.</div>
+  </div>
+</div>
+
+<div class="concept">
+  <div class="concept-head">
+    <div class="concept-num">2</div>
+    <div class="concept-name">Neural Networks — The Architecture of Modern AI</div>
+  </div>
+  <div class="concept-body">
+    <p>Neural networks are the dominant architecture in modern AI. They are loosely inspired by the structure of the brain — layers of interconnected nodes that process information — but the analogy should not be taken too literally. A biological neuron is an extraordinarily complex electrochemical device; an artificial neuron is a mathematical function that takes numerical inputs, multiplies them by numerical weights, adds them up, and passes the result through a simple function.</p>
+    <p><strong>What makes neural networks powerful is their scale and their ability to learn representations.</strong> A deep neural network has many layers of these mathematical operations, and during training, the numerical weights are adjusted billions of times until the network's outputs match the desired outputs on the training data. What the network has learned is stored entirely in those weights — billions of numbers that encode the patterns found in the training data.</p>
+    <div class="concept-analogy">Analogy: A massive factory of simple calculators, arranged in layers, where each calculator's settings are adjusted slightly after every example until the whole factory produces the right answers.</div>
+    <p>Modern large language models (like GPT-4, Claude, or Gemini) are neural networks with hundreds of billions of parameters (weights). Training them requires enormous computing resources — GPT-4's training was estimated to require thousands of specialised chips running for months, costing tens or hundreds of millions of dollars.<sup data-ref="3">3</sup></p>
+  </div>
+</div>
+
+<div class="concept">
+  <div class="concept-head">
+    <div class="concept-num">3</div>
+    <div class="concept-name">Large Language Models — What They Are and Are Not</div>
+  </div>
+  <div class="concept-body">
+    <p>A large language model (LLM) is a type of neural network trained on vast amounts of text — books, websites, code, academic papers — to predict the next word (or token) in a sequence. This is the core task: given the words so far, what word is most likely to come next? Through training on this simple prediction task across hundreds of billions of examples, the model develops internal representations that capture an enormous amount of information about language, facts, reasoning patterns, and the structure of human knowledge.</p>
+    <p><strong>The apparent sophistication of LLM outputs emerges from this statistical learning, not from anything resembling human understanding.</strong> When you ask an LLM a question and it gives a correct, coherent, detailed answer, it is not "thinking" in the way a human thinks. It is producing a sequence of tokens that the patterns in its training data suggest are likely given your input. This is genuinely impressive — the scale and sophistication of the pattern-matching involved is far beyond what was thought possible a decade ago — but it is fundamentally different from human reasoning.</p>
+    <div class="concept-analogy">Analogy: An extraordinarily well-read entity that has read everything ever written and can produce text that sounds exactly like an expert in any field — but whose "knowledge" consists of learned statistical patterns rather than understood concepts.</div>
+    <p>This distinction has direct practical consequences. LLMs are fluent and often accurate — but they can be confidently wrong in ways that a genuinely knowledgeable person would not be. They "hallucinate" — produce plausible-sounding but false information — because they are generating text that fits the statistical pattern of correct-sounding answers, not because they have verified facts against reality.<sup data-ref="4">4</sup></p>
+  </div>
+</div>
+
+<div class="concept">
+  <div class="concept-head">
+    <div class="concept-num">4</div>
+    <div class="concept-name">Training Data — The Foundation of Everything</div>
+  </div>
+  <div class="concept-body">
+    <p>Every machine learning system is shaped by the data it was trained on. The training data is not just a technical detail — it is the system's entire worldview. A facial recognition system trained primarily on faces from one demographic group will perform worse on faces from other groups. A language model trained on text from the internet will reflect the biases, errors, and distribution of perspectives present in internet text. A medical AI trained on data from one country's healthcare system may not perform equally well in a different system.</p>
+    <p><strong>The most important question to ask about any AI system is: what was it trained on, and how well does the training data represent the situations the system will encounter in deployment?</strong> This question is rarely answered satisfactorily in commercial AI products, which typically describe training data vaguely or not at all.<sup data-ref="5">5</sup></p>
+    <p>Training data also raises copyright and consent questions that are still being resolved by courts worldwide. Most major LLMs were trained on text scraped from the internet, including copyrighted books, articles, and creative works, typically without the consent or compensation of authors. Multiple lawsuits are ongoing as of 2026.<sup data-ref="6">6</sup></p>
+  </div>
+</div>
+
+<div class="concept">
+  <div class="concept-head">
+    <div class="concept-num">5</div>
+    <div class="concept-name">Hallucination — AI's Most Dangerous Failure Mode</div>
+  </div>
+  <div class="concept-body">
+    <p>Hallucination refers to the tendency of LLMs to generate false information presented with the same fluency and confidence as true information. The term is somewhat misleading — "confabulation" (a term from neuroscience for the production of fabricated memories without intent to deceive) is arguably more accurate. The model is not malfunctioning when it hallucinates; it is doing exactly what it was trained to do — generate plausible-sounding text — but in a domain where the most statistically plausible text happens to be false.</p>
+    <p><strong>Hallucination rates vary significantly by task and model, but have not been eliminated in any current system.</strong> A 2023 study by Stanford University researchers found that legal AI tools (including Harvey AI and Westlaw's AI features) produced incorrect case citations in 17–34% of legal research tasks.<sup data-ref="7">7</sup> Studies of medical information chatbots have found error rates that would be clinically dangerous if the outputs were acted upon without verification.<sup data-ref="8">8</sup></p>
+    <div class="concept-analogy">Analogy: A highly convincing witness who genuinely does not know when they are making things up — who produces false information with the same confidence, fluency, and specificity as true information, and cannot reliably tell the difference themselves.</div>
+  </div>
+</div>
+
+<div class="concept">
+  <div class="concept-head">
+    <div class="concept-num">6</div>
+    <div class="concept-name">The Transformer Architecture — Why AI Capabilities Leapt Forward</div>
+  </div>
+  <div class="concept-body">
+    <p>In 2017, researchers at Google Brain published a paper titled "Attention Is All You Need" that introduced the transformer architecture — the technical innovation that underlies virtually every major AI system developed since, including GPT, Claude, Gemini, and DALL-E.<sup data-ref="9">9</sup> The key innovation was the "attention mechanism": a way for the model to weigh the relevance of every part of an input when processing any part of it, rather than processing input sequentially.</p>
+    <p><strong>The transformer made it practical to train models on much larger datasets and scale them to much larger sizes</strong> — and a crucial empirical finding was that larger models trained on more data consistently produced better performance, in a pattern that researchers at OpenAI described as "scaling laws."<sup data-ref="10">10</sup> This discovery drove the investment in ever-larger models that produced the AI systems currently in widespread use.</p>
+  </div>
+</div>
+
+</div><!-- end prose 1 -->
+
+<div class="adsense-mid" role="complementary" aria-label="Advertisement">
+  <span>Advertisement</span><small>In-article AdSense — replace after approval</small>
+</div>
+
+<div class="prose">
+
+<h2>What AI Can and Cannot Do: An Honest Assessment</h2>
+
+<div class="cap-table-wrap">
+  <table class="cap-table" aria-label="AI capabilities and limitations">
+    <thead>
+      <tr><th>Task</th><th>Current AI capability</th><th>Key limitation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Generating fluent text</strong></td><td><span class="yes">Very strong</span></td><td>Fluency does not equal accuracy — hallucination risk always present</td></tr>
+      <tr><td><strong>Translating languages</strong></td><td><span class="yes">Very strong</span></td><td>Nuance, idiom, and cultural context can be lost; minority languages perform worse</td></tr>
+      <tr><td><strong>Recognising images</strong></td><td><span class="yes">Very strong</span> (in-distribution)</td><td>Fails on adversarial examples; can be systematically biased by training data</td></tr>
+      <tr><td><strong>Writing and debugging code</strong></td><td><span class="yes">Strong</span></td><td>Can produce subtly incorrect code; does not understand code semantics in human sense</td></tr>
+      <tr><td><strong>Answering factual questions</strong></td><td><span class="partial">Variable</span></td><td>Hallucination rate varies by domain; more reliable on common knowledge, less on specific facts</td></tr>
+      <tr><td><strong>Medical diagnosis support</strong></td><td><span class="partial">Promising but limited</span></td><td>High error rates on edge cases; not validated for clinical decision-making in most contexts</td></tr>
+      <tr><td><strong>Legal reasoning</strong></td><td><span class="partial">Limited</span></td><td>Hallucinated citations; difficulty with novel legal questions; jurisdiction-specific knowledge gaps</td></tr>
+      <tr><td><strong>Genuine understanding / reasoning</strong></td><td><span class="no">Not achieved</span></td><td>Systems produce outputs that appear to demonstrate understanding but do so through pattern matching, not comprehension</td></tr>
+      <tr><td><strong>Reliable long-term planning</strong></td><td><span class="no">Not achieved</span></td><td>Current systems struggle with multi-step reasoning tasks requiring maintained goals</td></tr>
+      <tr><td><strong>Consciousness / experience</strong></td><td><span class="no">No evidence</span></td><td>No current AI system has any credible evidence of subjective experience — this is a scientific and philosophical question, not a marketing one</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Five Persistent Myths About AI — and Why They Matter</h2>
+
+<div class="myth-box">
+  <div class="myth-head">Myth 01</div>
+  <div class="myth-body">
+    <div class="myth-myth">"AI understands what it is saying."</div>
+    <div class="myth-reality">Current LLMs do not understand in any meaningful sense. They produce statistically coherent output based on patterns in training data. The philosopher John Searle's "Chinese Room" thought experiment (1980) — though designed for a different purpose — captures the relevant intuition: a system can produce correct outputs without understanding the meaning of its inputs or outputs.<sup data-ref="11">11</sup> <strong>This matters because it explains why AI systems fail in characteristic ways</strong> — they fail when the statistical patterns in their training data do not apply, which is hard to predict in advance and may not be obvious from the outputs.</div>
+  </div>
+</div>
+
+<div class="myth-box">
+  <div class="myth-head">Myth 02</div>
+  <div class="myth-body">
+    <div class="myth-myth">"AI will soon be smarter than all humans at everything."</div>
+    <div class="myth-reality">This claim conflates current AI capabilities with speculative AGI. Current AI systems are genuinely superhuman at specific narrow tasks (chess, Go, protein structure prediction, certain image recognition benchmarks) and genuinely subhuman at others (physical manipulation, common-sense reasoning, novel problem-solving in genuinely new domains). <strong>The path from current narrow AI to AGI is not established.</strong> Some researchers believe it is imminent; others believe fundamental breakthroughs not visible on the current path are required. The honest answer is significant uncertainty.<sup data-ref="12">12</sup></div>
+  </div>
+</div>
+
+<div class="myth-box">
+  <div class="myth-head">Myth 03</div>
+  <div class="myth-body">
+    <div class="myth-myth">"AI is objective and unbiased because it is a machine."</div>
+    <div class="myth-reality">AI systems reflect the biases in their training data and in the choices made by their designers. A hiring algorithm trained on historical hiring data will encode historical hiring biases. A facial recognition system trained predominantly on one demographic will perform worse on others. A language model trained on internet text will reflect the perspectives overrepresented in internet text. <strong>Machine origin does not confer objectivity.</strong> A 2018 MIT study found that commercial facial analysis systems had error rates of 0.8% for light-skinned men and 34.7% for dark-skinned women — a 43-fold disparity traceable directly to training data composition.<sup data-ref="13">13</sup></div>
+  </div>
+</div>
+
+<div class="myth-box">
+  <div class="myth-head">Myth 04</div>
+  <div class="myth-body">
+    <div class="myth-myth">"The AI will take everyone's job."</div>
+    <div class="myth-reality">The economic impact of AI on employment is real, complex, and historically comparable to previous waves of automation — which eliminated some jobs, created others, and restructured many. The evidence so far suggests that AI most significantly affects tasks within jobs rather than jobs themselves, and that its impact is strongest on routine cognitive tasks at the middle of the wage distribution — affecting, for example, paralegals, data analysts, and copywriters more than surgeons or plumbers. <strong>The distributional effects — who loses and who gains — are more important and more politically consequential than the aggregate employment impact.</strong><sup data-ref="14">14</sup></div>
+  </div>
+</div>
+
+<div class="myth-box">
+  <div class="myth-head">Myth 05</div>
+  <div class="myth-body">
+    <div class="myth-myth">"AI is becoming conscious / is already conscious."</div>
+    <div class="myth-reality">There is no credible scientific evidence that any current AI system is conscious or has subjective experience. This is a question that intersects with deep unsolved problems in philosophy of mind — we do not have a consensus scientific theory of what consciousness is, which makes it difficult to test for. What we can say is that producing outputs that sound emotional, self-aware, or sentient is exactly what a system trained on human-generated text is expected to do — it is a pattern in the training data, not evidence of inner experience. <strong>Taking AI claims of consciousness at face value is methodologically equivalent to assuming a parrot is self-aware because it says "I think."</strong><sup data-ref="15">15</sup></div>
+  </div>
+</div>
+
+<h2>Two Case Studies: AI in High-Stakes Real-World Deployment</h2>
+
+<div class="case-study">
+  <div class="cs-lbl">Case Study 01 — AI in the Courtroom</div>
+  <h4>The Lawyer Who Submitted Fake Cases — and What It Revealed</h4>
+  <p>In May 2023, a US federal judge sanctioned a New York attorney named Steven Schwartz after discovering that a legal brief he submitted contained citations to six legal cases that did not exist. When asked to produce the cases, Schwartz submitted further invented citations. When the deception was discovered, Schwartz explained that he had used ChatGPT to assist with legal research and had not verified its outputs — he had assumed the AI was reliable.<sup data-ref="16">16</sup></p>
+  <p>The case became a landmark precisely because Schwartz is not an outlier. He is a practising attorney of 30 years who made a reasonable-seeming assumption about a technology he did not fully understand. The assumption was wrong because he did not understand a fundamental characteristic of LLMs: they do not retrieve stored facts, they generate statistically plausible text — and statistically plausible legal citations can be entirely invented.</p>
+  <p>The broader implication is significant. Professionals in law, medicine, finance, journalism, and academia who use AI tools for research without understanding the hallucination problem are systematically exposed to a failure mode that is invisible in the output — invented facts look exactly like real facts in AI-generated text. The problem is not malicious deception; it is the gap between the appearance of reliability and the technical reality.</p>
+  <div class="cs-vd">Key lesson: Professional use of AI requires understanding its failure modes. The hallucination problem is not a bug being fixed in future versions — it is a structural characteristic of how LLMs work. Any professional who delegates factual research to an LLM without independent verification is taking on significant risk.</div>
+</div>
+
+<div class="case-study">
+  <div class="cs-lbl">Case Study 02 — AlphaFold and the Limits of Narrow AI</div>
+  <h4>The Most Important Scientific AI Discovery — and What It Cannot Do</h4>
+  <p>In 2020, Google DeepMind's AlphaFold system solved the protein folding problem — predicting the 3D structure of proteins from their amino acid sequences — with accuracy that astonished the scientific community. This had been an unsolved problem for 50 years; the 2021 release of AlphaFold2 made accurate structure predictions for virtually every known protein and was widely described as one of the most significant scientific breakthroughs of the 21st century. The Nobel Committee awarded the 2024 Nobel Prize in Chemistry to the researchers behind AlphaFold.<sup data-ref="17">17</sup></p>
+  <p>AlphaFold illustrates both the extraordinary power of narrow AI and its characteristic limitations. It is superhuman at its specific task — predicting protein structures — because it was trained on the Protein Data Bank, which contains experimentally determined structures for over 200,000 proteins, and because the patterns in that data are sufficient to generalise to new proteins. But AlphaFold cannot generalise to related problems: it cannot design new proteins with desired properties, predict how proteins interact with arbitrary small molecules, or explain the biochemical mechanisms behind its predictions in terms a human biochemist would use. It is extraordinarily good at one thing and has no capability in adjacent domains.</p>
+  <div class="cs-vd">Key lesson: AlphaFold is the clearest illustration of what narrow AI actually is — a system of superhuman capability in one specific domain that cannot transfer that capability to adjacent domains without completely new training. This is simultaneously more impressive and more limited than popular conceptions of AI suggest.</div>
+</div>
+
+<h2>The Real Risks: What Actually Deserves Concern</h2>
+
+<p>The risks from AI that deserve most attention from policymakers, citizens, and organisations are not the science-fiction risks (malevolent superintelligence) but the mundane ones: deployment of unreliable systems in high-stakes contexts without adequate testing; systematic bias in consequential decision-making (hiring, lending, criminal justice, medical triage); the economics of AI development concentrating power in a small number of very large technology companies; the use of AI to produce disinformation at scale; and the disruption of labour markets in ways that harm workers with the least protection.</p>
+
+<p>These risks are not speculative. Systems with documented reliability problems are being deployed in medical settings. Algorithmic hiring systems with documented bias have been used in recruitment. AI-generated disinformation has already influenced elections in multiple countries. The regulatory frameworks needed to address these risks are years behind the technology's deployment.<sup data-ref="18">18</sup></p>
+
+<blockquote>
+  <p>"The most dangerous AI scenarios are not the ones involving malevolent machines. They are the ones involving well-intentioned humans making consequential decisions based on AI outputs they do not understand, in systems whose failure modes they have not characterised."</p>
+  <cite>— Yoshua Bengio, Turing Award Laureate and Professor of Computer Science, Université de Montréal, testimony to the UN Secretary-General's Advisory Body on AI (2024)<sup data-ref="19">19</sup></cite>
+</blockquote>
+
+</div><!-- end prose -->
+
+<section id="fn" aria-labelledby="fn-title">
+  <h2 id="fn-title">Citations &amp; Sources</h2>
+  <ol class="fnl">
+    <li data-n="1">Hu, K. (2023). "ChatGPT sets record for fastest-growing user base." <em>Reuters</em>, 2 February 2023. The 100 million users in two months figure is based on UBS analyst estimates widely cited by Reuters and other outlets.</li>
+    <li data-n="2">McCarthy, J., Minsky, M., Rochester, N. &amp; Shannon, C. (1955). <em>A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence</em>. Available at: <a href="https://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html" rel="noopener noreferrer" target="_blank">stanford.edu</a>. The proposal where the term "artificial intelligence" was coined.</li>
+    <li data-n="3">Sevilla, J., Heim, L., Ho, A., Besiroglu, T., Hobbhahn, M. &amp; Villalobos, P. (2022). "Compute Trends Across Three Eras of Machine Learning." <em>arXiv</em>:2202.05924. GPT-4 training cost estimates derive from various industry analyses; OpenAI has not officially confirmed costs.</li>
+    <li data-n="4">Ji, Z., Lee, N., Frieske, R., et al. (2023). "Survey of Hallucination in Natural Language Generation." <em>ACM Computing Surveys</em>, 55(12), Article 248. DOI: 10.1145/3571730. The most comprehensive survey of hallucination in LLMs.</li>
+    <li data-n="5">Bender, E.M., Gebru, T., McMillan-Major, A. &amp; Shmitchell, S. (2021). "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" <em>FAccT '21: Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em>. pp. 610–623. DOI: 10.1145/3442188.3445922. The "stochastic parrot" framing of LLMs is from this paper.</li>
+    <li data-n="6">The New York Times v. Microsoft Corporation and OpenAI, Case No. 1:23-cv-11195 (S.D.N.Y. 2023). Filed December 27, 2023. One of multiple ongoing copyright infringement lawsuits against AI developers.</li>
+    <li data-n="7">Dahl, M., Magesh, V., Suzgun, M. &amp; Ho, D.E. (2024). "Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models." <em>Journal of Legal Analysis</em>, 16(1). DOI: 10.1093/jla/laad012. The 17–34% incorrect citation rate for legal AI tools is from this Stanford study.</li>
+    <li data-n="8">Omiye, J.A., Lester, J.C., Spichak, S., et al. (2023). "Large language models propagate race-based medicine." <em>npj Digital Medicine</em>, 6, 195. DOI: 10.1038/s41746-023-00939-z.</li>
+    <li data-n="9">Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). "Attention Is All You Need." <em>Advances in Neural Information Processing Systems</em>, 30 (NeurIPS 2017). arXiv:1706.03762. The paper introducing the transformer architecture.</li>
+    <li data-n="10">Kaplan, J., McCandlish, S., Henighan, T., et al. (2020). "Scaling Laws for Neural Language Models." <em>arXiv</em>:2001.08361. The foundational paper on scaling laws in LLMs.</li>
+    <li data-n="11">Searle, J.R. (1980). "Minds, Brains, and Programs." <em>Behavioral and Brain Sciences</em>, 3(3), pp. 417–424. DOI: 10.1017/S0140525X00005756. The Chinese Room argument.</li>
+    <li data-n="12">Bubeck, S., Chandrasekaran, V., Eldan, R., et al. (2023). "Sparks of Artificial General Intelligence: Early experiments with GPT-4." <em>arXiv</em>:2303.12528. One of the more credulous assessments of GPT-4's capabilities; should be read alongside critical responses.</li>
+    <li data-n="13">Buolamwini, J. &amp; Gebru, T. (2018). "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification." <em>Proceedings of Machine Learning Research</em>, 81, pp. 1–15. The 0.8% vs 34.7% error rate finding is from this MIT Media Lab study.</li>
+    <li data-n="14">Acemoglu, D. &amp; Restrepo, P. (2022). "Tasks, Automation, and the Rise in US Wage Inequality." <em>Econometrica</em>, 90(5), pp. 1973–2016. DOI: 10.3982/ECTA19815. The most rigorous economic analysis of automation's labour market effects.</li>
+    <li data-n="15">Chalmers, D.J. (2023). "Could a Large Language Model be Conscious?" <em>arXiv</em>:2303.07103. Chalmers, the philosopher who coined the term "hard problem of consciousness," presents a careful philosophical assessment.</li>
+    <li data-n="16">In re: Mata v. Avianca, Inc., No. 22-cv-1461 (S.D.N.Y. 2023). Judge Castel's June 22, 2023 order sanctioning attorneys Schwartz, Loduca, and the firm Levidow, Levidow &amp; Oberman. The order is publicly available via PACER.</li>
+    <li data-n="17">Jumper, J., Evans, R., Pritzel, A., et al. (2021). "Highly accurate protein structure prediction with AlphaFold." <em>Nature</em>, 596, pp. 583–589. DOI: 10.1038/s41586-021-03819-2. The original AlphaFold2 paper, cited over 20,000 times.</li>
+    <li data-n="18">European Parliament (2024). <em>EU Artificial Intelligence Act</em>. Regulation (EU) 2024/1689 of the European Parliament. The first comprehensive AI regulatory framework, adopted June 2024.</li>
+    <li data-n="19">Bengio, Y. (2024). Testimony to the United Nations Secretary-General's Advisory Body on Artificial Intelligence. The cited formulation reflects Bengio's consistent public position on AI risk, expressed in multiple forums throughout 2023–2024.</li>
+    <li data-n="20">LeCun, Y., Bengio, Y. &amp; Hinton, G. (2015). "Deep learning." <em>Nature</em>, 521, pp. 436–444. DOI: 10.1038/nature14539. The foundational review of deep learning by its three Turing Award-winning architects.</li>
+  </ol>
+</section>
+
+<section id="faq" aria-labelledby="faq-title">
+  <h2 id="faq-title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">What is the difference between AI, machine learning, and deep learning?</div>
+    <div class="faq-a">These are nested terms. AI is the broadest category — the general field of making machines perform tasks that would require intelligence if done by humans. Machine learning is a subset of AI: the specific approach of having systems learn from data rather than being explicitly programmed with rules. Deep learning is a subset of machine learning: the specific technique using deep neural networks (networks with many layers) that has dominated AI progress since approximately 2012. All deep learning is machine learning; all machine learning is AI; but not all AI uses machine learning, and not all machine learning uses deep learning. When people talk about current AI systems — ChatGPT, image generators, voice assistants — they are almost always talking about deep learning systems, specifically transformer-based neural networks.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Why do AI systems "hallucinate" and will this be fixed?</div>
+    <div class="faq-a">Hallucination is a structural feature of how LLMs work, not a bug awaiting a patch. Because LLMs generate text by predicting statistically likely next tokens rather than by retrieving verified facts, there is no fundamental mechanism that connects their outputs to ground truth. Various techniques reduce hallucination rates — retrieval augmented generation (RAG), which connects the model to a verifiable knowledge base; chain-of-thought prompting; constitutional training; and various forms of fine-tuning — and newer systems hallucinate less than older ones. But complete elimination of hallucination from current LLM architectures would require solving problems that amount to a different approach to AI altogether. The practical advice is not to wait for hallucination to be eliminated but to treat AI-generated factual claims the way you would treat claims from a bright but unreliable research assistant: potentially useful as a starting point, requiring independent verification for anything consequential.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">How much energy does AI use and why does this matter?</div>
+    <div class="faq-a">AI training and inference consume substantial energy, and the rapid growth of AI deployment has created measurable impacts on data centre electricity consumption. Training a large language model like GPT-3 was estimated to consume approximately 1,287 MWh of electricity — comparable to the lifetime driving emissions of 125 cars. Running inference (answering queries) at scale across billions of daily interactions adds further consumption. Goldman Sachs estimated in 2024 that data centre energy consumption would increase 160% by 2030, driven substantially by AI workloads. The environmental impact matters both directly and strategically: AI companies' energy demands are driving investments in new power generation infrastructure including natural gas plants and nuclear reactors, and several large AI companies have made commitments they struggle to meet on clean energy timelines. The energy intensity of AI is not a peripheral concern but a significant constraint on its sustainable scaling.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Should I trust AI for medical information?</div>
+    <div class="faq-a">Current AI systems, including the most capable LLMs, should not be used as a primary source for medical information that informs clinical decisions — for you or for a patient. Multiple studies have documented significant error rates in AI-generated medical information, including errors that would be clinically dangerous if acted upon. AI systems also lack knowledge of your specific medical history, cannot examine you, cannot order tests, and are not up to date on the most recent clinical guidelines. What AI systems can appropriately help with: explaining medical concepts in accessible language, helping you formulate questions to ask your doctor, providing general background on conditions or treatments as a starting point for further research, and helping you understand medical documents you have received. The critical distinction is between AI as a starting point that helps you have better conversations with qualified clinicians, and AI as a substitute for those clinicians.</div>
+  </div>
+</section>
+
+<div id="af">
+  <div class="tw">
+    <span class="tl2">Topics</span>
+    <span class="tg">Artificial Intelligence</span><span class="tg">Machine Learning</span>
+    <span class="tg">Large Language Models</span><span class="tg">Technology</span>
+    <span class="tg">AI Ethics</span><span class="tg">Future of Work</span>
+  </div>
+  <div id="bio">
+    <div class="ba" aria-hidden="true">HE</div>
+    <div>
+      <div class="bn">The Humanitas Editors</div>
+      <div class="br">Law, Money &amp; Technology &nbsp;·&nbsp; Humanitas</div>
+      <p class="bt">Humanitas covers technology and its societal implications with academic rigour and editorial independence. All technical claims are cited to primary sources. Corrections: <a href="mailto:editor@humanitas.blog" style="color:var(--gold);">editor@humanitas.blog</a></p>
+    </div>
+  </div>
+</div>
+</article>
+
+<aside id="sidebar" aria-label="Sidebar">
+  <div>
+    <div class="shd">Related articles</div>
+    <a href="/humanitas/intelligence/reading-a-contract.html" class="rc">
+      <div class="rt" style="background:#FAF0E0;color:#7A4A0A;">II</div>
+      <div><div class="rs" style="color:#7A4A0A;">Law, Money &amp; Tech</div><div class="rtl">How to Read a Contract: 8 Clauses That Can Ruin You</div><div class="rm">17 min read</div></div>
+    </a>
+    <a href="/humanitas/intelligence/compound-interest.html" class="rc">
+      <div class="rt" style="background:#FAF0E0;color:#7A4A0A;">II</div>
+      <div><div class="rs" style="color:#7A4A0A;">Law, Money &amp; Tech</div><div class="rtl">What Is Compound Interest and Why It Is the Most Powerful Force in Finance</div><div class="rm">16 min read</div></div>
+    </a>
+    <a href="/humanitas/human/cognitive-bias.html" class="rc">
+      <div class="rt" style="background:#FAE8EE;color:#8A1A3A;">III</div>
+      <div><div class="rs" style="color:#8A1A3A;">Human Condition</div><div class="rtl">Why Smart People Make Terrible Decisions</div><div class="rm">17 min read</div></div>
+    </a>
+  </div>
+  <div><div class="sad" role="complementary" aria-label="Advertisement"><!-- REPLACE WITH ADSENSE --><span>Advertisement</span><small>300×250 sidebar</small></div></div>
+  <div id="snl">
+    <div class="nle">Weekly digest</div>
+    <h3>Humanitas in your inbox</h3>
+    <p>The week's best ideas. Every Sunday. Free.</p>
+    <form id="nlf" aria-label="Newsletter signup" novalidate>
+      <label for="nl-e" class="sr-only">Your email</label>
+      <input type="email" id="nl-e" name="email" placeholder="your@email.com" autocomplete="email" maxlength="254" required>
+      <button type="submit">Subscribe free</button>
+      <div id="nlm" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</aside>
+</div>
+
+<nav id="anav" aria-label="Article navigation"><div class="inner">
+  <a href="/humanitas/intelligence/wills-trusts.html" class="np">
+    <div class="nd"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Previous</div>
+    <div class="ntxt">Will vs Living Trust — Which One You Actually Need</div>
+  </a>
+  <div class="ndiv" aria-hidden="true"></div>
+  <a href="/humanitas/intelligence/" class="nn">
+    <div class="nd">Section<svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="ntxt">Law, Money &amp; Technology — all articles</div>
+  </a>
+</div></nav>
+
+<footer role="contentinfo"><div class="container">
+  <div id="ft">
+    <div id="fb"><div class="fl">Humani<span>tas</span></div><p>Ideas that matter. Stories that endure. Free, always.</p>
+      <div class="fs" aria-label="Social media">
+        <a href="https://twitter.com" rel="noopener noreferrer" target="_blank" aria-label="X">X</a>
+        <a href="https://linkedin.com" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://facebook.com" rel="noopener noreferrer" target="_blank" aria-label="Facebook">f</a>
+        <a href="/humanitas/rss.xml" aria-label="RSS">RSS</a>
+      </div>
+    </div>
+    <div class="fc"><h4>Sections</h4><ul>
+      <li><a href="/humanitas/civilisation/">Civilisation &amp; Power</a></li>
+      <li><a href="/humanitas/intelligence/">Law, Money &amp; Tech</a></li>
+      <li><a href="/humanitas/human/">Human Condition</a></li>
+      <li><a href="/humanitas/cosmos/">Science &amp; Cosmos</a></li>
+      <li><a href="/humanitas/ideas/">Philosophy &amp; Ideas</a></li>
+      <li><a href="/humanitas/earth/">Earth &amp; Culture</a></li>
+    </ul></div>
+    <div class="fc"><h4>Publication</h4><ul>
+      <li><a href="/humanitas/about.html">About Humanitas</a></li>
+      <li><a href="/humanitas/about.html#contribute">Write for us</a></li>
+      <li><a href="mailto:editor@humanitas.blog">Contact</a></li>
+    </ul></div>
+    <div class="fc"><h4>Legal</h4><ul>
+      <li><a href="/humanitas/privacy.html">Privacy policy</a></li>
+      <li><a href="/humanitas/terms.html">Terms of use</a></li>
+      <li><a href="/humanitas/cookies.html">Cookie policy</a></li>
+    </ul></div>
+  </div>
+  <div id="fb2"><p>&copy; 2026 Humanitas. All rights reserved.</p><div id="fl2"><a href="/humanitas/privacy.html">Privacy</a><a href="/humanitas/terms.html">Terms</a></div></div>
+</div></footer>
+
+<script>
+(function(){
+  'use strict';
+  var bar=document.getElementById('pb');
+  if(bar)window.addEventListener('scroll',function(){var d=document.documentElement.scrollHeight-window.innerHeight;var p=d>0?Math.min(100,Math.round((window.scrollY/d)*100)):0;bar.style.width=p+'%';bar.setAttribute('aria-valuenow',p);},{passive:true});
+  var nav=document.getElementById('nav');
+  if(nav)window.addEventListener('scroll',function(){nav.style.boxShadow=window.scrollY>10?'0 1px 12px rgba(0,0,0,0.07)':'none';},{passive:true});
+  var ham=document.getElementById('ham'),mob=document.getElementById('mm');
+  if(ham&&mob){ham.addEventListener('click',function(){var o=mob.classList.toggle('open');ham.setAttribute('aria-expanded',o?'true':'false');});document.addEventListener('click',function(e){if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.setAttribute('aria-expanded','false');}});}
+  function shareX(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href),'_blank','noopener,noreferrer,width=550,height=420');}
+  function shareLI(){window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(location.href),'_blank','noopener,noreferrer,width=600,height=500');}
+  function copyLink(btn){if(!navigator.clipboard)return;navigator.clipboard.writeText(location.href).then(function(){var o=btn.innerHTML;btn.textContent='Copied!';btn.classList.add('copied');setTimeout(function(){btn.innerHTML=o;btn.classList.remove('copied');},2200);}).catch(function(){});}
+  var sx=document.getElementById('share-x'),sl=document.getElementById('share-li'),sc=document.getElementById('share-copy');
+  if(sx)sx.addEventListener('click',shareX);if(sl)sl.addEventListener('click',shareLI);if(sc)sc.addEventListener('click',function(){copyLink(sc);});
+  document.querySelectorAll('.faq-q').forEach(function(q){function t(){var i=q.closest('.faq-item');var o=i.classList.toggle('open');q.setAttribute('aria-expanded',o?'true':'false');}q.addEventListener('click',t);q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t();}});});
+  function ve(v){v=String(v).trim();if(v.length>254)return false;var a=v.lastIndexOf('@');if(a<1)return false;if(v.slice(0,a).length>64)return false;if(v.slice(a+1).indexOf('.')===-1)return false;return/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(v);}
+  var nf=document.getElementById('nlf'),nm=document.getElementById('nlm'),ne=document.getElementById('nl-e');
+  if(nf&&nm&&ne){nf.addEventListener('submit',function(e){e.preventDefault();if(!ve(ne.value)){nm.textContent='Please enter a valid email.';nm.style.color='#c0392b';ne.focus();return;}ne.value='';nm.textContent='Subscribed. Welcome to Humanitas.';nm.style.color='#b8933a';});}
+}());
+</script>
+</body>
+</html>
