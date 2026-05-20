@@ -1,113 +1,103 @@
 /**
- * Humanitas Image Fixer
- * Upload this file to GitHub root as: fix-images.js
- * It automatically fixes every broken image on every page.
- * No changes needed to individual articles.
+ * HUMANITAS IMAGE FIXER v3 — LoremFlickr keyword matching
+ * Upload to GitHub root as: fix-images.js
+ * Already included in all articles via <script src="/humanitas/fix-images.js"></script>
  */
 (function(){
   'use strict';
 
-  // Map of keywords in page URL to appropriate Picsum seed images
-  var imageMap = {
-    'roman-law':        ['roman640', 'ancient360', 'marble480'],
-    'empire-collapse':  ['ruins640', 'history360', 'ancient480'],
-    'silk-road':        ['desert640', 'caravan360', 'trade480'],
-    'democracy':        ['athens640', 'columns360', 'agora480'],
-    'compound-interest':['finance640', 'money360', 'wealth480'],
-    'reading-a-contract':['law640', 'document360', 'legal480'],
-    'credit-scores':    ['bank640', 'finance360', 'credit480'],
-    'wills-trusts':     ['estate640', 'will360', 'trust480'],
-    'what-is-ai':       ['tech640', 'computer360', 'digital480'],
-    'stock-market':     ['stocks640', 'market360', 'invest480'],
-    'neuroscience-love':['love640', 'brain360', 'heart480'],
-    'cognitive-bias':   ['mind640', 'thinking360', 'psychology480'],
-    'science-of-loneliness':['solitude640', 'person360', 'alone480'],
-    'attachment-theory':['bond640', 'connection360', 'family480'],
-    'james-webb':       ['space640', 'galaxy360', 'cosmos480'],
-    'free-will':        ['philosophy640', 'mind360', 'thought480']
+  // Map URL keywords to LoremFlickr search terms
+  // LoremFlickr: https://loremflickr.com/WIDTH/HEIGHT/keyword
+  var articleImages = {
+    'africa-forward-summit': 'nairobi,kenya,africa,summit',
+    'roman-law':             'rome,ancient,colosseum,forum',
+    'empire-collapse':       'ruins,ancient,empire,history',
+    'silk-road':             'desert,camel,trade,ancient',
+    'democracy-older':       'athens,greece,ancient,democracy',
+    'compound-interest':     'finance,money,investment,wealth',
+    'reading-a-contract':    'law,contract,legal,justice',
+    'credit-scores':         'banking,credit,finance,cards',
+    'wills-trusts':          'estate,will,family,legal',
+    'what-is-ai':            'technology,computer,digital,ai',
+    'stock-market':          'stock,market,trading,finance',
+    'neuroscience-love':     'love,couple,heart,brain',
+    'cognitive-bias':        'psychology,mind,thinking,brain',
+    'science-of-loneliness': 'solitude,alone,person,lonely',
+    'attachment-theory':     'family,bond,connection,care',
+    'james-webb':            'space,galaxy,cosmos,stars',
+    'free-will':             'philosophy,mind,thinking,light',
+    'great-barrier-reef':    'coral,reef,ocean,underwater'
   };
 
-  // Fallback seeds by section
-  var sectionMap = {
-    'civilisation': 'history',
-    'intelligence': 'finance',
-    'human':        'people',
-    'cosmos':       'space',
-    'ideas':        'philosophy',
-    'earth':        'nature'
+  var sectionImages = {
+    'civilisation': 'history,ancient,civilisation',
+    'intelligence': 'finance,law,technology,business',
+    'human':        'people,human,psychology,emotion',
+    'cosmos':       'space,astronomy,universe,stars',
+    'ideas':        'philosophy,thinking,books,library',
+    'earth':        'nature,wildlife,environment,earth',
+    'politics':     'politics,government,parliament,flag'
   };
 
-  function getSeed(){
+  function getKeyword(){
     var url = window.location.pathname.toLowerCase();
-    // Check article-specific map first
-    for(var key in imageMap){
-      if(url.indexOf(key) !== -1){
-        return imageMap[key][0];
-      }
+    for(var key in articleImages){
+      if(url.indexOf(key) !== -1) return articleImages[key];
     }
-    // Fall back to section
-    for(var sec in sectionMap){
-      if(url.indexOf(sec) !== -1){
-        return sectionMap[sec];
-      }
+    for(var sec in sectionImages){
+      if(url.indexOf(sec) !== -1) return sectionImages[sec];
     }
-    return 'article';
+    return 'knowledge,books,writing,ideas';
   }
 
-  var seed = getSeed();
+  var keyword = getKeyword();
   var counter = 0;
 
-  function fixImage(img){
+  function makeUrl(w, h){
     counter++;
-    var w = img.naturalWidth || img.width || 640;
-    var h = img.naturalHeight || img.height || 360;
-    // Use aspect ratio from element
-    var aspect = img.getAttribute('data-aspect') || '16/9';
-    var pw = 640, ph = 360;
-    if(aspect === '3/2'){ ph = 427; }
-    if(aspect === '4/3'){ ph = 480; }
-    img.src = 'https://picsum.photos/seed/' + seed + counter + '/' + pw + '/' + ph;
-    img.onerror = null; // prevent loop
+    // LoremFlickr with lock parameter for consistency per page
+    return 'https://loremflickr.com/' + w + '/' + h + '/' + keyword + '?lock=' + counter;
   }
 
-  function handleBrokenImages(){
-    var imgs = document.querySelectorAll('img');
-    imgs.forEach(function(img){
-      // If already broken
-      if(img.complete && (img.naturalWidth === 0 || img.naturalHeight === 0)){
-        fixImage(img);
+  function fixImg(img){
+    var w = 1200, h = 600;
+    // Detect size from element dimensions
+    var ew = img.offsetWidth || img.naturalWidth;
+    if(ew > 0 && ew < 400){ w = 400; h = 267; }
+    else if(ew >= 400 && ew < 700){ w = 640; h = 427; }
+    img.src = makeUrl(w, h);
+    img.removeAttribute('onerror');
+  }
+
+  function processAll(){
+    document.querySelectorAll('img').forEach(function(img){
+      var src = img.getAttribute('src') || '';
+
+      // Replace Wikimedia/Wikipedia hotlinks immediately
+      if(src.indexOf('wikimedia') !== -1 || src.indexOf('wikipedia') !== -1){
+        fixImg(img); return;
       }
-      // If breaks later
-      img.addEventListener('error', function(){
-        fixImage(this);
-      }, {once: true});
+
+      // Replace broken Picsum with LoremFlickr
+      if(src.indexOf('picsum.photos') !== -1){
+        fixImg(img); return;
+      }
+
+      // Handle any other broken image
+      if(img.complete && img.naturalWidth === 0 && src){
+        fixImg(img); return;
+      }
+
+      img.addEventListener('error', function(){ fixImg(this); }, {once:true});
     });
   }
 
-  // Run on DOM ready
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', handleBrokenImages);
+    document.addEventListener('DOMContentLoaded', processAll);
   } else {
-    handleBrokenImages();
+    processAll();
   }
 
-  // Also catch any dynamically added images
-  if(window.MutationObserver){
-    var observer = new MutationObserver(function(mutations){
-      mutations.forEach(function(m){
-        m.addedNodes.forEach(function(node){
-          if(node.tagName === 'IMG'){
-            node.addEventListener('error', function(){ fixImage(this); }, {once:true});
-          }
-          if(node.querySelectorAll){
-            node.querySelectorAll('img').forEach(function(img){
-              img.addEventListener('error', function(){ fixImage(this); }, {once:true});
-            });
-          }
-        });
-      });
-    });
-    observer.observe(document.body || document.documentElement, {childList:true, subtree:true});
-  }
+  window.addEventListener('load', processAll);
 
 }());
