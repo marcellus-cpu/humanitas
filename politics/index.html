@@ -1,526 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humanitas — Ideas that matter. Stories that endure.</title>
-<meta name="description" content="Humanitas is a free, independent publication exploring civilisation, science, law, the human condition, philosophy, and the living world.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://marcellus-cpu.github.io/humanitas/">
-<link rel="alternate" type="application/rss+xml" title="Humanitas RSS" href="/humanitas/rss.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power &amp; Geopolitics — Humanitas</title>
+<meta name="description" content="Power, democracy, foreign policy, geopolitics, and the mechanics of governance — rigorous analysis of how the world is run and by whom.">
+<link rel="canonical" href="https://marcellus-cpu.github.io/humanitas/politics/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{--black:#000;--white:#fff;--grey-1:#111;--grey-2:#222;--grey-3:#444;--grey-4:#888;--grey-5:#bbb;--grey-6:#ddd;--grey-7:#f4f4f4;--grey-8:#fafafa;--gold:#B8933A;--gold-light:#D4AA55;--red:#CC0000;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;--border:1px solid #e8e8e8;}
+:root{--black:#0A0A0A;--ink:#1A1A1A;--ink-soft:#555;--ink-muted:#999;--white:#fff;--gold:#B8933A;--rule-light:#EEE;--serif:'Playfair Display',Georgia,serif;--sans:'Source Sans 3','Helvetica Neue',Arial,sans-serif;--sc:#7A1A1A;--sl:#FAE8E8;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--white);color:var(--grey-1);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
-a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-
-/* TICKER */
-#ticker{background:var(--black);height:36px;display:flex;align-items:center;overflow:hidden;position:relative}
-#ticker::before,#ticker::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
-#ticker::before{left:0;background:linear-gradient(90deg,#000,transparent)}
-#ticker::after{right:0;background:linear-gradient(-90deg,#000,transparent)}
-.ticker-label{flex-shrink:0;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding:0 16px;z-index:3;background:var(--black);white-space:nowrap}
-.ticker-wrap{flex:1;overflow:hidden}
-.ticker-track{display:flex;animation:scroll-ticker 45s linear infinite;width:max-content;white-space:nowrap}
-.ticker-track:hover{animation-play-state:paused}
-.ticker-item{display:flex;align-items:center;gap:6px;padding:0 28px 0 0;font-size:11px;font-weight:400;color:#999;flex-shrink:0}
-.ticker-item span{color:var(--white);font-weight:500}
-.ticker-item::after{content:'·';color:#444;margin-left:28px}
-@keyframes scroll-ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* HEADER */
-#header{border-bottom:var(--border)}
-#header-inner{max-width:1280px;margin:0 auto;padding:20px 24px 0}
-#header-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:var(--border)}
-#wordmark{font-family:var(--serif);font-size:48px;font-weight:900;color:var(--black);letter-spacing:-.03em;line-height:1}
-#wordmark em{font-style:italic;color:var(--gold)}
-#header-meta{display:flex;flex-direction:column;align-items:center;gap:6px}
-#live-badge{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-3)}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-#hdate{font-size:11px;font-weight:400;color:var(--grey-4)}
-#header-sub{background:var(--black);color:var(--white);border:none;padding:9px 22px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .15s}
-#header-sub:hover{background:var(--gold)}
-
-/* NAV */
-#nav{border-bottom:2px solid var(--black);position:sticky;top:0;z-index:100;background:var(--white);transition:box-shadow .2s}
-#nav.scrolled{box-shadow:0 2px 16px rgba(0,0,0,.08)}
-#nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:44px}
-#nav-logo{font-family:var(--serif);font-size:20px;font-weight:900;color:var(--black);letter-spacing:-.02em;margin-right:24px;flex-shrink:0;opacity:0;transition:opacity .2s}
-#nav-logo.show{opacity:1}
-#nav-logo em{font-style:italic;color:var(--gold)}
-#nav-links{display:flex;list-style:none;height:100%;overflow-x:auto}
-#nav-links li{height:100%}
-#nav-links a{display:flex;align-items:center;height:100%;padding:0 11px;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--grey-3);border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .15s,border-color .15s;white-space:nowrap}
-#nav-links a:hover{color:var(--black);border-bottom-color:var(--black)}
-#nav-links a[aria-current]{color:var(--black);border-bottom-color:var(--gold)}
-#nav-right{margin-left:auto;display:flex;align-items:center;gap:10px;flex-shrink:0}
-#nav-sub{background:var(--black);color:var(--white);border:none;padding:7px 16px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .15s;white-space:nowrap}
-#nav-sub:hover{background:var(--gold)}
-#ham{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
-#ham span{display:block;width:20px;height:2px;background:var(--black);border-radius:1px}
-#mob-nav{display:none;background:var(--white);border-bottom:var(--border)}
-#mob-nav.open{display:block}
-#mob-nav a{display:block;padding:12px 24px;font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--grey-3);border-bottom:var(--border)}
-#mob-nav a:hover{color:var(--black);background:var(--grey-8)}
-
-/* WRAP */
-.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
-
-/* AD */
-.ad-bar{background:var(--grey-8);border-bottom:var(--border);height:80px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-5)}
-
-/* SECTION RULE */
-.sec-rule{display:flex;align-items:center;justify-content:space-between;padding:18px 0 14px;border-bottom:2px solid var(--black);margin-bottom:24px}
-.sec-rule h2{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--black)}
-.sec-rule a{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid transparent;transition:border-color .15s}
-.sec-rule a:hover{border-bottom-color:var(--gold)}
-
-/* CAT */
-.cat{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
-
-/* HERO */
-#hero-wrap{padding:28px 0 0}
-#hero-grid{display:grid;grid-template-columns:1fr 1fr 280px;gap:0}
-
-.hero-left{padding-right:28px;border-right:var(--border);display:block}
-.hero-img{width:100%;aspect-ratio:3/2;overflow:hidden;background:var(--grey-7);margin-bottom:14px}
-.hero-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.hero-left:hover .hero-img img{transform:scale(1.02)}
-.title-lg{font-family:var(--serif);font-size:clamp(22px,2.8vw,34px);font-weight:700;line-height:1.18;color:var(--black);display:block;margin-bottom:10px;letter-spacing:-.02em;transition:color .15s}
-.hero-left:hover .title-lg{color:var(--gold)}
-.dek{font-size:14px;font-weight:300;color:var(--grey-3);line-height:1.65;margin-bottom:10px}
-.meta{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-4)}
-
-.hero-centre{padding:0 28px;border-right:var(--border);display:flex;flex-direction:column}
-.c-story{padding:16px 0;border-bottom:var(--border)}
-.c-story:first-child{padding-top:0}
-.c-story:last-child{border-bottom:none;padding-bottom:0}
-.title-md{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.28;color:var(--black);display:block;margin-bottom:5px;letter-spacing:-.01em;transition:color .15s}
-.c-story:hover .title-md{color:var(--gold)}
-
-.hero-right{padding-left:22px}
-.mini{padding:11px 0;border-bottom:var(--border);display:flex;gap:11px;align-items:flex-start}
-.mini:last-child{border-bottom:none}
-.mini-n{font-family:var(--serif);font-size:20px;font-weight:900;color:var(--grey-6);line-height:1;flex-shrink:0;width:22px}
-.mini-cat{font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
-.mini-title{font-family:var(--serif);font-size:13.5px;font-weight:700;line-height:1.35;color:var(--black);display:block;transition:color .15s}
-.mini:hover .mini-title{color:var(--gold)}
-
-/* DIVIDER */
-.divider{border:none;border-top:var(--border);margin:28px 0}
-
-/* THREE COL */
-.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-bottom:28px;border-bottom:var(--border);margin-bottom:28px}
-.s-thumb{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--grey-7);margin-bottom:12px}
-.s-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
-.s-card:hover .s-thumb img{transform:scale(1.03)}
-.title-sm{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.3;color:var(--black);display:block;margin-bottom:7px;letter-spacing:-.01em;transition:color .15s}
-.s-card:hover .title-sm{color:var(--gold)}
-
-/* DARK BAND */
-#band{background:var(--black);padding:36px 0;margin:0 0 28px}
-#band-inner{max-width:1280px;margin:0 auto;padding:0 24px}
-.band-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-#sec-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:#1a1a1a}
-.sec-blk{background:#111;padding:16px 14px;border-bottom:2px solid transparent;transition:background .15s,border-color .15s;display:block}
-.sec-blk:hover{background:#1a1a1a;border-bottom-color:var(--gold)}
-.sec-num{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#555;margin-bottom:4px}
-.sec-name{font-family:var(--serif);font-size:13px;font-weight:700;color:var(--white);line-height:1.3;margin-bottom:3px}
-.sec-ct{font-size:10px;font-weight:400;color:#555}
-
-/* CONTENT ROW */
-#content-row{display:grid;grid-template-columns:1fr 280px;gap:40px;padding-bottom:48px}
-.list-art{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:15px 0;border-bottom:var(--border)}
-.list-art:last-child{border-bottom:none}
-.l-thumb{width:110px;aspect-ratio:4/3;overflow:hidden;background:var(--grey-7);flex-shrink:0}
-.l-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.list-art:hover .l-thumb img{transform:scale(1.05)}
-
-/* SIDEBAR */
-.w-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--black);padding-bottom:10px;border-bottom:2px solid var(--black);margin-bottom:14px}
-.w-art{padding:10px 0;border-bottom:var(--border)}
-.w-art:last-child{border-bottom:none;padding-bottom:0}
-.w-cat{font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;display:block}
-.w-title{font-family:var(--serif);font-size:14px;font-weight:700;line-height:1.3;color:var(--black);display:block;transition:color .15s}
-.w-art:hover .w-title{color:var(--gold)}
-.w-meta{font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-4);margin-top:3px}
-.s-widget{margin-bottom:24px;padding-bottom:20px;border-bottom:var(--border)}
-.s-widget:last-child{border-bottom:none;margin-bottom:0}
-#nl-box{background:var(--black);padding:20px}
-.nl-ey{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-#nl-box h3{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--white);line-height:1.25;margin-bottom:8px}
-#nl-box p{font-size:12px;font-weight:300;color:#777;line-height:1.6;margin-bottom:14px}
-#nl-form{display:flex;flex-direction:column;gap:7px}
-#nl-em{background:#1a1a1a;border:1px solid #333;padding:9px 12px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;transition:border-color .2s;width:100%}
-#nl-em::placeholder{color:#555}#nl-em:focus{border-color:var(--gold)}
-#nl-btn{background:var(--gold);color:var(--black);border:none;padding:10px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .15s}
-#nl-btn:hover{background:var(--gold-light)}
-#nl-msg{font-size:11px;color:#666;min-height:14px}
-.s-ad{background:var(--grey-8);border:var(--border);height:250px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-5)}
-
-/* FOOTER */
-footer{background:var(--black);padding:40px 0 24px;border-top:3px solid var(--gold)}
-#f-grid{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid #1a1a1a;margin-bottom:24px}
-.f-logo{font-family:var(--serif);font-size:28px;font-weight:900;color:var(--white);letter-spacing:-.02em;margin-bottom:10px}
-.f-logo em{font-style:italic;color:var(--gold)}
-#f-brand p{font-size:12px;font-weight:300;color:#666;line-height:1.7;max-width:220px;margin-bottom:16px}
-.f-col h4{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#444;margin-bottom:14px}
-.f-col ul{list-style:none}
-.f-col ul li{margin-bottom:8px}
-.f-col ul li a{font-size:12.5px;font-weight:300;color:#666;transition:color .15s}
-.f-col ul li a:hover{color:var(--white)}
-#f-bottom{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-#f-bottom p{font-size:11.5px;color:#444}
-#f-legal{display:flex;gap:16px}
-#f-legal a{font-size:11.5px;color:#444;transition:color .15s}
-#f-legal a:hover{color:#888}
-
-/* RESPONSIVE */
-@media(max-width:1100px){#sec-grid{grid-template-columns:repeat(4,1fr)}.hero-right{display:none}#hero-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){#hero-grid{grid-template-columns:1fr}.hero-centre{padding:20px 0 0;border-right:none;border-top:var(--border)}.three-col{grid-template-columns:1fr 1fr}#content-row{grid-template-columns:1fr}#f-grid{grid-template-columns:1fr 1fr}#sec-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){#wordmark{font-size:36px}#header-sub{display:none}#nav-links{display:none}#ham{display:flex}.three-col{grid-template-columns:1fr}#sec-grid{grid-template-columns:repeat(2,1fr)}.list-art{grid-template-columns:90px 1fr}#f-grid{grid-template-columns:1fr;gap:20px}#f-bottom{flex-direction:column;align-items:flex-start}}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+#nav{background:var(--white);border-bottom:3px solid var(--black);position:sticky;top:0;z-index:100}
+#ni{display:flex;align-items:center;height:52px;max-width:1200px;margin:0 auto;padding:0 24px}
+#logo{font-family:var(--serif);font-size:24px;font-weight:900;color:var(--black);letter-spacing:-.02em;margin-right:28px;flex-shrink:0}
+#logo em{font-style:italic;color:var(--gold)}
+#navl{display:flex;list-style:none;height:100%;overflow-x:auto}
+#navl li{height:100%}
+#navl a{display:flex;align-items:center;height:100%;padding:0 11px;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#999;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap}
+#navl a:hover{color:var(--black);border-bottom-color:var(--black)}
+#navl a[aria-current]{color:var(--black);border-bottom-color:var(--gold)}
+#hero{background:var(--sc);padding:48px 0;border-bottom:4px solid var(--gold)}
+.h-wrap{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.h-eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
+.h-title{font-family:var(--serif);font-size:clamp(32px,5vw,54px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.02em}
+.h-desc{font-size:14.5px;font-weight:300;color:rgba(255,255,255,.6);max-width:480px;line-height:1.7;margin-top:12px}
+.h-count{font-family:var(--serif);font-size:80px;font-weight:900;color:rgba(255,255,255,.07);line-height:1;flex-shrink:0}
+#main{padding:40px 0 72px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:32px}
+.card{border:1px solid var(--rule-light);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1);transform:translateY(-3px)}
+.card-img{aspect-ratio:16/9;overflow:hidden;background:var(--sl)}
+.card-img img{transition:transform .35s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sc);background:var(--sl)}
+.card-body{padding:20px}
+.card-cat{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;display:block}
+.card-title{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.28;color:var(--black);display:block;margin-bottom:10px;letter-spacing:-.01em;transition:color .15s}
+.card:hover .card-title{color:var(--sc)}
+.card-dek{font-size:13.5px;font-weight:300;color:var(--ink-soft);line-height:1.6;margin-bottom:10px}
+.card-meta{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted)}
+.new-badge{display:inline-block;background:var(--sc);color:#fff;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-left:8px;vertical-align:middle}
+footer{background:var(--black);color:#666;padding:32px 0;text-align:center;font-size:12.5px}
+footer a{color:var(--gold)}
+@media(max-width:768px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<nav id="nav"><div id="ni">
+  <a href="/humanitas/" id="logo">Humani<em>tas</em></a>
+  <ul id="navl">
+    <li><a href="/humanitas/civilisation/">History &amp; Civilisation</a></li>
+    <li><a href="/humanitas/intelligence/">Economics &amp; Law</a></li>
+    <li><a href="/humanitas/human/">Mind &amp; Society</a></li>
+    <li><a href="/humanitas/cosmos/">Science &amp; Discovery</a></li>
+    <li><a href="/humanitas/ideas/">Philosophy &amp; Ethics</a></li>
+    <li><a href="/humanitas/earth/">Environment &amp; Nature</a></li>
+    <li><a href="/humanitas/politics/" aria-current="page">Power &amp; Geopolitics</a></li>
+  </ul>
+</div></nav>
 
-<!-- TICKER -->
-<div id="ticker">
-  <div class="ticker-label">● Live</div>
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <div class="ticker-item">Articles Published <span>19</span></div>
-      <div class="ticker-item">Sections <span>7</span></div>
-      <div class="ticker-item">Latest <span>Africa Forward Summit 2026</span></div>
-      <div class="ticker-item">Total Citations <span>300+</span></div>
-      <div class="ticker-item">Access <span>Free · Always</span></div>
-      <div class="ticker-item">Est. <span>2026</span></div>
-      <div class="ticker-item">Based in <span>Nairobi, Kenya</span></div>
-      <!-- duplicate for seamless loop -->
-      <div class="ticker-item">Articles Published <span>19</span></div>
-      <div class="ticker-item">Sections <span>7</span></div>
-      <div class="ticker-item">Latest <span>Africa Forward Summit 2026</span></div>
-      <div class="ticker-item">Total Citations <span>300+</span></div>
-      <div class="ticker-item">Access <span>Free · Always</span></div>
-      <div class="ticker-item">Est. <span>2026</span></div>
-      <div class="ticker-item">Based in <span>Nairobi, Kenya</span></div>
+<div id="hero"><div class="h-wrap">
+  <div>
+    <div class="h-eyebrow">Section VII · Humanitas</div>
+    <h1 class="h-title">Power &amp; Geopolitics</h1>
+    <p class="h-desc">Foreign policy, democracy, geopolitics, and the mechanics of power — rigorous analysis of how the world is run and by whom.</p>
+  </div>
+  <div class="h-count" aria-hidden="true">1</div>
+</div></div>
+
+<main id="main"><div class="wrap"><div class="grid">
+  <article class="card">
+    <div class="card-img">
+      <img src="https://loremflickr.com/640/360/nairobi,kenya,africa" alt="Africa Forward Summit Nairobi" loading="eager" onerror="this.src='https://loremflickr.com/640/360/africa,summit'; this.onerror=null; //='<div class=card-ph>Power &amp; Geopolitics</div>'">
     </div>
-  </div>
-</div>
-
-<!-- HEADER -->
-<header id="header">
-  <div id="header-inner">
-    <div id="header-top">
-      <a href="/humanitas/" id="wordmark">Humani<em>tas</em></a>
-      <div id="header-meta">
-        <div id="live-badge"><div class="live-dot"></div>Publishing Now</div>
-        <div id="hdate"></div>
-      </div>
-      <button id="header-sub" onclick="document.getElementById('nl-box').scrollIntoView({behavior:'smooth'})">Subscribe Free</button>
+    <div class="card-body">
+      <span class="card-cat">International Relations <span class="new-badge">New</span></span>
+      <a href="/humanitas/politics/africa-forward-summit.html" class="card-title">The Africa Forward Summit 2026 — What Was Decided in Nairobi and Why It Matters</a>
+      <p class="card-dek">30+ heads of state, the UN Secretary-General, and the Nairobi Declaration. A complete account of the commitments made, what the declaration says, and whether it will be delivered.</p>
+      <div class="card-meta">18 min read &nbsp;·&nbsp; 16 citations &nbsp;·&nbsp; May 2026</div>
     </div>
-  </div>
-</header>
-
-<!-- NAV -->
-<nav id="nav">
-  <div id="nav-inner">
-    <a href="/humanitas/" id="nav-logo">Humani<em>tas</em></a>
-    <ul id="nav-links">
-      <li><a href="/humanitas/civilisation/">Civilisation</a></li>
-      <li><a href="/humanitas/intelligence/">Law &amp; Finance</a></li>
-      <li><a href="/humanitas/human/">Human</a></li>
-      <li><a href="/humanitas/cosmos/">Science</a></li>
-      <li><a href="/humanitas/ideas/">Philosophy</a></li>
-      <li><a href="/humanitas/earth/">Earth</a></li>
-      <li><a href="/humanitas/politics/">Politics</a></li>
-    </ul>
-    <div id="nav-right">
-      <button id="nav-sub" onclick="document.getElementById('nl-box').scrollIntoView({behavior:'smooth'})">Subscribe</button>
-      <button id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-  <div id="mob-nav">
-    <a href="/humanitas/civilisation/">Civilisation &amp; Power</a>
-    <a href="/humanitas/intelligence/">Law, Finance &amp; Technology</a>
-    <a href="/humanitas/human/">The Human Condition</a>
-    <a href="/humanitas/cosmos/">Science &amp; the Cosmos</a>
-    <a href="/humanitas/ideas/">Philosophy &amp; Ideas</a>
-    <a href="/humanitas/earth/">Earth, Life &amp; Culture</a>
-    <a href="/humanitas/politics/">Politics, Governance &amp; International Relations</a>
-  </div>
-</nav>
-
-<!-- AD -->
-<div class="ad-bar">Advertisement · 728×90 · Replace with AdSense</div>
-
-<main>
-<div class="wrap">
-
-  <!-- HERO -->
-  <div id="hero-wrap">
-    <div class="sec-rule">
-      <h2>Top Stories</h2>
-      <a href="/humanitas/politics/">Politics &amp; Governance →</a>
-    </div>
-    <div id="hero-grid">
-
-      <!-- LEAD -->
-      <a href="/humanitas/politics/africa-forward-summit.html" class="hero-left">
-        <div class="hero-img">
-          <img src="https://loremflickr.com/800/534/nairobi,kenya,summit?lock=1" alt="Africa Forward Summit Nairobi 2026" loading="eager" onerror="this.src='https://loremflickr.com/800/534/nairobi,kenya,africa'">
-        </div>
-        <span class="cat">Politics &amp; Governance · Breaking</span>
-        <span class="title-lg">The Africa Forward Summit 2026 — What Was Decided in Nairobi and Why It Matters</span>
-        <p class="dek">30+ heads of state, the UN Secretary-General, and the Nairobi Declaration — a complete account of what was agreed and whether it will be delivered.</p>
-        <span class="meta">18 min read · 16 citations · May 2026</span>
-      </a>
-
-      <!-- CENTRE -->
-      <div class="hero-centre">
-        <div class="c-story">
-          <span class="cat">Science &amp; Cosmos</span>
-          <a href="/humanitas/cosmos/james-webb-telescope.html" class="title-md">James Webb Telescope: Seven Discoveries Rewriting Cosmology</a>
-          <p class="dek" style="font-size:13px;margin-top:4px;">Galaxies that should not exist, CO₂ on an exoplanet, the most distant object ever confirmed.</p>
-          <span class="meta">16 min read</span>
-        </div>
-        <div class="c-story">
-          <span class="cat">Philosophy &amp; Ideas</span>
-          <a href="/humanitas/ideas/free-will-illusion.html" class="title-md">Is Free Will an Illusion? What Neuroscience and Philosophy Actually Say</a>
-          <p class="dek" style="font-size:13px;margin-top:4px;">The Libet experiments, three philosophical positions, and why it matters for criminal justice.</p>
-          <span class="meta">17 min read</span>
-        </div>
-        <div class="c-story">
-          <span class="cat">Law, Finance &amp; Tech</span>
-          <a href="/humanitas/intelligence/stock-market.html" class="title-md">How the Stock Market Actually Works — A Complete, Honest Explanation</a>
-          <p class="dek" style="font-size:13px;margin-top:4px;">What a stock is, how prices are set, and what forty years of evidence says about ordinary investors.</p>
-          <span class="meta">17 min read</span>
-        </div>
-      </div>
-
-      <!-- NUMBERED LIST -->
-      <div class="hero-right">
-        <div class="sec-rule" style="padding-top:0"><h2>Also reading</h2></div>
-        <div class="mini">
-          <div class="mini-n">1</div>
-          <div><span class="mini-cat">Human Condition</span><a href="/humanitas/human/attachment-theory.html" class="mini-title">What Attachment Theory Reveals About Every Relationship</a></div>
-        </div>
-        <div class="mini">
-          <div class="mini-n">2</div>
-          <div><span class="mini-cat">Civilisation</span><a href="/humanitas/civilisation/empire-collapse.html" class="mini-title">Why Every Great Empire Eventually Collapsed</a></div>
-        </div>
-        <div class="mini">
-          <div class="mini-n">3</div>
-          <div><span class="mini-cat">Earth &amp; Culture</span><a href="/humanitas/earth/great-barrier-reef.html" class="mini-title">The Great Barrier Reef Is Dying — What Science Says</a></div>
-        </div>
-        <div class="mini">
-          <div class="mini-n">4</div>
-          <div><span class="mini-cat">Law &amp; Finance</span><a href="/humanitas/intelligence/what-is-ai.html" class="mini-title">What Artificial Intelligence Actually Is</a></div>
-        </div>
-        <div class="mini">
-          <div class="mini-n">5</div>
-          <div><span class="mini-cat">Civilisation</span><a href="/humanitas/civilisation/silk-road.html" class="mini-title">The Silk Road: How a Trade Route Built the Ancient World</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- THREE COL -->
-  <div class="sec-rule">
-    <h2>Latest Articles</h2>
-    <a href="/humanitas/">View all →</a>
-  </div>
-  <div class="three-col">
-    <article class="s-card">
-      <div class="s-thumb">
-        <img src="https://loremflickr.com/640/360/coral,reef,ocean?lock=2" alt="Great Barrier Reef coral" loading="lazy" onerror="this.src='https://loremflickr.com/640/360/coral,reef,ocean'">
-      </div>
-      <span class="cat">Earth, Life &amp; Culture</span>
-      <a href="/humanitas/earth/great-barrier-reef.html" class="title-sm">The Great Barrier Reef Is Dying — What Science Says</a>
-      <p class="dek" style="font-size:13px;margin-top:4px;">Five mass bleaching events since 2016. The biology, the damage, and whether recovery is still possible.</p>
-      <span class="meta">16 min · 18 citations</span>
-    </article>
-    <article class="s-card">
-      <div class="s-thumb">
-        <img src="https://loremflickr.com/640/360/stock,market,finance?lock=3" alt="Stock market finance" loading="lazy" onerror="this.src='https://loremflickr.com/640/360/stock,market,finance'">
-      </div>
-      <span class="cat">Law, Finance &amp; Tech</span>
-      <a href="/humanitas/intelligence/stock-market.html" class="title-sm">How the Stock Market Actually Works</a>
-      <p class="dek" style="font-size:13px;margin-top:4px;">What a stock is, how prices are set, and what the evidence says about the best strategy for ordinary investors.</p>
-      <span class="meta">17 min · 18 citations</span>
-    </article>
-    <article class="s-card">
-      <div class="s-thumb">
-        <img src="https://loremflickr.com/640/360/democracy,parliament,politics?lock=4" alt="Democracy and governance" loading="lazy" onerror="this.src='https://loremflickr.com/640/360/athens,greece,ancient'">
-      </div>
-      <span class="cat">Civilisation &amp; Power</span>
-      <a href="/humanitas/civilisation/democracy-older-than-greece.html" class="title-sm">Democracy Is Older Than Greece</a>
-      <p class="dek" style="font-size:13px;margin-top:4px;">Athens did not invent democracy. Evidence from Mesopotamia, India, and the Haudenosaunee Confederacy.</p>
-      <span class="meta">16 min · 19 citations</span>
-    </article>
-  </div>
-
-</div>
-
-<!-- SECTIONS BAND — NOW 7 SECTIONS -->
-<div id="band">
-  <div id="band-inner">
-    <div class="band-eyebrow">Seven domains of human knowledge</div>
-    <div id="sec-grid">
-      <a href="/humanitas/civilisation/" class="sec-blk"><div class="sec-num">Section I</div><div class="sec-name">Civilisation &amp; Power</div><div class="sec-ct">5 articles</div></a>
-      <a href="/humanitas/intelligence/" class="sec-blk"><div class="sec-num">Section II</div><div class="sec-name">Law, Finance &amp; Tech</div><div class="sec-ct">6 articles</div></a>
-      <a href="/humanitas/human/" class="sec-blk"><div class="sec-num">Section III</div><div class="sec-name">The Human Condition</div><div class="sec-ct">4 articles</div></a>
-      <a href="/humanitas/cosmos/" class="sec-blk"><div class="sec-num">Section IV</div><div class="sec-name">Science &amp; the Cosmos</div><div class="sec-ct">1 article</div></a>
-      <a href="/humanitas/ideas/" class="sec-blk"><div class="sec-num">Section V</div><div class="sec-name">Philosophy &amp; Ideas</div><div class="sec-ct">1 article</div></a>
-      <a href="/humanitas/earth/" class="sec-blk"><div class="sec-num">Section VI</div><div class="sec-name">Earth, Life &amp; Culture</div><div class="sec-ct">1 article</div></a>
-      <a href="/humanitas/politics/" class="sec-blk"><div class="sec-num">Section VII</div><div class="sec-name">Politics &amp; Governance</div><div class="sec-ct">1 article</div></a>
-    </div>
-  </div>
-</div>
-
-<div class="wrap">
-  <div class="ad-bar" style="margin-bottom:28px;">Advertisement · Replace with AdSense</div>
-
-  <div id="content-row">
-    <section>
-      <div class="sec-rule">
-        <h2>The Human Condition</h2>
-        <a href="/humanitas/human/">All articles →</a>
-      </div>
-      <article class="list-art">
-        <div class="l-thumb"><img src="https://loremflickr.com/220/165/love,relationship,couple?lock=5" alt="Love neuroscience" loading="lazy" onerror="this.src='https://picsum.photos/seed/love2026/220/165'"></div>
-        <div>
-          <span class="cat">Human Condition</span>
-          <a href="/humanitas/human/neuroscience-love.html" class="title-sm">The Neuroscience of Falling in Love</a>
-          <p class="dek" style="font-size:13px;margin-top:5px;">Brain scans, hormones, and the reward system — the complete scientific account with 20 citations.</p>
-          <span class="meta">15 min · 20 citations</span>
-        </div>
-      </article>
-      <article class="list-art">
-        <div class="l-thumb"><img src="https://loremflickr.com/220/165/psychology,brain,thinking?lock=6" alt="Cognitive bias psychology" loading="lazy" onerror="this.src='https://picsum.photos/seed/mind2026/220/165'"></div>
-        <div>
-          <span class="cat">Human Condition</span>
-          <a href="/humanitas/human/cognitive-bias.html" class="title-sm">Why Smart People Make Terrible Decisions</a>
-          <p class="dek" style="font-size:13px;margin-top:5px;">Intelligence amplifies certain biases. Twelve cognitive biases, their neuroscience, and what reduces them.</p>
-          <span class="meta">17 min · 18 citations</span>
-        </div>
-      </article>
-      <article class="list-art">
-        <div class="l-thumb"><img src="https://loremflickr.com/220/165/loneliness,alone,solitude?lock=7" alt="Science of loneliness" loading="lazy" onerror="this.src='https://picsum.photos/seed/alone2026/220/165'"></div>
-        <div>
-          <span class="cat">Human Condition</span>
-          <a href="/humanitas/human/science-of-loneliness.html" class="title-sm">The Science of Loneliness — Why It Is Killing Us</a>
-          <p class="dek" style="font-size:13px;margin-top:5px;">Loneliness has the same mortality impact as smoking 15 cigarettes a day. The full science.</p>
-          <span class="meta">15 min · 19 citations</span>
-        </div>
-      </article>
-    </section>
-
-    <aside>
-      <div class="s-widget">
-        <div class="w-label">Politics &amp; Governance</div>
-        <div class="w-art">
-          <span class="w-cat">International Relations · New</span>
-          <a href="/humanitas/politics/africa-forward-summit.html" class="w-title">The Africa Forward Summit 2026 — Nairobi Declaration</a>
-          <div class="w-meta">18 min · 16 citations</div>
-        </div>
-      </div>
-      <div class="s-widget">
-        <div class="w-label">Civilisation &amp; Power</div>
-        <div class="w-art">
-          <span class="w-cat">History</span>
-          <a href="/humanitas/civilisation/roman-law-modern-world.html" class="w-title">How Roman Law Quietly Governs the Modern World</a>
-          <div class="w-meta">18 min · 22 citations</div>
-        </div>
-        <div class="w-art">
-          <span class="w-cat">History</span>
-          <a href="/humanitas/civilisation/silk-road.html" class="w-title">The Silk Road: How a Trade Route Built the Ancient World</a>
-          <div class="w-meta">16 min · 18 citations</div>
-        </div>
-        <div class="w-art">
-          <span class="w-cat">History</span>
-          <a href="/humanitas/civilisation/empire-collapse.html" class="w-title">Why Every Great Empire Eventually Collapsed</a>
-          <div class="w-meta">17 min · 20 citations</div>
-        </div>
-      </div>
-      <div class="s-widget">
-        <div id="nl-box">
-          <div class="nl-ey">Weekly digest</div>
-          <h3>Ideas in your inbox</h3>
-          <p>One email every Sunday. Curated, not algorithmic. Free always.</p>
-          <form id="nl-form" novalidate>
-            <input type="email" id="nl-em" placeholder="your@email.com" autocomplete="email" maxlength="254" required>
-            <button type="submit" id="nl-btn">Subscribe Free</button>
-            <div id="nl-msg" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-      <div class="s-widget">
-        <div class="s-ad">Advertisement · 300×250 · Replace with AdSense</div>
-      </div>
-    </aside>
-  </div>
-</div>
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <div id="f-grid">
-    <div id="f-brand">
-      <div class="f-logo">Humani<em>tas</em></div>
-      <p>A free, independent publication. Ideas that matter. Stories that endure. No paywalls. Always free.</p>
-    </div>
-    <div class="f-col"><h4>Sections</h4><ul>
-      <li><a href="/humanitas/civilisation/">Civilisation &amp; Power</a></li>
-      <li><a href="/humanitas/intelligence/">Law, Finance &amp; Tech</a></li>
-      <li><a href="/humanitas/human/">Human Condition</a></li>
-      <li><a href="/humanitas/cosmos/">Science &amp; Cosmos</a></li>
-      <li><a href="/humanitas/ideas/">Philosophy &amp; Ideas</a></li>
-      <li><a href="/humanitas/earth/">Earth &amp; Culture</a></li>
-      <li><a href="/humanitas/politics/">Politics &amp; Governance</a></li>
-    </ul></div>
-    <div class="f-col"><h4>Publication</h4><ul>
-      <li><a href="/humanitas/about.html">About Humanitas</a></li>
-      <li><a href="mailto:editor@humanitas.blog">Contact</a></li>
-      <li><a href="/humanitas/rss.xml">RSS Feed</a></li>
-    </ul></div>
-    <div class="f-col"><h4>Legal</h4><ul>
-      <li><a href="/humanitas/privacy.html">Privacy Policy</a></li>
-      <li><a href="/humanitas/terms.html">Terms of Use</a></li>
-      <li><a href="/humanitas/cookies.html">Cookies</a></li>
-      <li><a href="/humanitas/sitemap.xml">Sitemap</a></li>
-    </ul></div>
-  </div>
-  <div id="f-bottom">
-    <p>&copy; 2026 Humanitas. All rights reserved. Published from Nairobi, Kenya.</p>
-    <div id="f-legal"><a href="/humanitas/privacy.html">Privacy</a><a href="/humanitas/terms.html">Terms</a></div>
-  </div>
-</footer>
-
-<script>
-(function(){
-  'use strict';
-  // Live date
-  var el=document.getElementById('hdate');
-  if(el){var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],months=['January','February','March','April','May','June','July','August','September','October','November','December'],d=new Date();el.textContent=days[d.getDay()]+', '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();}
-  // Nav scroll
-  var nav=document.getElementById('nav'),logo=document.getElementById('nav-logo'),hdr=document.getElementById('header');
-  if(nav&&logo&&hdr){window.addEventListener('scroll',function(){if(window.scrollY>hdr.offsetHeight){nav.classList.add('scrolled');logo.classList.add('show');}else{nav.classList.remove('scrolled');logo.classList.remove('show');}},{passive:true});}
-  // Hamburger
-  var ham=document.getElementById('ham'),mob=document.getElementById('mob-nav');
-  if(ham&&mob){ham.addEventListener('click',function(){var o=mob.classList.toggle('open');ham.setAttribute('aria-expanded',o?'true':'false');});document.addEventListener('click',function(e){if(!ham.contains(e.target)&&!mob.contains(e.target)){mob.classList.remove('open');ham.setAttribute('aria-expanded','false');}});}
-  // Newsletter
-  var nlf=document.getElementById('nl-form'),nlm=document.getElementById('nl-msg'),nle=document.getElementById('nl-em');
-  if(nlf&&nlm&&nle){nlf.addEventListener('submit',function(e){e.preventDefault();var v=nle.value.trim();if(!v||v.indexOf('@')<1||v.indexOf('.')<0){nlm.textContent='Please enter a valid email.';nlm.style.color='#cc0000';nle.focus();return;}nle.value='';nlm.textContent='Subscribed. Welcome to Humanitas.';nlm.style.color='#B8933A';});}
-}());
-</script>
-<script src="/humanitas/fix-images.js"></script>
-</body>
-</html>
+  </article>
+</div></div></main>
+<footer><p>&copy; 2026 <a href="/humanitas/">Humanitas</a> &nbsp;·&nbsp; <a href="/humanitas/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/humanitas/terms.html">Terms</a></p></footer>
+</body></html>
